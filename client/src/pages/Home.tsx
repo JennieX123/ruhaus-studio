@@ -25,9 +25,7 @@ export default function Home() {
             <h1 className="text-lg font-medium playground-heading tracking-tight">Ruhaus</h1>
           </div>
           <nav className="flex gap-8 text-sm font-medium opacity-60">
-            <a href="#" className="hover:opacity-100 transition-opacity">Work</a>
             <a href="#" className="hover:opacity-100 transition-opacity">About</a>
-            <a href="#" className="hover:opacity-100 transition-opacity">Contact</a>
           </nav>
         </div>
       </header>
