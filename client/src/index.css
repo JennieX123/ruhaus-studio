@@ -11,54 +11,61 @@
   --playground-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* NotebookLM Theme - Updated with specific image tokens */
+/* NotebookLM Theme - Refined with Editorial Typography */
 .theme-notebook {
-  --font-heading: 'Merriweather', serif;
+  --font-heading: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
   --bg-color: #FFFFFF;
   --text-color: #1A1A1A;
   --card-bg: #FFFFFF;
   --border-color: #f0f0f0;
   --accent-color: #0066FF;
-  --card-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  --card-radius: 4px;
+  --card-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  --card-radius: 2px;
   --card-padding: 0px;
+}
+
+.theme-notebook .playground-root {
+  line-height: 1.65;
+  letter-spacing: -0.01em;
 }
 
 .theme-notebook .playground-card {
   border-width: 1px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
 }
 
 .theme-notebook .playground-card:hover {
-  transform: translateY(-4px) scale(1.02);
-}
-
-.theme-notebook .playground-switcher-item:hover,
-.theme-notebook button:hover {
-  opacity: 0.85;
+  transform: translateY(-8px) scale(1.01);
 }
 
 .theme-notebook .playground-heading {
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
 }
 
 .theme-notebook h2.playground-heading {
-  font-size: 48px;
-  line-height: 1.2;
+  font-size: 64px;
+  font-weight: 700;
 }
 
 .theme-notebook h3.playground-heading {
-  font-size: 32px;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.theme-notebook p {
+  max-width: 70ch;
 }
 
 .theme-notebook .playground-accent-bg {
-  background-color: #000000; /* primary token */
-  border-radius: 4px;
+  background-color: #000000;
+  border-radius: 2px;
 }
 
 .theme-notebook .playground-switcher-item.active {
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 /* Palantir Theme */
