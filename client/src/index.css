@@ -11,61 +11,69 @@
   --playground-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* NotebookLM Theme - Refined with Editorial Typography */
+/* NotebookLM Theme - Final Refinement for Modern Grotesk Editorial */
 .theme-notebook {
   --font-heading: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
   --bg-color: #FFFFFF;
   --text-color: #1A1A1A;
   --card-bg: #FFFFFF;
-  --border-color: #f0f0f0;
+  --border-color: #E5E5E5;
   --accent-color: #0066FF;
-  --card-shadow: 0 1px 2px rgba(0,0,0,0.03);
-  --card-radius: 2px;
+  --card-shadow: none;
+  --card-radius: 0px;
   --card-padding: 0px;
 }
 
 .theme-notebook .playground-root {
-  line-height: 1.65;
+  line-height: 1.75; /* Generous line height */
   letter-spacing: -0.01em;
 }
 
 .theme-notebook .playground-card {
   border-width: 1px;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .theme-notebook .playground-card:hover {
-  transform: translateY(-8px) scale(1.01);
+  transform: translateY(-12px);
+  border-color: #000000;
 }
 
 .theme-notebook .playground-heading {
   font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
+  letter-spacing: -0.04em; /* Tighter headline spacing */
+  line-height: 1.1; /* Tighter headline line-height */
 }
 
 .theme-notebook h2.playground-heading {
-  font-size: 64px;
+  font-size: 80px; /* Strong hierarchy through scale */
   font-weight: 700;
 }
 
 .theme-notebook h3.playground-heading {
-  font-size: 36px;
-  font-weight: 600;
+  font-size: 40px;
+  font-weight: 500; /* Subtle weight contrast */
 }
 
 .theme-notebook p {
-  max-width: 70ch;
+  max-width: 65ch; /* Optimized paragraph width */
+  font-weight: 400;
+  opacity: 0.8;
 }
 
 .theme-notebook .playground-accent-bg {
   background-color: #000000;
-  border-radius: 2px;
+  border-radius: 0px;
 }
 
 .theme-notebook .playground-switcher-item.active {
-  border-radius: 2px;
+  border-radius: 0px;
+  font-weight: 600;
+}
+
+.theme-notebook .playground-border {
+  border-color: #E5E5E5;
 }
 
 /* Palantir Theme */
