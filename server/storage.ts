@@ -1,23 +1,78 @@
-import { type User, type InsertUser } from "@shared/schema";
-import { randomUUID } from "crypto";
-
-// modify the interface with any CRUD methods
-// you might need
+import { type User, type InsertUser, type Project, type InsertProject } from "@shared/schema";
 
 export interface IStorage {
-  getUser(id: string): Promise<User | undefined>;
+  getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
+  
+  getProjects(): Promise<Project[]>;
+  getProject(id: number): Promise<Project | undefined>;
+  createProject(project: InsertProject): Promise<Project>;
 }
 
 export class MemStorage implements IStorage {
-  private users: Map<string, User>;
+  private users: Map<number, User>;
+  private projects: Map<number, Project>;
+  private userId: number;
+  private projectId: number;
 
   constructor() {
     this.users = new Map();
+    this.projects = new Map();
+    this.userId = 1;
+    this.projectId = 1;
+    this.seedProjects();
   }
 
-  async getUser(id: string): Promise<User | undefined> {
+  private seedProjects() {
+    const seedData: InsertProject[] = [
+      {
+        title: "Hear Me",
+        domain: "#Audio #Voice",
+        intro: "Next-gen voice interfaces and immersive auditory experiences for creative professionals.",
+        image: "/assets/images/project-hearme.png",
+        tags: ["AI", "VOICE UX", "NEW"]
+      },
+      {
+        title: "YOYO",
+        domain: "#Play #Interactive",
+        intro: "Whimsical digital toys and interactive playgrounds that bring joy to daily routines.",
+        image: "/assets/images/project-yoyo.png",
+        tags: ["PRODUCT", "INTERACTIVE"]
+      },
+      {
+        title: "LEARNO",
+        domain: "#EdTech #Learning",
+        intro: "Structured and beautiful educational platforms designed for the curious mind.",
+        image: "/assets/images/project-learno.png",
+        tags: ["EDTECH", "UX DESIGN"]
+      },
+      {
+        title: "Galaxsync",
+        domain: "#Data #Sci-Fi",
+        intro: "Real-time data synchronization visualizer crossing vast digital distances.",
+        image: "/assets/images/project-galaxsync.png",
+        tags: ["DATA VIZ", "SYSTEMS"]
+      },
+      {
+        title: "Soma",
+        domain: "#Health #Wellness",
+        intro: "Mindful applications tracking holistic body health through organic interfaces.",
+        image: "/assets/images/project-soma.png",
+        tags: ["HEALTH", "IDENTITY"]
+      },
+      {
+        title: "Lumina",
+        domain: "#SmartHome #IoT",
+        intro: "Ambient computing and intelligent lighting systems blending seamlessly into spaces.",
+        image: "/assets/images/project-lumina.png",
+        tags: ["IOT", "AMBIENT"]
+      },
+    ];
+    seedData.forEach(p => this.createProject(p));
+  }
+
+  async getUser(id: number): Promise<User | undefined> {
     return this.users.get(id);
   }
 
@@ -28,10 +83,25 @@ export class MemStorage implements IStorage {
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
+    const id = this.userId++;
     const user: User = { ...insertUser, id };
     this.users.set(id, user);
     return user;
+  }
+
+  async getProjects(): Promise<Project[]> {
+    return Array.from(this.projects.values());
+  }
+
+  async getProject(id: number): Promise<Project | undefined> {
+    return this.projects.get(id);
+  }
+
+  async createProject(insertProject: InsertProject): Promise<Project> {
+    const id = this.projectId++;
+    const project: Project = { ...insertProject, id };
+    this.projects.set(id, project);
+    return project;
   }
 }
 
