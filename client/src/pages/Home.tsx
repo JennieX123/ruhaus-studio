@@ -22,6 +22,7 @@ export default function Home() {
     { id: "theme-palantir", name: "Palantir", icon: <Database className="w-4 h-4" /> },
     { id: "theme-minimal", name: "Minimalist", icon: <Square className="w-4 h-4" /> },
     { id: "theme-neobrutalism", name: "Neo-Brutalism", icon: <Zap className="w-4 h-4" /> },
+    { id: "theme-jason", name: "Jason S.", icon: <ExternalLink className="w-4 h-4" /> },
   ];
 
   const projects = [
@@ -30,36 +31,42 @@ export default function Home() {
       domain: "#Audio #Voice",
       intro: "Next-gen voice interfaces and immersive auditory experiences for creative professionals.",
       image: hearMeImg,
+      tags: ["AI", "VOICE UX", "NEW"]
     },
     {
       title: "YOYO",
       domain: "#Play #Interactive",
       intro: "Whimsical digital toys and interactive playgrounds that bring joy to daily routines.",
       image: yoyoImg,
+      tags: ["PRODUCT", "INTERACTIVE"]
     },
     {
       title: "LEARNO",
       domain: "#EdTech #Learning",
       intro: "Structured and beautiful educational platforms designed for the curious mind.",
       image: learnoImg,
+      tags: ["EDTECH", "UX DESIGN"]
     },
     {
       title: "Galaxsync",
       domain: "#Data #Sci-Fi",
       intro: "Real-time data synchronization visualizer crossing vast digital distances.",
       image: galaxsyncImg,
+      tags: ["DATA VIZ", "SYSTEMS"]
     },
     {
       title: "Soma",
       domain: "#Health #Wellness",
       intro: "Mindful applications tracking holistic body health through organic interfaces.",
       image: somaImg,
+      tags: ["HEALTH", "IDENTITY"]
     },
     {
       title: "Lumina",
       domain: "#SmartHome #IoT",
       intro: "Ambient computing and intelligent lighting systems blending seamlessly into spaces.",
       image: luminaImg,
+      tags: ["IOT", "AMBIENT"]
     },
   ];
 
@@ -123,14 +130,14 @@ export default function Home() {
               style={{ animationDelay: `${idx * 150}ms` }}
             >
               {/* Project Card/Image */}
-              <div className="playground-card mb-6 md:mb-8 relative aspect-[4/3] transform transition-transform duration-500 hover:-translate-y-2">
+              <div className="playground-card mb-6 md:mb-8 relative aspect-[4/3] transform transition-transform duration-500">
                 <div className="playground-card-img-container w-full h-full relative">
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-all duration-700"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <div className="bg-white text-black p-4 rounded-full shadow-2xl transform translate-y-8 group-hover:translate-y-0 transition-all duration-500 ease-out">
                       <ArrowRight className="w-6 h-6" />
                     </div>
@@ -140,17 +147,29 @@ export default function Home() {
               
               {/* Project Info */}
               <div className="flex flex-col gap-3 px-1">
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex flex-col items-start gap-1">
                   <h3 className="text-3xl md:text-4xl font-bold playground-heading tracking-tight">{project.title}</h3>
-                  <span className="text-xs md:text-sm font-mono mt-2 playground-accent whitespace-nowrap">{project.domain}</span>
                 </div>
                 <p className="text-lg opacity-70 leading-relaxed max-w-md">
                   {project.intro}
                 </p>
                 
-                <div className="mt-4 flex items-center gap-2 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 playground-accent">
-                  View Case Study <ExternalLink className="w-4 h-4" />
-                </div>
+                {theme === "theme-jason" && project.tags && (
+                  <div className="project-tags flex gap-2 flex-wrap">
+                    {project.tags.map((tag, tIdx) => (
+                      <span key={tIdx} className="tag">{tag}</span>
+                    ))}
+                  </div>
+                )}
+                
+                {theme !== "theme-jason" && (
+                  <>
+                    <span className="text-xs md:text-sm font-mono mt-2 playground-accent whitespace-nowrap">{project.domain}</span>
+                    <div className="mt-4 flex items-center gap-2 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 playground-accent">
+                      View Case Study <ExternalLink className="w-4 h-4" />
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           ))}
