@@ -11,18 +11,41 @@
   --playground-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* NotebookLM Theme */
+/* NotebookLM Theme - Updated with minimalist professional guidance */
 .theme-notebook {
   --font-heading: 'Merriweather', serif;
   --font-body: 'Inter', sans-serif;
-  --bg-color: #fcfaf8;
-  --text-color: #2c2a29;
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
   --card-bg: #ffffff;
-  --border-color: #e0dcd3;
-  --accent-color: #b24020;
-  --card-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
-  --card-radius: 8px;
-  --card-padding: 12px;
+  --border-color: #f0f0f0;
+  --accent-color: #000000;
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 10px 15px -5px rgba(0,0,0,0.02);
+  --card-radius: 4px;
+  --card-padding: 0px;
+}
+
+.theme-notebook .playground-card {
+  border-width: 1px;
+  transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.theme-notebook .playground-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+}
+
+.theme-notebook .playground-heading {
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.theme-notebook .playground-accent-bg {
+  border-radius: 4px;
+}
+
+.theme-notebook .playground-switcher-item.active {
+  border-radius: 4px;
 }
 
 /* Palantir Theme */

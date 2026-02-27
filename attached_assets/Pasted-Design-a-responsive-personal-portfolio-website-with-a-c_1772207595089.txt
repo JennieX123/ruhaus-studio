@@ -1,0 +1,40 @@
+Design a responsive personal portfolio website with a clean, minimalist aesthetic and professional layout inspired by contemporary designer portfolios. The site should include:
+
+1) Layout & Structure
+	•	Header with minimal logo/text and simple nav (Home, About, Work/Projects, Contact).
+	•	Hero section with designer’s name, role, short bio, and a large banner image.
+	•	Project showcase sections with big visuals and succinct descriptions.
+	•	CTA buttons with high clarity and consistent placement.
+
+2) Visual Style
+	•	Use a modern, readable sans-serif typography system (e.g., Inter, Satoshi, or similar).
+	•	Generous whitespace and vertical rhythm for clarity and breathing room.
+	•	Soft neutral color palette (white, very light greys) with subtle accent color for highlights/buttons.
+	•	High-quality image containers with consistent aspect ratios.
+
+3) UI Components
+	•	Hero Block: Large heading, subheading, centered or left-aligned, with a prominent introductory image.
+	•	Navigation: Sticky minimal top nav with subtle hover states.
+	•	Project Cards: Full-width images with overlay text, subtle interactions on hover (scale/opacity shift).
+	•	Text Blocks: Clear heading levels (H1, H2, H3), callouts, and bullet lists with consistent spacing.
+	•	Footer: Simple contact links and copyright.
+
+4) Interaction & Responsiveness
+	•	Fully responsive (mobile first): collapsible menu on smaller screens.
+	•	Smooth scroll between sections.
+	•	Subtle microinteractions (button hover color transitions, fade-in sections).
+
+5) Accessibility
+	•	Semantic HTML structure.
+	•	High contrast text for readability.
+	•	aria-label for nav toggles and good alt text for images.
+
+6) Branding & Personal Narrative
+	•	Space reserved for case study details and storytelling (text + images).
+	•	Blockquote styles for personal insights.
+	•	Section for professional accomplishments (projects, patents, highlights).
+
+Output Requirements:
+	•	Generate HTML, CSS (preferably TailwindCSS or utility CSS), plus optional JS for responsive behavior.
+	•	Provide a style guide (font sizes, color tokens, spacing scale, button styles).
+	•	Create reusable components/templates for Projects, Hero, and Profile sections.
