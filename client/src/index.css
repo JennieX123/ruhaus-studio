@@ -26,7 +26,7 @@
 }
 
 .theme-notebook .playground-root {
-  line-height: 1.75; /* Generous line height */
+  line-height: 1.75;
   letter-spacing: -0.01em;
 }
 
@@ -42,22 +42,24 @@
 
 .theme-notebook .playground-heading {
   font-weight: 600;
-  letter-spacing: -0.04em; /* Tighter headline spacing */
-  line-height: 1.1; /* Tighter headline line-height */
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  /* Simulating Suisse Int'l / Neue Haas Grotesk characteristics with Inter */
+  font-feature-settings: "cv05", "cv08", "ss01"; 
 }
 
 .theme-notebook h2.playground-heading {
-  font-size: 80px; /* Strong hierarchy through scale */
+  font-size: 80px;
   font-weight: 700;
 }
 
 .theme-notebook h3.playground-heading {
   font-size: 40px;
-  font-weight: 500; /* Subtle weight contrast */
+  font-weight: 500;
 }
 
 .theme-notebook p {
-  max-width: 65ch; /* Optimized paragraph width */
+  max-width: 65ch;
   font-weight: 400;
   opacity: 0.8;
 }
