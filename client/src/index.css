@@ -282,6 +282,8 @@
 
 .theme-jason .playground-switcher-item.active {
   border-radius: 99px;
+  background-color: #111;
+  color: white;
 }
 
 .theme-jason .project-tags {
