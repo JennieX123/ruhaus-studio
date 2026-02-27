@@ -191,82 +191,25 @@
   box-shadow: 4px 4px 0px 0px #000000;
   transform: translate(-2px, -2px);
 }
-/* 5. Minimal Editorial Style (Based on Jason Spielman's portfolio) */
-.theme-jason {
-  --font-heading: 'Inter', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --bg-color: #ffffff;
-  --text-color: #111111;
-  --card-bg: #f5f5f5;
-  --border-color: transparent;
-  --accent-color: #000000;
-  --card-shadow: none;
-  --card-radius: 12px;
-  --card-padding: 0px;
-}
-
-.theme-jason .playground-root {
-  line-height: 1.5;
-  letter-spacing: -0.01em;
+/* Hide the switcher in the final Jason version if it's not being used */
+.theme-jason .style-engine-container {
+  display: none !important;
 }
 
 .theme-jason header {
   border-bottom: none;
   background: transparent;
   backdrop-filter: none;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-.theme-jason .playground-card {
-  background-color: var(--card-bg);
-  border: none;
-  border-radius: var(--card-radius);
-  transition: transform 0.4s ease;
+.theme-jason .playground-root {
+  background-color: #ffffff;
 }
 
-.theme-jason .playground-card:hover {
-  transform: scale(0.98);
-}
-
-.theme-jason .playground-card-img-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem;
-}
-
-.theme-jason .playground-card img {
-  width: auto;
-  height: auto;
-  max-width: 60%;
-  max-height: 60%;
-  object-fit: contain;
-  filter: grayscale(1) brightness(0.2);
-  transition: filter 0.3s ease;
-}
-
-.theme-jason .playground-card:hover img {
-  filter: none;
-}
-
-.theme-jason h2.playground-heading {
-  font-size: 1.5rem;
-  font-weight: 400;
-  max-width: 800px;
-  line-height: 1.4;
-  margin-bottom: 4rem;
-  color: #555;
-}
-
-.theme-jason h3.playground-heading {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.theme-jason p {
-  font-size: 0.95rem;
-  color: #666;
-  max-width: 50ch;
+.theme-jason .playground-heading {
+  font-family: 'Inter', sans-serif;
 }
 
 .theme-jason .playground-accent {
@@ -275,30 +218,34 @@
   text-underline-offset: 4px;
 }
 
-.theme-jason .playground-accent-bg {
-  background-color: #111;
-  border-radius: 99px;
+.theme-jason .playground-card {
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
 }
 
-.theme-jason .playground-switcher-item.active {
-  border-radius: 99px;
-  background-color: #111;
-  color: white;
+.theme-jason .playground-card:hover {
+  transform: scale(0.98);
 }
 
-.theme-jason .project-tags {
-  display: flex;
-  gap: 8px;
-  margin-top: 12px;
+.theme-jason .playground-card img {
+  filter: grayscale(1) brightness(0.2);
+  transition: all 0.7s ease-in-out;
+}
+
+.theme-jason .playground-card:hover img {
+  filter: grayscale(0) brightness(1);
 }
 
 .theme-jason .tag {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 10px;
+  tracking-wider: 0.05em;
   padding: 4px 12px;
-  border: 1px solid #ddd;
+  border: 1px solid #e5e5e5;
   border-radius: 99px;
-  color: #666;
-  font-weight: 600;
+  color: #a3a3a3;
+  font-weight: 700;
+  text-transform: uppercase;
 }
