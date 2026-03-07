@@ -2,9 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import { type Project } from "@shared/schema";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
+  const [, navigate] = useLocation();
 
   const { data: projects, isLoading } = useQuery<Project[]>({
     queryKey: ["/api/projects"],
@@ -56,6 +58,7 @@ export default function Home() {
               <div 
                 key={project.id} 
                 className="group cursor-pointer flex flex-col"
+                onClick={() => navigate(`/project/${project.id}`)}
               >
                 {/* Project Card/Image */}
                 <div className="playground-card mb-6 relative aspect-[4/3] overflow-hidden">
