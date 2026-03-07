@@ -28,6 +28,22 @@ export class MemStorage implements IStorage {
   private seedProjects() {
     const seedData: InsertProject[] = [
       {
+        slug: "soma",
+        title: "Soma",
+        domain: "#Health #Wellness",
+        intro: "Mindful applications tracking holistic body health through organic interfaces.",
+        image: "/assets/images/project-soma.png",
+        tags: ["HEALTH", "IDENTITY"]
+      },
+      {
+        slug: "galaxsync",
+        title: "Galaxsync",
+        domain: "#Data #Sci-Fi",
+        intro: "Real-time data synchronization visualizer crossing vast digital distances.",
+        image: "/assets/images/project-galaxsync.png",
+        tags: ["DATA VIZ", "SYSTEMS"]
+      },
+      {
         slug: "hear-me",
         title: "Hear Me",
         domain: "#Audio #Voice",
@@ -50,22 +66,6 @@ export class MemStorage implements IStorage {
         intro: "Structured and beautiful educational platforms designed for the curious mind.",
         image: "/assets/images/project-learno.png",
         tags: ["EDTECH", "UX DESIGN"]
-      },
-      {
-        slug: "galaxsync",
-        title: "Galaxsync",
-        domain: "#Data #Sci-Fi",
-        intro: "Real-time data synchronization visualizer crossing vast digital distances.",
-        image: "/assets/images/project-galaxsync.png",
-        tags: ["DATA VIZ", "SYSTEMS"]
-      },
-      {
-        slug: "soma",
-        title: "Soma",
-        domain: "#Health #Wellness",
-        intro: "Mindful applications tracking holistic body health through organic interfaces.",
-        image: "/assets/images/project-soma.png",
-        tags: ["HEALTH", "IDENTITY"]
       },
       {
         slug: "lumina",
