@@ -31,9 +31,8 @@ export default function ProjectDetail() {
           </button>
         </div>
       </header>
-
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-12 md:py-20">
+      <main className="max-w-7xl mx-auto px-6 py-12 md:py-20 pt-[0px] pb-[0px]">
         {isLoading ? (
           <div className="animate-pulse space-y-8">
             <div className="aspect-video bg-neutral-100 rounded-lg" />
@@ -96,7 +95,6 @@ export default function ProjectDetail() {
           </div>
         )}
       </main>
-
       {/* Footer */}
       <footer className="border-t border-neutral-100 mt-20 py-12">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 opacity-60 text-sm">
