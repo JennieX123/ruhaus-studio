@@ -5,12 +5,14 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/Home";
 import ProjectDetail from "@/pages/ProjectDetail";
+import GalaxsyncDetail from "@/pages/GalaxsyncDetail";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home}/>
+      <Route path="/galaxsync" component={GalaxsyncDetail}/>
       <Route path="/:slug" component={ProjectDetail}/>
       <Route component={NotFound} />
     </Switch>
