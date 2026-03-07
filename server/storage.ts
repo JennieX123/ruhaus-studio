@@ -7,6 +7,7 @@ export interface IStorage {
   
   getProjects(): Promise<Project[]>;
   getProject(id: number): Promise<Project | undefined>;
+  getProjectBySlug(slug: string): Promise<Project | undefined>;
   createProject(project: InsertProject): Promise<Project>;
 }
 
@@ -27,6 +28,7 @@ export class MemStorage implements IStorage {
   private seedProjects() {
     const seedData: InsertProject[] = [
       {
+        slug: "hear-me",
         title: "Hear Me",
         domain: "#Audio #Voice",
         intro: "Next-gen voice interfaces and immersive auditory experiences for creative professionals.",
@@ -34,6 +36,7 @@ export class MemStorage implements IStorage {
         tags: ["AI", "VOICE UX", "NEW"]
       },
       {
+        slug: "yoyo",
         title: "YOYO",
         domain: "#Play #Interactive",
         intro: "Whimsical digital toys and interactive playgrounds that bring joy to daily routines.",
@@ -41,6 +44,7 @@ export class MemStorage implements IStorage {
         tags: ["PRODUCT", "INTERACTIVE"]
       },
       {
+        slug: "learno",
         title: "LEARNO",
         domain: "#EdTech #Learning",
         intro: "Structured and beautiful educational platforms designed for the curious mind.",
@@ -48,6 +52,7 @@ export class MemStorage implements IStorage {
         tags: ["EDTECH", "UX DESIGN"]
       },
       {
+        slug: "galaxsync",
         title: "Galaxsync",
         domain: "#Data #Sci-Fi",
         intro: "Real-time data synchronization visualizer crossing vast digital distances.",
@@ -55,6 +60,7 @@ export class MemStorage implements IStorage {
         tags: ["DATA VIZ", "SYSTEMS"]
       },
       {
+        slug: "soma",
         title: "Soma",
         domain: "#Health #Wellness",
         intro: "Mindful applications tracking holistic body health through organic interfaces.",
@@ -62,6 +68,7 @@ export class MemStorage implements IStorage {
         tags: ["HEALTH", "IDENTITY"]
       },
       {
+        slug: "lumina",
         title: "Lumina",
         domain: "#SmartHome #IoT",
         intro: "Ambient computing and intelligent lighting systems blending seamlessly into spaces.",
@@ -95,6 +102,12 @@ export class MemStorage implements IStorage {
 
   async getProject(id: number): Promise<Project | undefined> {
     return this.projects.get(id);
+  }
+
+  async getProjectBySlug(slug: string): Promise<Project | undefined> {
+    return Array.from(this.projects.values()).find(
+      (project) => project.slug === slug,
+    );
   }
 
   async createProject(insertProject: InsertProject): Promise<Project> {

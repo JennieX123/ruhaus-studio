@@ -58,7 +58,7 @@ export default function Home() {
               <div 
                 key={project.id} 
                 className="group cursor-pointer flex flex-col"
-                onClick={() => navigate(`/project/${project.id}`)}
+                onClick={() => navigate(`/${project.slug}`)}
               >
                 {/* Project Card/Image */}
                 <div className="playground-card mb-6 relative aspect-[4/3] overflow-hidden">

@@ -5,14 +5,14 @@ import { ArrowLeft } from "lucide-react";
 import { useLocation } from "wouter";
 
 export default function ProjectDetail() {
-  const [match, params] = useRoute("/project/:id");
+  const [match, params] = useRoute("/:slug");
   const [, navigate] = useLocation();
   
-  const projectId = params?.id ? parseInt(params.id) : null;
+  const slug = params?.slug;
   
   const { data: project, isLoading } = useQuery<Project>({
-    queryKey: [`/api/projects/${projectId}`],
-    enabled: !!projectId,
+    queryKey: [`/api/projects/slug/${slug}`],
+    enabled: !!slug,
   });
 
   if (!match) return null;
