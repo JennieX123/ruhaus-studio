@@ -37,9 +37,8 @@ export default function Home() {
         {/* Hero Section */}
         <div className="max-w-3xl mb-24 md:mb-32">
           <h2 className="text-2xl md:text-3xl font-normal playground-heading mb-12 leading-relaxed text-neutral-500">
-            Designer, strategist, and builder specializing in <span className="playground-accent italic">AI and voice experiences</span>. 
-            Currently building bespoke digital dimensions, exploring the future of personal intelligence. 
-            Previously led design on iconic platforms and contributed to global AI efforts.
+            Design, strategize, and build <span className="playground-accent italic">AI-powered experiences for social impact</span>, exploring the future of personal intelligence. 
+            Pioneering innovative product design and contributing to the global advancement of AI.
           </h2>
         </div>
 
