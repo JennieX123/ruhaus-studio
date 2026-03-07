@@ -16,7 +16,7 @@ export default function GalaxsyncDetail() {
   const hoverScale = "hover:scale-105 transition-transform duration-300";
 
   return (
-    <div className="playground-root theme-jason min-h-screen selection:bg-current selection:text-white">
+    <div className="playground-root theme-jason min-h-screen selection:bg-current selection:text-white" style={{ backgroundColor: '#FEF5E4' }}>
       {/* Header */}
       <header className="py-8 border-b border-neutral-100">
         <div className="max-w-7xl mx-auto px-6 flex items-center gap-4">
