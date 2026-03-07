@@ -35,7 +35,7 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-6 py-12 md:py-20 pt-[40px] pb-[40px]">
         {/* Hero Section */}
         <div className="max-w-3xl mb-16 md:mb-24">
-          <h2 className="text-base md:text-lg font-normal playground-heading mb-8 leading-relaxed text-neutral-500">
+          <h2 className="text-base md:text-lg font-normal playground-heading mb-4 leading-relaxed text-neutral-500">
             Design, strategize, and build <span className="playground-accent italic">AI-powered experiences for social impact</span>, exploring the future of personal intelligence. 
             Pioneering innovative product design and contributing to the global advancement of AI.
           </h2>
