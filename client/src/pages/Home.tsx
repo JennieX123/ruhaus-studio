@@ -24,7 +24,6 @@ export default function Home() {
       <header className="py-8 pt-[24px] pb-[24px]">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <img src="/ruhaus-logo.jpg" alt="Ruhaus Studio" className="h-6 w-auto" />
             <h1 className="text-lg font-medium playground-heading tracking-tight">Ruhaus</h1>
           </div>
           <nav className="flex gap-8 text-sm font-medium opacity-60">
