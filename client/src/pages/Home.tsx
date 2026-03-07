@@ -35,8 +35,8 @@ export default function Home() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-12 md:py-20">
         {/* Hero Section */}
-        <div className="max-w-3xl mb-24 md:mb-32">
-          <h2 className="text-2xl md:text-3xl font-normal playground-heading mb-12 leading-relaxed text-neutral-500">
+        <div className="max-w-3xl mb-16 md:mb-24">
+          <h2 className="text-base md:text-lg font-normal playground-heading mb-8 leading-relaxed text-neutral-500">
             Design, strategize, and build <span className="playground-accent italic">AI-powered experiences for social impact</span>, exploring the future of personal intelligence. 
             Pioneering innovative product design and contributing to the global advancement of AI.
           </h2>
@@ -60,7 +60,7 @@ export default function Home() {
                 onClick={() => navigate(`/${project.slug}`)}
               >
                 {/* Project Card/Image */}
-                <div className="playground-card mb-6 relative aspect-[4/3] overflow-hidden">
+                <div className="playground-card mb-6 relative aspect-square overflow-hidden">
                   <div className="playground-card-img-container w-full h-full relative flex items-center justify-center bg-[#F5F5F5] p-12 md:p-20">
                     <img 
                       src={project.image} 
