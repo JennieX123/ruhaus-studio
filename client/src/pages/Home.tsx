@@ -60,11 +60,15 @@ export default function Home() {
               >
                 {/* Project Card/Image */}
                 <div className="playground-card mb-6 relative aspect-video overflow-hidden">
-                  <div className={`playground-card-img-container w-full h-full relative flex items-center justify-center p-12 md:p-20`} style={project.slug === 'galaxsync' ? { backgroundColor: '#FEF5E4' } : { backgroundColor: '#F5F5F5' }}>
+                  <div className="playground-card-img-container w-full h-full relative flex items-center justify-center bg-[#F5F5F5] p-12 md:p-20">
                     <img 
                       src={project.image} 
                       alt={project.title} 
-                      className="max-w-full max-h-full object-contain grayscale brightness-[0.2] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 ease-in-out"
+                      className={`max-w-full max-h-full object-contain transition-all duration-700 ease-in-out ${
+                        project.slug === 'galaxsync' 
+                          ? '' 
+                          : 'grayscale brightness-[0.2] group-hover:grayscale-0 group-hover:brightness-100'
+                      }`}
                     />
                   </div>
                 </div>
