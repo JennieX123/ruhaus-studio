@@ -31,9 +31,8 @@ export default function Home() {
           </nav>
         </div>
       </header>
-
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-12 md:py-20">
+      <main className="max-w-7xl mx-auto px-6 py-12 md:py-20 pt-[40px] pb-[40px]">
         {/* Hero Section */}
         <div className="max-w-3xl mb-16 md:mb-24">
           <h2 className="text-base md:text-lg font-normal playground-heading mb-8 leading-relaxed text-neutral-500">
@@ -92,7 +91,6 @@ export default function Home() {
           )}
         </div>
       </main>
-
       {/* Footer */}
       <footer className="border-t playground-border mt-20 py-12">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 opacity-60 text-sm">
