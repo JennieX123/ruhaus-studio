@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className="playground-root theme-jason min-h-screen selection:bg-current selection:text-white">
       {/* Header */}
-      <header className="py-8 pt-[24px] pb-[24px]">
+      <header className="py-4">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <h1 className="text-lg font-medium playground-heading tracking-tight">Ruhaus</h1>
@@ -32,9 +32,9 @@ export default function Home() {
         </div>
       </header>
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-12 md:py-20 pt-[0px] pb-[0px]">
+      <main className="max-w-7xl mx-auto px-6 py-8 md:py-12">
         {/* Hero Section */}
-        <div className="max-w-3xl mb-16 md:mb-24">
+        <div className="max-w-3xl mb-8 md:mb-12">
           <h2 className="text-base md:text-lg font-normal playground-heading mb-4 leading-relaxed text-neutral-500">
             Design, strategize, and build <span className="playground-accent italic">AI-powered experiences for social impact</span>, exploring the future of human intelligence. 
             Pioneering innovative product design and contributing to the global advancement of AI.
@@ -42,7 +42,7 @@ export default function Home() {
         </div>
 
         {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
           {isLoading ? (
             Array(6).fill(0).map((_, i) => (
               <div key={i} className="animate-pulse flex flex-col gap-4">
