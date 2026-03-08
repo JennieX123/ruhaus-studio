@@ -20,8 +20,14 @@ export default function ProjectDetail() {
   return (
     <div className="playground-root theme-jason min-h-screen selection:bg-current selection:text-white">
       {/* Header */}
-      <header className="py-8 border-b border-neutral-100">
-        <div className="max-w-7xl mx-auto px-6 flex items-center gap-4">
+      <header className="sticky top-0 bg-white z-50 border-b border-neutral-100 py-4">
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+          <button
+            onClick={() => navigate("/")}
+            className="text-lg font-medium playground-heading tracking-tight hover:opacity-60 transition-opacity cursor-pointer"
+          >
+            Ruhaus
+          </button>
           <button
             onClick={() => navigate("/")}
             className="flex items-center gap-2 text-sm font-medium opacity-60 hover:opacity-100 transition-opacity"

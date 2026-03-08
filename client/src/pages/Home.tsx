@@ -21,10 +21,15 @@ export default function Home() {
   return (
     <div className="playground-root theme-jason min-h-screen selection:bg-current selection:text-white">
       {/* Header */}
-      <header className="py-4">
+      <header className="sticky top-0 bg-white z-50 border-b border-neutral-100 py-4">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <h1 className="text-lg font-medium playground-heading tracking-tight">Ruhaus</h1>
+            <button 
+              onClick={() => navigate("/")}
+              className="text-lg font-medium playground-heading tracking-tight hover:opacity-60 transition-opacity cursor-pointer"
+            >
+              Ruhaus
+            </button>
           </div>
           <nav className="flex gap-8 text-sm font-medium opacity-60">
             <a href="#" className="hover:opacity-100 transition-opacity">About</a>
