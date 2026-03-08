@@ -27,13 +27,7 @@ export default function GalaxsyncDetail() {
             Ruhaus
           </button>
           <nav className="flex gap-8 text-sm font-medium opacity-60">
-            <button
-              onClick={() => navigate("/")}
-              className="flex items-center gap-2 hover:opacity-100 transition-opacity"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back
-            </button>
+            <a href="#" className="hover:opacity-100 transition-opacity">About</a>
           </nav>
         </div>
       </header>
