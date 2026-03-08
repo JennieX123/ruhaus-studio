@@ -18,7 +18,7 @@ export default function GalaxsyncDetail() {
   return (
     <div className="playground-root theme-jason min-h-screen selection:bg-current selection:text-white" style={{ backgroundColor: '#FEF5E4' }}>
       {/* Header */}
-      <header className="sticky top-0 bg-white z-50 border-b border-neutral-100 py-4">
+      <header className="sticky top-0 z-50 border-b border-neutral-100 py-4" style={{ backgroundColor: '#FEF5E4' }}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <button
             onClick={() => navigate("/")}
