@@ -20,7 +20,7 @@ export default function ProjectDetail() {
   return (
     <div className="playground-root theme-jason min-h-screen selection:bg-current selection:text-white">
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-neutral-100 py-4" style={{ backgroundColor: '#FFFFFF' }}>
+      <header className="sticky top-0 z-50 py-4" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <button
             onClick={() => navigate("/")}
