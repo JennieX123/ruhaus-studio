@@ -32,7 +32,7 @@ export default function Home() {
         </div>
       </header>
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-8 md:py-12">
+      <main className="max-w-7xl mx-auto px-6 py-8 md:py-12 pt-[0px] pb-[0px]">
         {/* Hero Section */}
         <div className="max-w-3xl mb-8 md:mb-12">
           <h2 className="text-base md:text-lg font-normal playground-heading mb-4 leading-relaxed text-neutral-500">
