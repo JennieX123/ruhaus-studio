@@ -56,30 +56,34 @@ export default function GalaxsyncDetail() {
           <div className={`space-y-8 ${fadeInUp}`} style={{ animationDelay: "0.1s" }}>
             <h2 className="text-2xl font-semibold playground-heading">Problem</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className={`p-8 bg-neutral-50 rounded-lg border border-neutral-100 ${hoverScale}`}>
-                <div className="flex justify-center mb-6">
-                  <img src="/elder-avatar.png" alt="Elder" className="w-20 h-20 object-contain" />
+              <div className={`p-8 bg-neutral-50 rounded-lg border border-neutral-100 ${hoverScale} flex items-center gap-8`}>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-lg mb-4">Empty-Nest Seniors</h3>
+                  <ul className="space-y-2 text-neutral-600 text-sm">
+                    <li>• 200M seniors living alone worldwide</li>
+                    <li>• Lifetimes of wisdom and rich personal histories</li>
+                    <li>• Decreasing social interaction and isolation</li>
+                    <li>• Seeking meaningful connection and purpose</li>
+                  </ul>
                 </div>
-                <h3 className="font-semibold text-lg mb-4">Empty-Nest Seniors</h3>
-                <ul className="space-y-2 text-neutral-600 text-sm">
-                  <li>• 200M seniors living alone worldwide</li>
-                  <li>• Lifetimes of wisdom and rich personal histories</li>
-                  <li>• Decreasing social interaction and isolation</li>
-                  <li>• Seeking meaningful connection and purpose</li>
-                </ul>
+                <div className="flex-shrink-0">
+                  <img src="/elder-avatar.png" alt="Elder" className="w-40 h-40 object-contain" />
+                </div>
               </div>
 
-              <div className={`p-8 bg-neutral-50 rounded-lg border border-neutral-100 ${hoverScale}`}>
-                <div className="flex justify-center mb-6">
-                  <img src="/child-avatar.png" alt="Child" className="w-20 h-20 object-contain" />
+              <div className={`p-8 bg-neutral-50 rounded-lg border border-neutral-100 ${hoverScale} flex items-center gap-8`}>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-lg mb-4">Children with ADHD</h3>
+                  <ul className="space-y-2 text-neutral-600 text-sm">
+                    <li>• 366M children globally struggle with attention</li>
+                    <li>• High energy and fragmented focus</li>
+                    <li>• Often misunderstood for their intensity</li>
+                    <li>• Thrive in immersive, structured environments</li>
+                  </ul>
                 </div>
-                <h3 className="font-semibold text-lg mb-4">Children with ADHD</h3>
-                <ul className="space-y-2 text-neutral-600 text-sm">
-                  <li>• 366M children globally struggle with attention</li>
-                  <li>• High energy and fragmented focus</li>
-                  <li>• Often misunderstood for their intensity</li>
-                  <li>• Thrive in immersive, structured environments</li>
-                </ul>
+                <div className="flex-shrink-0">
+                  <img src="/child-avatar.png" alt="Child" className="w-40 h-40 object-contain" />
+                </div>
               </div>
             </div>
           </div>
