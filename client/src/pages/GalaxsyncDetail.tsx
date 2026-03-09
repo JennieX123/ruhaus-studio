@@ -32,7 +32,7 @@ export default function GalaxsyncDetail() {
         </div>
       </header>
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-12 md:py-20 pt-[0px] pb-[0px]">
+      <main className="max-w-7xl mx-auto px-6 pb-12 md:pb-20" style={{ paddingTop: 0 }}>
         <div className="space-y-16">
           {/* Hero Section */}
           <div className={`space-y-8 ${fadeInUp}`}>
