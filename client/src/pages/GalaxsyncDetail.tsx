@@ -36,7 +36,7 @@ export default function GalaxsyncDetail() {
         <div className="space-y-16">
           {/* Hero Section */}
           <div className={`space-y-8 ${fadeInUp}`}>
-            <div className="w-full bg-[#F5F5F5] rounded-lg overflow-hidden flex items-center justify-center">
+            <div className="bg-[#F5F5F5] overflow-hidden flex items-center justify-center" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)' }}>
               <img src="/galaxsync-hero.jpg" alt="Galaxsync Hero" className="w-full h-auto object-contain" />
             </div>
 
