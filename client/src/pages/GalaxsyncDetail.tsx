@@ -71,7 +71,7 @@ export default function GalaxsyncDetail() {
                 </div>
               </div>
 
-              <div className={`p-8 bg-neutral-50 rounded-lg border border-neutral-100 ${hoverScale} flex items-center gap-8`}>
+              <div className="p-8 rounded-lg border border-neutral-100 hover:scale-105 transition-transform duration-300 flex items-center gap-8 text-[#FFECBD] bg-[#97563D]">
                 <div className="flex-1">
                   <h3 className="font-semibold text-lg mb-4">Children with ADHD</h3>
                   <ul className="space-y-2 text-sm text-[#FFECBD]">
