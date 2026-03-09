@@ -24,9 +24,9 @@ export default function ProjectDetail() {
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <button
             onClick={() => navigate("/")}
-            className="hover:opacity-60 transition-opacity cursor-pointer"
+            className="text-lg font-medium playground-heading tracking-tight hover:opacity-60 transition-opacity cursor-pointer"
           >
-            <img src="/ruhaus-logo-new.png" alt="Ruhaus" className="h-8 w-auto" />
+            Ruhaus
           </button>
           <nav className="flex gap-8 text-sm font-medium opacity-60">
             <a href="#" className="hover:opacity-100 transition-opacity">About</a>
