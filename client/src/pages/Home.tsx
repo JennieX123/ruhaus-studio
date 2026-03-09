@@ -26,9 +26,9 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <button 
               onClick={() => navigate("/")}
-              className="text-lg font-medium playground-heading tracking-tight hover:opacity-60 transition-opacity cursor-pointer"
+              className="hover:opacity-60 transition-opacity cursor-pointer"
             >
-              Ruhaus
+              <img src="/ruhaus-logo-new.png" alt="Ruhaus" className="h-8 w-auto" />
             </button>
           </div>
           <nav className="flex gap-8 text-sm font-medium opacity-60">
