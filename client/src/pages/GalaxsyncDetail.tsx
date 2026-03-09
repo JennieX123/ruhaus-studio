@@ -74,7 +74,7 @@ export default function GalaxsyncDetail() {
               <div className={`p-8 bg-neutral-50 rounded-lg border border-neutral-100 ${hoverScale} flex items-center gap-8`}>
                 <div className="flex-1">
                   <h3 className="font-semibold text-lg mb-4">Children with ADHD</h3>
-                  <ul className="space-y-2 text-neutral-600 text-sm">
+                  <ul className="space-y-2 text-sm text-[#FFECBD]">
                     <li>• 366M children globally struggle with attention</li>
                     <li>• High energy and fragmented focus</li>
                     <li>• Often misunderstood for their intensity</li>
