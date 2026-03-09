@@ -36,7 +36,7 @@ export default function GalaxsyncDetail() {
         <div className="space-y-16">
           {/* Hero Section */}
           <div className={`space-y-8 ${fadeInUp}`}>
-            <div className="aspect-video bg-[#F5F5F5] rounded-lg overflow-hidden flex items-center justify-center p-8">
+            <div className="aspect-video bg-[#F5F5F5] rounded-lg overflow-hidden flex items-center justify-center p-8 pt-[0px] pb-[0px] pl-[0px] pr-[0px]">
               <img src="/galaxsync-hero.jpg" alt="Galaxsync Hero" className="w-full h-full object-cover" />
             </div>
 
