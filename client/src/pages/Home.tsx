@@ -85,7 +85,7 @@ export default function Home() {
                   <div className="flex flex-col items-start gap-1">
                     <h3 className="text-lg font-semibold playground-heading">{project.title}</h3>
                   </div>
-                  <p className="text-sm text-neutral-500 truncate">
+                  <p className="text-sm text-neutral-500 leading-relaxed">
                     {project.intro}
                   </p>
                   
