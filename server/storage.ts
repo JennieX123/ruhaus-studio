@@ -33,7 +33,7 @@ export class MemStorage implements IStorage {
         domain: "#Health #Wellness",
         intro: "An AI-powered wearable ecosystem designed for neurodivergent children aged 6–12, providing a critical window for behavioral support.",
         image: "/soma-logo.png",
-        tags: ["HEALTH", "IDENTITY"]
+        tags: ["ASD", "IDENTITY"]
       },
       {
         slug: "galaxsync",
