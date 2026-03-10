@@ -65,7 +65,7 @@ export default function Home() {
               >
                 {/* Project Card/Image */}
                 <div className="playground-card mb-6 relative aspect-video overflow-hidden">
-                  <div className="playground-card-img-container w-full h-full relative flex items-center justify-center bg-[#F5F5F5] p-12 md:p-20">
+                  <div className={`playground-card-img-container w-full h-full relative flex items-center justify-center p-12 md:p-20`} style={project.slug === 'soma' ? { backgroundColor: '#EFF4FB' } : { backgroundColor: '#F5F5F5' }}>
                     <img 
                       src={project.image} 
                       alt={project.title} 
