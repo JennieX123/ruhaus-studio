@@ -32,7 +32,7 @@ export class MemStorage implements IStorage {
         title: "Soma",
         domain: "#Health #Wellness",
         intro: "Mindful applications tracking holistic body health through organic interfaces.",
-        image: "/soma-thumbnail.jpg",
+        image: "/soma-logo.png",
         tags: ["HEALTH", "IDENTITY"]
       },
       {

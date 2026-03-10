@@ -17,10 +17,12 @@ export default function ProjectDetail() {
 
   if (!match) return null;
 
+  const isSoma = slug === 'soma';
+
   return (
-    <div className="playground-root theme-jason min-h-screen selection:bg-current selection:text-white">
+    <div className="playground-root theme-jason min-h-screen selection:bg-current selection:text-white" style={isSoma ? { backgroundColor: '#EFF4FB' } : {}}>
       {/* Header */}
-      <header className="sticky top-0 z-50 py-4" style={{ backgroundColor: '#FFFFFF' }}>
+      <header className="sticky top-0 z-50 py-4" style={isSoma ? { backgroundColor: '#EFF4FB' } : { backgroundColor: '#FFFFFF' }}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <button
             onClick={() => navigate("/")}
@@ -34,7 +36,7 @@ export default function ProjectDetail() {
         </div>
       </header>
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-12 md:py-20 pt-[0px] pb-[0px]">
+      <main className="max-w-7xl mx-auto px-6 pb-12 md:pb-20" style={{ paddingTop: 0 }}>
         {isLoading ? (
           <div className="animate-pulse space-y-8">
             <div className="aspect-video bg-neutral-100 rounded-lg" />
@@ -47,11 +49,11 @@ export default function ProjectDetail() {
         ) : project ? (
           <div className="space-y-12">
             {/* Project Image */}
-            <div className="aspect-video bg-[#F5F5F5] rounded-lg overflow-hidden flex items-center justify-center p-8">
+            <div className={`${isSoma ? '' : 'aspect-video p-8'} bg-[#F5F5F5] rounded-lg overflow-hidden flex items-center justify-center`} style={isSoma ? { width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)' } : {}}>
               <img
-                src={project.image}
+                src={isSoma ? "/soma-hero.jpg" : project.image}
                 alt={project.title}
-                className="max-w-full max-h-full object-contain"
+                className={isSoma ? "w-full h-auto object-contain" : "max-w-full max-h-full object-contain"}
               />
             </div>
 
