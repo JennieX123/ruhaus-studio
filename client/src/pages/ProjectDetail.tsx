@@ -20,18 +20,19 @@ export default function ProjectDetail() {
   const isSoma = slug === 'soma';
 
   return (
-    <div className="playground-root theme-jason min-h-screen selection:bg-current selection:text-white" style={isSoma ? { backgroundColor: '#EFF4FB' } : {}}>
+    <div className="playground-root theme-jason min-h-screen selection:bg-current selection:text-white" style={isSoma ? { backgroundColor: '#EFF4FB', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"', color: '#1D2C4E' } : {}}>
       {/* Header */}
-      <header className="sticky top-0 z-50 py-4" style={isSoma ? { backgroundColor: '#EFF4FB' } : { backgroundColor: '#FFFFFF' }}>
+      <header className="sticky top-0 z-50 py-4" style={isSoma ? { backgroundColor: '#EFF4FB', color: '#1D2C4E' } : { backgroundColor: '#FFFFFF' }}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <button
             onClick={() => navigate("/")}
             className="text-lg font-medium playground-heading tracking-tight hover:opacity-60 transition-opacity cursor-pointer"
+            style={isSoma ? { color: '#1D2C4E' } : {}}
           >
             Ruhaus
           </button>
           <nav className="flex gap-8 text-sm font-medium opacity-60">
-            <a href="#" className="hover:opacity-100 transition-opacity">About</a>
+            <a href="#" className="hover:opacity-100 transition-opacity" style={isSoma ? { color: '#1D2C4E' } : {}}>About</a>
           </nav>
         </div>
       </header>
@@ -60,10 +61,10 @@ export default function ProjectDetail() {
             {/* Project Info */}
             <div className="max-w-3xl space-y-8">
               <div>
-                <h1 className="text-4xl font-semibold playground-heading mb-4">
+                <h1 className="text-4xl font-semibold playground-heading mb-4" style={isSoma ? { color: '#1D2C4E' } : {}}>
                   {project.title}
                 </h1>
-                <p className="text-lg text-neutral-500 leading-relaxed">
+                <p className="text-lg leading-relaxed" style={isSoma ? { color: '#1D2C4E', opacity: 0.8 } : { color: '#737373' }}>
                   {project.intro}
                 </p>
               </div>
@@ -74,7 +75,8 @@ export default function ProjectDetail() {
                   {project.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="text-xs tracking-wider py-2 px-4 border border-neutral-200 rounded-full text-neutral-400 font-bold uppercase"
+                      className="text-xs tracking-wider py-2 px-4 border rounded-full font-bold uppercase"
+                      style={isSoma ? { borderColor: '#1D2C4E', color: '#1D2C4E', opacity: 0.6 } : { borderColor: '#e5e5e5', color: '#a3a3a3' }}
                     >
                       {tag}
                     </span>
@@ -83,12 +85,12 @@ export default function ProjectDetail() {
               )}
 
               {/* Additional Info */}
-              <div className="space-y-6 pt-8 border-t border-neutral-100">
+              <div className="space-y-6 pt-8 border-t" style={isSoma ? { borderColor: 'rgba(29, 44, 78, 0.1)' } : { borderColor: '#f5f5f5' }}>
                 <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-widest text-neutral-400 mb-4">
+                  <h3 className="text-sm font-semibold uppercase tracking-widest mb-4" style={isSoma ? { color: '#1D2C4E', opacity: 0.5 } : { color: '#a3a3a3' }}>
                     Domain
                   </h3>
-                  <p className="text-neutral-600">{project.domain}</p>
+                  <p style={isSoma ? { color: '#1D2C4E' } : { color: '#525252' }}>{project.domain}</p>
                 </div>
               </div>
             </div>
