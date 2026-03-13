@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 export default function GalaxsyncDetail() {
   const [, navigate] = useLocation();
   const [mounted, setMounted] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -24,11 +25,19 @@ export default function GalaxsyncDetail() {
       from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
       to { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
     }
+    @keyframes orbit-fast {
+      from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+    }
     .galaxy-center {
       animation: rotate-center 8s linear infinite;
     }
     .galaxy-orbit {
       animation: orbit 12s linear infinite;
+      transition: animation-duration 0.3s ease-in-out;
+    }
+    .galaxy-orbit.hovering {
+      animation: orbit-fast 4s linear infinite;
     }
   `;
 
@@ -112,9 +121,13 @@ export default function GalaxsyncDetail() {
             <div className="space-y-8">
               {/* Animated Galaxy Visualization */}
               <div className="flex items-center justify-center py-12 bg-gradient-to-r from-neutral-50 to-neutral-100 rounded-lg border border-neutral-100">
-                <div className="relative w-80 h-80 flex items-center justify-center">
+                <div 
+                  className="relative w-80 h-80 flex items-center justify-center cursor-pointer"
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)}
+                >
                   {/* Orbit container */}
-                  <div className="absolute w-full h-full galaxy-orbit">
+                  <div className={`absolute w-full h-full galaxy-orbit ${isHovering ? 'hovering' : ''}`}>
                     <img src="/galaxsync-galaxy.png" alt="Galaxy" className="w-full h-full object-contain" />
                   </div>
                 </div>
