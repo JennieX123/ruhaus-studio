@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 export default function GalaxsyncDetail() {
   const [, navigate] = useLocation();
   const [mounted, setMounted] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -91,7 +92,17 @@ export default function GalaxsyncDetail() {
           {/* Solution Overview */}
           <div className={`space-y-8 ${fadeInUp}`} style={{ animationDelay: "0.2s" }}>
             <h2 className="text-2xl font-semibold playground-heading">Solution</h2>
-            <div className="p-12 rounded-lg border border-neutral-100 relative overflow-hidden" style={{ backgroundImage: 'url(/galaxsync-galaxy.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <div 
+              className="p-12 rounded-lg border border-neutral-100 relative overflow-hidden transition-all duration-300 cursor-pointer"
+              style={{ 
+                backgroundImage: 'url(/galaxsync-galaxy.png)', 
+                backgroundSize: isHovering ? '130%' : '100%',
+                backgroundPosition: 'center',
+                transition: 'background-size 0.3s ease-out'
+              }}
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+            >
               {/* Semi-transparent overlay for background image */}
               <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255, 255, 255, 0.5)', pointerEvents: 'none' }} />
               {/* Content */}
