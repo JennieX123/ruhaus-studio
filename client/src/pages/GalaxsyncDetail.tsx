@@ -7,7 +7,6 @@ export default function GalaxsyncDetail() {
   const [, navigate] = useLocation();
   const [mounted, setMounted] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   
   const heroRef = useScrollAnimation();
   const problemRef = useScrollAnimation();
@@ -164,26 +163,15 @@ export default function GalaxsyncDetail() {
           >
             <h2 className="text-2xl font-semibold playground-heading">Solution</h2>
             <div 
-              className="p-12 rounded-lg border border-neutral-100 relative overflow-hidden cursor-pointer"
+              className="p-12 rounded-lg border border-neutral-100 relative overflow-hidden transition-all duration-300 cursor-pointer"
               style={{ 
                 backgroundImage: 'url(/galaxsync-galaxy.png)', 
-                backgroundSize: '100%',
-                backgroundPosition: `calc(center + ${mousePosition.x * 0.05}px) calc(center + ${mousePosition.y * 0.05}px)`,
-                transition: 'background-position 0.1s ease-out'
+                backgroundSize: isHovering ? '130%' : '100%',
+                backgroundPosition: 'center',
+                transition: 'background-size 0.3s ease-out'
               }}
               onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => {
-                setIsHovering(false);
-                setMousePosition({ x: 0, y: 0 });
-              }}
-              onMouseMove={(e) => {
-                const rect = e.currentTarget.getBoundingClientRect();
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const offsetX = e.clientX - rect.left - centerX;
-                const offsetY = e.clientY - rect.top - centerY;
-                setMousePosition({ x: offsetX, y: offsetY });
-              }}
+              onMouseLeave={() => setIsHovering(false)}
             >
               {/* Semi-transparent overlay for background image */}
               <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255, 255, 255, 0.5)', pointerEvents: 'none' }} />
