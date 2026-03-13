@@ -1,11 +1,17 @@
 import { useLocation } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function GalaxsyncDetail() {
   const [, navigate] = useLocation();
   const [mounted, setMounted] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  
+  const problemRef = useScrollAnimation();
+  const solutionRef = useScrollAnimation();
+  const featuresRef = useScrollAnimation();
+  const impactRef = useScrollAnimation();
 
   useEffect(() => {
     setMounted(true);
@@ -13,8 +19,13 @@ export default function GalaxsyncDetail() {
 
   if (!mounted) return null;
 
-  const fadeInUp = "transition-all duration-700 ease-out";
   const hoverScale = "hover:scale-105 transition-transform duration-300";
+  
+  const getAnimationClass = (isVisible: boolean) => {
+    return isVisible 
+      ? "opacity-100 translate-y-0" 
+      : "opacity-0 translate-y-8";
+  };
 
   return (
     <div className="min-h-screen selection:bg-current selection:text-white relative" style={{ backgroundColor: '#FEF5E4', fontFamily: "'Nunito', sans-serif" }}>
@@ -32,6 +43,41 @@ export default function GalaxsyncDetail() {
       />
       {/* Content wrapper */}
       <div className="relative z-10">
+        <style>{`
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(32px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          
+          @keyframes scaleIn {
+            from {
+              opacity: 0;
+              transform: scale(0.95);
+            }
+            to {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+          
+          .animate-fadeInUp {
+            animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+          }
+          
+          .animate-scaleIn {
+            animation: scaleIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+          }
+          
+          .scroll-section {
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+          }
+        `}</style>
         {/* Header */}
       <header className="sticky top-0 z-50 py-4" style={{ backgroundColor: '#FEF5E4' }}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -68,7 +114,10 @@ export default function GalaxsyncDetail() {
           </div>
 
           {/* Problem Section */}
-          <div className={`space-y-8 ${fadeInUp}`} style={{ animationDelay: "0.1s" }}>
+          <div 
+            ref={problemRef.ref}
+            className={`space-y-8 scroll-section ${problemRef.isVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}
+          >
             <h2 className="text-2xl font-semibold playground-heading">Problem</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="p-8 rounded-lg border border-neutral-100 hover:scale-105 transition-transform duration-300 flex items-center gap-8 bg-[#FFECBD] text-[#563D33]">
@@ -104,7 +153,10 @@ export default function GalaxsyncDetail() {
           </div>
 
           {/* Solution Overview */}
-          <div className={`space-y-8 ${fadeInUp}`} style={{ animationDelay: "0.2s" }}>
+          <div 
+            ref={solutionRef.ref}
+            className={`space-y-8 scroll-section ${solutionRef.isVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}
+          >
             <h2 className="text-2xl font-semibold playground-heading">Solution</h2>
             <div 
               className="p-12 rounded-lg border border-neutral-100 relative overflow-hidden transition-all duration-300 cursor-pointer"
@@ -132,7 +184,10 @@ export default function GalaxsyncDetail() {
           </div>
 
           {/* Solution Components */}
-          <div className={`space-y-12 ${fadeInUp}`} style={{ animationDelay: "0.3s" }}>
+          <div 
+            ref={featuresRef.ref}
+            className={`space-y-12 scroll-section ${featuresRef.isVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}
+          >
             <h2 className="text-2xl font-semibold playground-heading">Key Features</h2>
 
             <div className={`p-8 border-l-4 border-neutral-300 bg-neutral-50 rounded-r-lg ${hoverScale}`}>
@@ -172,7 +227,10 @@ export default function GalaxsyncDetail() {
           </div>
 
           {/* Impact Section */}
-          <div className={`space-y-8 ${fadeInUp}`} style={{ animationDelay: "0.4s" }}>
+          <div 
+            ref={impactRef.ref}
+            className={`space-y-8 scroll-section ${impactRef.isVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}
+          >
             <h2 className="text-2xl font-semibold playground-heading">Impact</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className={`p-8 bg-neutral-50 rounded-lg border border-neutral-100 ${hoverScale}`}>
