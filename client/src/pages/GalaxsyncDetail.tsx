@@ -164,14 +164,12 @@ export default function GalaxsyncDetail() {
           >
             <h2 className="text-2xl font-semibold playground-heading">Solution</h2>
             <div 
-              className="p-12 rounded-lg border border-neutral-100 relative overflow-hidden transition-all duration-300 cursor-pointer"
+              className="p-12 rounded-lg border border-neutral-100 relative overflow-hidden cursor-pointer"
               style={{ 
                 backgroundImage: 'url(/galaxsync-galaxy.png)', 
-                backgroundSize: isHovering ? '130%' : '100%',
-                backgroundPosition: isHovering 
-                  ? `calc(center + ${mousePosition.x * 0.05}px) calc(center + ${mousePosition.y * 0.05}px)`
-                  : 'center',
-                transition: isHovering ? 'none' : 'background-size 0.3s ease-out'
+                backgroundSize: '100%',
+                backgroundPosition: `calc(center + ${mousePosition.x * 0.05}px) calc(center + ${mousePosition.y * 0.05}px)`,
+                transition: 'background-position 0.1s ease-out'
               }}
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => {
@@ -179,7 +177,6 @@ export default function GalaxsyncDetail() {
                 setMousePosition({ x: 0, y: 0 });
               }}
               onMouseMove={(e) => {
-                if (!isHovering) return;
                 const rect = e.currentTarget.getBoundingClientRect();
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
