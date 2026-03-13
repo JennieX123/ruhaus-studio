@@ -3,10 +3,16 @@ import { type Project } from "@shared/schema";
 import { useRoute } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import { useLocation } from "wouter";
+import { useState, useEffect } from "react";
 
 export default function ProjectDetail() {
   const [match, params] = useRoute("/:slug");
   const [, navigate] = useLocation();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   
   const slug = params?.slug;
   
@@ -21,6 +27,23 @@ export default function ProjectDetail() {
 
   return (
     <div className="playground-root theme-jason min-h-screen selection:bg-current selection:text-white" style={isSoma ? { backgroundColor: '#EFF4FB', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"', color: '#1D2C4E' } : {}}>
+      {isSoma && (
+        <style>{`
+          @keyframes fadeInScale {
+            from {
+              opacity: 0;
+              transform: scale(0.95);
+            }
+            to {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+          .soma-hero {
+            animation: fadeInScale 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+          }
+        `}</style>
+      )}
       {/* Header */}
       <header className="sticky top-0 z-50 py-4" style={isSoma ? { backgroundColor: '#EFF4FB', color: '#1D2C4E' } : { backgroundColor: '#FFFFFF' }}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -54,7 +77,7 @@ export default function ProjectDetail() {
               <img
                 src={isSoma ? "/soma-hero.jpg" : project.image}
                 alt={project.title}
-                className={isSoma ? "w-full h-auto object-contain" : "max-w-full max-h-full object-contain"}
+                className={`${isSoma && mounted ? "soma-hero" : ""} ${isSoma ? "w-full h-auto object-contain" : "max-w-full max-h-full object-contain"}`}
               />
             </div>
 
