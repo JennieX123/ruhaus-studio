@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 export default function GalaxsyncDetail() {
   const [, navigate] = useLocation();
   const [mounted, setMounted] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -16,34 +15,8 @@ export default function GalaxsyncDetail() {
   const fadeInUp = "transition-all duration-700 ease-out";
   const hoverScale = "hover:scale-105 transition-transform duration-300";
 
-  const galaxyStyle = `
-    @keyframes rotate-center {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    @keyframes orbit {
-      from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
-      to { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
-    }
-    @keyframes orbit-fast {
-      from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
-      to { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
-    }
-    .galaxy-center {
-      animation: rotate-center 8s linear infinite;
-    }
-    .galaxy-orbit {
-      animation: orbit 12s linear infinite;
-      transition: animation-duration 0.3s ease-in-out;
-    }
-    .galaxy-orbit.hovering {
-      animation: orbit-fast 4s linear infinite;
-    }
-  `;
-
   return (
     <div className="min-h-screen selection:bg-current selection:text-white" style={{ backgroundColor: '#FEF5E4', fontFamily: "'Nunito', sans-serif" }}>
-      <style>{galaxyStyle}</style>
       {/* Header */}
       <header className="sticky top-0 z-50 py-4" style={{ backgroundColor: '#FEF5E4' }}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -118,24 +91,12 @@ export default function GalaxsyncDetail() {
           {/* Solution Overview */}
           <div className={`space-y-8 ${fadeInUp}`} style={{ animationDelay: "0.2s" }}>
             <h2 className="text-2xl font-semibold playground-heading">Solution</h2>
-            <div className="space-y-8">
-              {/* Animated Galaxy Visualization */}
-              <div className="flex items-center justify-center py-12 bg-gradient-to-r from-neutral-50 to-neutral-100 rounded-lg border border-neutral-100">
-                <div 
-                  className="relative w-80 h-80 flex items-center justify-center cursor-pointer"
-                  onMouseEnter={() => setIsHovering(true)}
-                  onMouseLeave={() => setIsHovering(false)}
-                >
-                  {/* Orbit container */}
-                  <div className={`absolute w-full h-full galaxy-orbit ${isHovering ? 'hovering' : ''}`}>
-                    <img src="/galaxsync-galaxy.png" alt="Galaxy" className="w-full h-full object-contain" />
-                  </div>
-                </div>
-              </div>
-              
-              {/* Solution Text */}
-              <div className="p-12 bg-gradient-to-r from-neutral-50 to-neutral-100 rounded-lg border border-neutral-100">
-                <p className="text-lg text-neutral-700 leading-relaxed mb-6">
+            <div className="p-12 rounded-lg border border-neutral-100 relative overflow-hidden" style={{ backgroundImage: 'url(/galaxsync-galaxy.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+              {/* Semi-transparent overlay for background image */}
+              <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255, 255, 255, 0.5)', pointerEvents: 'none' }} />
+              {/* Content */}
+              <div className="relative z-10 space-y-6">
+                <p className="text-lg text-neutral-700 leading-relaxed">
                   The gap could be bridged. Two generations could be connected.
                 </p>
                 <p className="text-2xl font-semibold playground-heading text-neutral-800">
