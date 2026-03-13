@@ -15,8 +15,26 @@ export default function GalaxsyncDetail() {
   const fadeInUp = "transition-all duration-700 ease-out";
   const hoverScale = "hover:scale-105 transition-transform duration-300";
 
+  const galaxyStyle = `
+    @keyframes rotate-center {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes orbit {
+      from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+    }
+    .galaxy-center {
+      animation: rotate-center 8s linear infinite;
+    }
+    .galaxy-orbit {
+      animation: orbit 12s linear infinite;
+    }
+  `;
+
   return (
     <div className="min-h-screen selection:bg-current selection:text-white" style={{ backgroundColor: '#FEF5E4', fontFamily: "'Nunito', sans-serif" }}>
+      <style>{galaxyStyle}</style>
       {/* Header */}
       <header className="sticky top-0 z-50 py-4" style={{ backgroundColor: '#FEF5E4' }}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -91,13 +109,26 @@ export default function GalaxsyncDetail() {
           {/* Solution Overview */}
           <div className={`space-y-8 ${fadeInUp}`} style={{ animationDelay: "0.2s" }}>
             <h2 className="text-2xl font-semibold playground-heading">Solution</h2>
-            <div className="p-12 bg-gradient-to-r from-neutral-50 to-neutral-100 rounded-lg border border-neutral-100">
-              <p className="text-lg text-neutral-700 leading-relaxed mb-6">
-                The gap could be bridged. Two generations could be connected.
-              </p>
-              <p className="text-2xl font-semibold playground-heading text-neutral-800">
-                Elders preserve real-life memories as digital assets, which are processed by AI into interactive story-based games for intergenerational engagement.
-              </p>
+            <div className="space-y-8">
+              {/* Animated Galaxy Visualization */}
+              <div className="flex items-center justify-center py-12 bg-gradient-to-r from-neutral-50 to-neutral-100 rounded-lg border border-neutral-100">
+                <div className="relative w-80 h-80 flex items-center justify-center">
+                  {/* Orbit container */}
+                  <div className="absolute w-full h-full galaxy-orbit">
+                    <img src="/galaxsync-galaxy.png" alt="Galaxy" className="w-full h-full object-contain" />
+                  </div>
+                </div>
+              </div>
+              
+              {/* Solution Text */}
+              <div className="p-12 bg-gradient-to-r from-neutral-50 to-neutral-100 rounded-lg border border-neutral-100">
+                <p className="text-lg text-neutral-700 leading-relaxed mb-6">
+                  The gap could be bridged. Two generations could be connected.
+                </p>
+                <p className="text-2xl font-semibold playground-heading text-neutral-800">
+                  Elders preserve real-life memories as digital assets, which are processed by AI into interactive story-based games for intergenerational engagement.
+                </p>
+              </div>
             </div>
           </div>
 
