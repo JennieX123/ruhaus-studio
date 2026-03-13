@@ -8,6 +8,7 @@ export default function GalaxsyncDetail() {
   const [mounted, setMounted] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   
+  const heroRef = useScrollAnimation();
   const problemRef = useScrollAnimation();
   const solutionRef = useScrollAnimation();
   const featuresRef = useScrollAnimation();
@@ -96,7 +97,10 @@ export default function GalaxsyncDetail() {
       <main className="max-w-7xl mx-auto px-6 pb-12 md:pb-20" style={{ paddingTop: 0 }}>
         <div className="space-y-16">
           {/* Hero Section */}
-          <div className={`space-y-8 ${fadeInUp}`}>
+          <div 
+            ref={heroRef.ref}
+            className={`space-y-8 scroll-section ${heroRef.isVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}
+          >
             <div className="bg-[#F5F5F5] overflow-hidden flex items-center justify-center" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)' }}>
               <img src="/galaxsync-hero.jpg" alt="Galaxsync Hero" className="w-full h-auto object-contain" />
             </div>
