@@ -17,8 +17,22 @@ export default function GalaxsyncDetail() {
   const hoverScale = "hover:scale-105 transition-transform duration-300";
 
   return (
-    <div className="min-h-screen selection:bg-current selection:text-white" style={{ backgroundColor: '#FEF5E4', fontFamily: "'Nunito', sans-serif" }}>
-      {/* Header */}
+    <div className="min-h-screen selection:bg-current selection:text-white relative" style={{ backgroundColor: '#FEF5E4', fontFamily: "'Nunito', sans-serif" }}>
+      {/* Background galaxy image */}
+      <div 
+        className="fixed inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'url(/galaxsync-galaxy.png)',
+          backgroundSize: '600px 600px',
+          backgroundPosition: 'right bottom',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.2,
+          zIndex: 0
+        }}
+      />
+      {/* Content wrapper */}
+      <div className="relative z-10">
+        {/* Header */}
       <header className="sticky top-0 z-50 py-4" style={{ backgroundColor: '#FEF5E4' }}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <button
@@ -202,6 +216,7 @@ export default function GalaxsyncDetail() {
           </div>
         </div>
       </footer>
+      </div>
     </div>
   );
 }
