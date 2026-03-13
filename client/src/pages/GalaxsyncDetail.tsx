@@ -176,7 +176,7 @@ export default function GalaxsyncDetail() {
               {/* Semi-transparent overlay for background image */}
               <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255, 255, 255, 0.5)', pointerEvents: 'none' }} />
               {/* Content */}
-              <div className="relative z-10 space-y-6">
+              <div className="relative z-10 space-y-6 text-center">
                 <p className="text-lg text-neutral-700 leading-relaxed">
                   The gap could be bridged. Two generations could be connected.
                 </p>
