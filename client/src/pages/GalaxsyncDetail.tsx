@@ -7,6 +7,7 @@ export default function GalaxsyncDetail() {
   const [, navigate] = useLocation();
   const [mounted, setMounted] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   
   const heroRef = useScrollAnimation();
   const problemRef = useScrollAnimation();
@@ -167,11 +168,25 @@ export default function GalaxsyncDetail() {
               style={{ 
                 backgroundImage: 'url(/galaxsync-galaxy.png)', 
                 backgroundSize: isHovering ? '130%' : '100%',
-                backgroundPosition: 'center',
-                transition: 'background-size 0.3s ease-out'
+                backgroundPosition: isHovering 
+                  ? `calc(center + ${mousePosition.x * 0.05}px) calc(center + ${mousePosition.y * 0.05}px)`
+                  : 'center',
+                transition: isHovering ? 'none' : 'background-size 0.3s ease-out'
               }}
               onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
+              onMouseLeave={() => {
+                setIsHovering(false);
+                setMousePosition({ x: 0, y: 0 });
+              }}
+              onMouseMove={(e) => {
+                if (!isHovering) return;
+                const rect = e.currentTarget.getBoundingClientRect();
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const offsetX = e.clientX - rect.left - centerX;
+                const offsetY = e.clientY - rect.top - centerY;
+                setMousePosition({ x: offsetX, y: offsetY });
+              }}
             >
               {/* Semi-transparent overlay for background image */}
               <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255, 255, 255, 0.5)', pointerEvents: 'none' }} />
