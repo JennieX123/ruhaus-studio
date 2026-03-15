@@ -181,7 +181,10 @@ export default function GalaxsyncDetail() {
                   The gap could be bridged. Two generations could be connected.
                 </p>
                 <p className="text-2xl font-semibold playground-heading text-neutral-800">
-                  Elders preserve real-life memories as digital assets, which are processed by AI into interactive story-based games for intergenerational engagement.
+                  Through the Neuro-Reciprocal Interaction Model, seniors' life stories are transformed into interactive VR worlds where children explore narrative missions while elders rediscover purpose and companionship.
+                </p>
+                <p className="text-lg text-neutral-700 leading-relaxed">
+                  Rather than one-way care, Galaxsync creates a reciprocal healing loop where memories become exploration and attention becomes connection.
                 </p>
               </div>
             </div>
