@@ -197,38 +197,87 @@ export default function GalaxsyncDetail() {
           >
             <h2 className="text-2xl font-semibold playground-heading">How It Works</h2>
 
-            <div className={`p-8 border-l-4 border-neutral-300 bg-neutral-50 rounded-r-lg ${hoverScale}`}>
-              <h3 className="font-semibold text-lg mb-3">The Six-Realm Galaxy</h3>
+            {/* 1. Elders - Digital Assets Curator */}
+            <div className={`p-8 bg-neutral-50 rounded-xl border border-neutral-100 ${hoverScale}`}>
+              <div className="flex items-center gap-3 mb-4">
+                <img src="/elder-avatar.png" alt="Elder" className="w-10 h-10 rounded-full object-cover" />
+                <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">Elders</span>
+              </div>
+              <h3 className="font-semibold text-lg mb-3">Digital Assets Curator</h3>
               <p className="text-neutral-600">
-                The Galaxsync Galaxy is generated entirely from the elders' diverse life stories. This VR universe features six cognitive realms, each covering vast diversity to ensure every ADHD child can discover stories that spark their unique interests.
+                Elders preserve real-life memories as digital assets, which are processed by AI into interactive story-based games for intergenerational engagement.
               </p>
             </div>
 
-            <div className={`p-8 border-l-4 border-neutral-300 bg-neutral-50 rounded-r-lg ${hoverScale}`}>
-              <h3 className="font-semibold text-lg mb-3">Dunhuang Planet & Cosmic Mentor</h3>
-              <p className="text-neutral-600 mb-4">
-                Take the Dunhuang Planet as example. Here, the senior creator acts as a "Cosmic Mentor." Through real-time communication and gentle on-site check-ins, they provide essential encouragement and guidance. Their presence ensures the ADHD student completes their artistic journey with consistent emotional support and care.
+            {/* 2. ADHD Children - The Six-Realm VR Experience Galaxy */}
+            <div className={`p-8 rounded-xl ${hoverScale}`} style={{ backgroundColor: '#563D33' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <img src="/child-avatar.png" alt="Child" className="w-10 h-10 rounded-full object-cover" />
+                <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">ADHD Children</span>
+              </div>
+              <h3 className="font-semibold text-lg mb-3 text-amber-50">Game-Based The Six-Realm VR Experience Galaxy</h3>
+              <p className="text-amber-100/80">
+                The Galaxsync Galaxy generated entirely from the elders' diverse life stories. This VR universe features six cognitive realms. Each realm covers vast diversity, ensures every ADHD child can discover stories that spark their unique interests.
               </p>
             </div>
 
-            <div className={`p-8 border-l-4 border-neutral-300 bg-neutral-50 rounded-r-lg ${hoverScale}`}>
-              <h3 className="font-semibold text-lg mb-3">Precision Biometric Guidance</h3>
-              <p className="text-neutral-600">
+            {/* 3. ADHD Children - Dunhuang Planet */}
+            <div className={`p-8 rounded-xl ${hoverScale}`} style={{ backgroundColor: '#563D33' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <img src="/child-avatar.png" alt="Child" className="w-10 h-10 rounded-full object-cover" />
+                <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">ADHD Children</span>
+              </div>
+              <h3 className="font-semibold text-lg mb-3 text-amber-50">Dunhuang Planet – The Cosmic Mentor</h3>
+              <p className="text-amber-100/80">
+                Take the Dunhuang Planet as example. Here, the senior creator acts as a "Cosmic Mentor." Through real-time communication and gentle on-site check-ins, they provide essential encouragement and guidance.
+              </p>
+            </div>
+
+            {/* 4. ADHD Children - Precision Biometric Guidance */}
+            <div className={`p-8 rounded-xl ${hoverScale}`} style={{ backgroundColor: '#563D33' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <img src="/child-avatar.png" alt="Child" className="w-10 h-10 rounded-full object-cover" />
+                <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">ADHD Children</span>
+              </div>
+              <h3 className="font-semibold text-lg mb-3 text-amber-50">Precision Biometric Guidance</h3>
+              <p className="text-amber-100/80">
                 Galaxsync utilizes eye-monitoring technology to detect distraction in real-time. When the child's attention begins to drift, the environment responds with a brief, calming interaction that supports a natural return to focus.
               </p>
             </div>
 
-            <div className={`p-8 border-l-4 border-neutral-300 bg-neutral-50 rounded-r-lg ${hoverScale}`}>
-              <h3 className="font-semibold text-lg mb-3">The Story Echo</h3>
-              <p className="text-neutral-600">
+            {/* 5. ADHD Children - The Story Echo */}
+            <div className={`p-8 rounded-xl ${hoverScale}`} style={{ backgroundColor: '#563D33' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <img src="/child-avatar.png" alt="Child" className="w-10 h-10 rounded-full object-cover" />
+                <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">ADHD Children</span>
+              </div>
+              <h3 className="font-semibold text-lg mb-3 text-amber-50">The Story Echo</h3>
+              <p className="text-amber-100/80">
                 After kids finish the stories, through story echo, we replace traditional scores with world-centric digital rewards, where the environment visibly heals and blooms, to validate their impact and build lasting confidence.
               </p>
             </div>
 
-            <div className={`p-8 border-l-4 border-neutral-300 bg-neutral-50 rounded-r-lg ${hoverScale}`}>
-              <h3 className="font-semibold text-lg mb-3">My Constellation & Elder Dashboard</h3>
+            {/* 6. Elders - My Constellation */}
+            <div className={`p-8 bg-neutral-50 rounded-xl border border-neutral-100 ${hoverScale}`}>
+              <div className="flex items-center gap-3 mb-4">
+                <img src="/elder-avatar.png" alt="Elder" className="w-10 h-10 rounded-full object-cover" />
+                <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">Elders</span>
+              </div>
+              <h3 className="font-semibold text-lg mb-3">My Constellation</h3>
               <p className="text-neutral-600">
-                Elders review story planets showing ADHD child interactions. Each session layers child's data onto the narrative, creating a co-created living memory legacy. Elders can view dynamic summaries of each child's exploration—their highlights, progress, and moments of achievement.
+                Elders review story planets showing ADHD child interactions. Each session layers child's data onto the narrative, creating a co-created living memory legacy for future generations.
+              </p>
+            </div>
+
+            {/* 7. Elders - Profile & Dashboard */}
+            <div className={`p-8 bg-neutral-50 rounded-xl border border-neutral-100 ${hoverScale}`}>
+              <div className="flex items-center gap-3 mb-4">
+                <img src="/elder-avatar.png" alt="Elder" className="w-10 h-10 rounded-full object-cover" />
+                <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">Elders</span>
+              </div>
+              <h3 className="font-semibold text-lg mb-3">Profile & Dashboard</h3>
+              <p className="text-neutral-600">
+                Elders can view dynamic summaries of each child's exploration—their highlights, progress, and moments of achievement. Every insight reaffirms how their guidance nurtures growth, turning mentorship into a tangible sense of purpose and impact.
               </p>
             </div>
           </div>
