@@ -11,6 +11,9 @@ export default function GalaxsyncDetail() {
   const heroRef = useScrollAnimation();
   const problemRef = useScrollAnimation();
   const solutionRef = useScrollAnimation();
+  const solutionText1Ref = useScrollAnimation(true);
+  const solutionText2Ref = useScrollAnimation(true);
+  const solutionText3Ref = useScrollAnimation(true);
   const featuresRef = useScrollAnimation();
   const impactRef = useScrollAnimation();
 
@@ -177,15 +180,33 @@ export default function GalaxsyncDetail() {
               <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255, 255, 255, 0.5)', pointerEvents: 'none' }} />
               {/* Content */}
               <div className="relative z-10 space-y-6 text-center">
-                <p className="text-lg text-neutral-700 leading-relaxed">
-                  The gap could be bridged. Two generations could be connected.
-                </p>
-                <p className="text-2xl font-semibold playground-heading text-neutral-800">
-                  Through the Neuro-Reciprocal Interaction Model, seniors' life stories are transformed into interactive VR worlds where children explore narrative missions while elders rediscover purpose and companionship.
-                </p>
-                <p className="text-lg text-neutral-700 leading-relaxed">
-                  Rather than one-way care, Galaxsync creates a reciprocal healing loop where memories become exploration and attention becomes connection.
-                </p>
+                <div
+                  ref={solutionText1Ref.ref}
+                  className="transition-all duration-700 ease-out"
+                  style={{ opacity: solutionText1Ref.isVisible ? 1 : 0, transform: solutionText1Ref.isVisible ? 'translateY(0)' : 'translateY(24px)' }}
+                >
+                  <p className="text-lg text-neutral-700 leading-relaxed">
+                    The gap could be bridged. Two generations could be connected.
+                  </p>
+                </div>
+                <div
+                  ref={solutionText2Ref.ref}
+                  className="transition-all duration-700 ease-out delay-300"
+                  style={{ opacity: solutionText2Ref.isVisible ? 1 : 0, transform: solutionText2Ref.isVisible ? 'translateY(0)' : 'translateY(24px)' }}
+                >
+                  <p className="text-2xl font-semibold playground-heading text-neutral-800">
+                    Through the Neuro-Reciprocal Interaction Model, seniors' life stories are transformed into interactive VR worlds where children explore narrative missions while elders rediscover purpose and companionship.
+                  </p>
+                </div>
+                <div
+                  ref={solutionText3Ref.ref}
+                  className="transition-all duration-700 ease-out delay-500"
+                  style={{ opacity: solutionText3Ref.isVisible ? 1 : 0, transform: solutionText3Ref.isVisible ? 'translateY(0)' : 'translateY(24px)' }}
+                >
+                  <p className="text-lg text-neutral-700 leading-relaxed">
+                    Rather than one-way care, Galaxsync creates a reciprocal healing loop where memories become exploration and attention becomes connection.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

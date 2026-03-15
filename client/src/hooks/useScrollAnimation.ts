@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
-export function useScrollAnimation() {
+export function useScrollAnimation(startHidden = false) {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(!startHidden);
 
   useEffect(() => {
     if (!ref.current) return;
