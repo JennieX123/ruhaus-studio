@@ -195,7 +195,7 @@ export default function GalaxsyncDetail() {
             ref={featuresRef.ref}
             className={`space-y-12 scroll-section ${featuresRef.isVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}
           >
-            <h2 className="text-2xl font-semibold playground-heading">Key Features</h2>
+            <h2 className="text-2xl font-semibold playground-heading">How It Works</h2>
 
             <div className={`p-8 border-l-4 border-neutral-300 bg-neutral-50 rounded-r-lg ${hoverScale}`}>
               <h3 className="font-semibold text-lg mb-3">The Six-Realm Galaxy</h3>
