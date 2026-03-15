@@ -243,9 +243,50 @@ export default function GalaxsyncDetail() {
                   </div>
                 </div>
                 <h3 className="font-semibold text-lg mb-3 text-amber-50">Game-Based The Six-Realm VR Experience Galaxy</h3>
-                <p className="text-amber-100/80">
+                <p className="text-amber-100/80 mb-8">
                   The Galaxsync Galaxy generated entirely from the elders' diverse life stories. This VR universe features six cognitive realms. Each realm covers vast diversity, ensures every ADHD child can discover stories that spark their unique interests.
                 </p>
+
+                {/* Six Realm Planets - Row 1 */}
+                <div className="grid grid-cols-3 gap-6 mb-4">
+                  {[
+                    { src: '/planet-art-craft.png', name: 'Art & Craft' },
+                    { src: '/planet-life-nature.png', name: 'Life & Nature' },
+                    { src: '/planet-logic-science.png', name: 'Logic & Science' },
+                  ].map((planet) => (
+                    <div key={planet.name} className="group flex flex-col items-center gap-2 cursor-pointer">
+                      <div className="relative transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-2">
+                        <img
+                          src={planet.src}
+                          alt={planet.name}
+                          className="w-28 h-28 md:w-36 md:h-36 object-contain drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-[0_8px_24px_rgba(255,200,100,0.4)] group-hover:brightness-110"
+                          style={{ animation: 'float 3s ease-in-out infinite', animationDelay: `${Math.random() * 2}s` }}
+                        />
+                      </div>
+                      <span className="text-xs font-semibold text-amber-200/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{planet.name}</span>
+                    </div>
+                  ))}
+                </div>
+                {/* Six Realm Planets - Row 2 */}
+                <div className="grid grid-cols-3 gap-6">
+                  {[
+                    { src: '/planet-skills-growth.png', name: 'Skills & Growth' },
+                    { src: '/planet-myths-tales.png', name: 'Myths & Tales' },
+                    { src: '/planet-heart-mind.png', name: 'Heart & Mind' },
+                  ].map((planet) => (
+                    <div key={planet.name} className="group flex flex-col items-center gap-2 cursor-pointer">
+                      <div className="relative transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-2">
+                        <img
+                          src={planet.src}
+                          alt={planet.name}
+                          className="w-28 h-28 md:w-36 md:h-36 object-contain drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-[0_8px_24px_rgba(255,200,100,0.4)] group-hover:brightness-110"
+                          style={{ animation: 'float 3s ease-in-out infinite', animationDelay: `${Math.random() * 2}s` }}
+                        />
+                      </div>
+                      <span className="text-xs font-semibold text-amber-200/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{planet.name}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <div className="mx-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.15)' }} />
