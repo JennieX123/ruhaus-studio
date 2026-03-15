@@ -259,7 +259,7 @@ export default function GalaxsyncDetail() {
                         <img
                           src={planet.src}
                           alt={planet.name}
-                          className="w-40 h-40 md:w-48 md:h-48 object-contain drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-[0_8px_24px_rgba(255,200,100,0.4)] group-hover:brightness-110"
+                          className="w-52 h-52 md:w-64 md:h-64 object-contain drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-[0_8px_24px_rgba(255,200,100,0.4)] group-hover:brightness-110"
                           style={{ animation: 'float 3s ease-in-out infinite', animationDelay: `${Math.random() * 2}s` }}
                         />
                       </div>
@@ -279,7 +279,7 @@ export default function GalaxsyncDetail() {
                         <img
                           src={planet.src}
                           alt={planet.name}
-                          className="w-40 h-40 md:w-48 md:h-48 object-contain drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-[0_8px_24px_rgba(255,200,100,0.4)] group-hover:brightness-110"
+                          className="w-52 h-52 md:w-64 md:h-64 object-contain drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-[0_8px_24px_rgba(255,200,100,0.4)] group-hover:brightness-110"
                           style={{ animation: 'float 3s ease-in-out infinite', animationDelay: `${Math.random() * 2}s` }}
                         />
                       </div>
