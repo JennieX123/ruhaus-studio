@@ -212,7 +212,7 @@ export default function GalaxsyncDetail() {
             </div>
 
             {/* Steps 2-5: ADHD Children — full-width dark background */}
-            <div className="rounded-2xl overflow-hidden" style={{ backgroundColor: '#563D33' }}>
+            <div className="overflow-hidden py-4" style={{ backgroundColor: '#563D33', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
               {/* Step 2 */}
               <div className="p-8">
                 <div className="flex items-center gap-4 mb-4">
