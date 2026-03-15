@@ -199,9 +199,11 @@ export default function GalaxsyncDetail() {
 
             {/* 1. Elders - Digital Assets Curator */}
             <div className={`p-8 bg-neutral-50 rounded-xl border border-neutral-100 ${hoverScale}`}>
-              <div className="flex items-center gap-3 mb-4">
-                <img src="/elder-avatar.png" alt="Elder" className="w-10 h-10 rounded-full object-cover" />
-                <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">Elders</span>
+              <div className="flex items-center gap-4 mb-4">
+                <img src="/elder-avatar.png" alt="Elder" className="w-16 h-16 rounded-full object-cover" />
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">Step 1 · Elders</span>
+                </div>
               </div>
               <h3 className="font-semibold text-lg mb-3">Digital Assets Curator</h3>
               <p className="text-neutral-600">
@@ -211,9 +213,11 @@ export default function GalaxsyncDetail() {
 
             {/* 2. ADHD Children - The Six-Realm VR Experience Galaxy */}
             <div className={`p-8 rounded-xl ${hoverScale}`} style={{ backgroundColor: '#563D33' }}>
-              <div className="flex items-center gap-3 mb-4">
-                <img src="/child-avatar.png" alt="Child" className="w-10 h-10 rounded-full object-cover" />
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">ADHD Children</span>
+              <div className="flex items-center gap-4 mb-4">
+                <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">Step 2 · ADHD Children</span>
+                </div>
               </div>
               <h3 className="font-semibold text-lg mb-3 text-amber-50">Game-Based The Six-Realm VR Experience Galaxy</h3>
               <p className="text-amber-100/80">
@@ -223,9 +227,11 @@ export default function GalaxsyncDetail() {
 
             {/* 3. ADHD Children - Dunhuang Planet */}
             <div className={`p-8 rounded-xl ${hoverScale}`} style={{ backgroundColor: '#563D33' }}>
-              <div className="flex items-center gap-3 mb-4">
-                <img src="/child-avatar.png" alt="Child" className="w-10 h-10 rounded-full object-cover" />
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">ADHD Children</span>
+              <div className="flex items-center gap-4 mb-4">
+                <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">Step 3 · ADHD Children</span>
+                </div>
               </div>
               <h3 className="font-semibold text-lg mb-3 text-amber-50">Dunhuang Planet – The Cosmic Mentor</h3>
               <p className="text-amber-100/80">
@@ -235,9 +241,11 @@ export default function GalaxsyncDetail() {
 
             {/* 4. ADHD Children - Precision Biometric Guidance */}
             <div className={`p-8 rounded-xl ${hoverScale}`} style={{ backgroundColor: '#563D33' }}>
-              <div className="flex items-center gap-3 mb-4">
-                <img src="/child-avatar.png" alt="Child" className="w-10 h-10 rounded-full object-cover" />
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">ADHD Children</span>
+              <div className="flex items-center gap-4 mb-4">
+                <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">Step 4 · ADHD Children</span>
+                </div>
               </div>
               <h3 className="font-semibold text-lg mb-3 text-amber-50">Precision Biometric Guidance</h3>
               <p className="text-amber-100/80">
@@ -247,9 +255,11 @@ export default function GalaxsyncDetail() {
 
             {/* 5. ADHD Children - The Story Echo */}
             <div className={`p-8 rounded-xl ${hoverScale}`} style={{ backgroundColor: '#563D33' }}>
-              <div className="flex items-center gap-3 mb-4">
-                <img src="/child-avatar.png" alt="Child" className="w-10 h-10 rounded-full object-cover" />
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">ADHD Children</span>
+              <div className="flex items-center gap-4 mb-4">
+                <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">Step 5 · ADHD Children</span>
+                </div>
               </div>
               <h3 className="font-semibold text-lg mb-3 text-amber-50">The Story Echo</h3>
               <p className="text-amber-100/80">
@@ -259,9 +269,11 @@ export default function GalaxsyncDetail() {
 
             {/* 6. Elders - My Constellation */}
             <div className={`p-8 bg-neutral-50 rounded-xl border border-neutral-100 ${hoverScale}`}>
-              <div className="flex items-center gap-3 mb-4">
-                <img src="/elder-avatar.png" alt="Elder" className="w-10 h-10 rounded-full object-cover" />
-                <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">Elders</span>
+              <div className="flex items-center gap-4 mb-4">
+                <img src="/elder-avatar.png" alt="Elder" className="w-16 h-16 rounded-full object-cover" />
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">Step 6 · Elders</span>
+                </div>
               </div>
               <h3 className="font-semibold text-lg mb-3">My Constellation</h3>
               <p className="text-neutral-600">
@@ -271,9 +283,11 @@ export default function GalaxsyncDetail() {
 
             {/* 7. Elders - Profile & Dashboard */}
             <div className={`p-8 bg-neutral-50 rounded-xl border border-neutral-100 ${hoverScale}`}>
-              <div className="flex items-center gap-3 mb-4">
-                <img src="/elder-avatar.png" alt="Elder" className="w-10 h-10 rounded-full object-cover" />
-                <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">Elders</span>
+              <div className="flex items-center gap-4 mb-4">
+                <img src="/elder-avatar.png" alt="Elder" className="w-16 h-16 rounded-full object-cover" />
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">Step 7 · Elders</span>
+                </div>
               </div>
               <h3 className="font-semibold text-lg mb-3">Profile & Dashboard</h3>
               <p className="text-neutral-600">
