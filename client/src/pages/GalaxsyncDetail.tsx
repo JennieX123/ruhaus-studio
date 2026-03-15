@@ -211,60 +211,69 @@ export default function GalaxsyncDetail() {
               </p>
             </div>
 
-            {/* 2. ADHD Children - The Six-Realm VR Experience Galaxy */}
-            <div className={`p-8 rounded-xl ${hoverScale}`} style={{ backgroundColor: '#563D33' }}>
-              <div className="flex items-center gap-4 mb-4">
-                <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">Step 2 · ADHD Children</span>
+            {/* Steps 2-5: ADHD Children — full-width dark background */}
+            <div className="rounded-2xl overflow-hidden" style={{ backgroundColor: '#563D33' }}>
+              {/* Step 2 */}
+              <div className="p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">Step 2 · ADHD Children</span>
+                  </div>
                 </div>
+                <h3 className="font-semibold text-lg mb-3 text-amber-50">Game-Based The Six-Realm VR Experience Galaxy</h3>
+                <p className="text-amber-100/80">
+                  The Galaxsync Galaxy generated entirely from the elders' diverse life stories. This VR universe features six cognitive realms. Each realm covers vast diversity, ensures every ADHD child can discover stories that spark their unique interests.
+                </p>
               </div>
-              <h3 className="font-semibold text-lg mb-3 text-amber-50">Game-Based The Six-Realm VR Experience Galaxy</h3>
-              <p className="text-amber-100/80">
-                The Galaxsync Galaxy generated entirely from the elders' diverse life stories. This VR universe features six cognitive realms. Each realm covers vast diversity, ensures every ADHD child can discover stories that spark their unique interests.
-              </p>
-            </div>
 
-            {/* 3. ADHD Children - Dunhuang Planet */}
-            <div className={`p-8 rounded-xl ${hoverScale}`} style={{ backgroundColor: '#563D33' }}>
-              <div className="flex items-center gap-4 mb-4">
-                <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">Step 3 · ADHD Children</span>
-                </div>
-              </div>
-              <h3 className="font-semibold text-lg mb-3 text-amber-50">Dunhuang Planet – The Cosmic Mentor</h3>
-              <p className="text-amber-100/80">
-                Take the Dunhuang Planet as example. Here, the senior creator acts as a "Cosmic Mentor." Through real-time communication and gentle on-site check-ins, they provide essential encouragement and guidance.
-              </p>
-            </div>
+              <div className="mx-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.15)' }} />
 
-            {/* 4. ADHD Children - Precision Biometric Guidance */}
-            <div className={`p-8 rounded-xl ${hoverScale}`} style={{ backgroundColor: '#563D33' }}>
-              <div className="flex items-center gap-4 mb-4">
-                <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">Step 4 · ADHD Children</span>
+              {/* Step 3 */}
+              <div className="p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">Step 3 · ADHD Children</span>
+                  </div>
                 </div>
+                <h3 className="font-semibold text-lg mb-3 text-amber-50">Dunhuang Planet – The Cosmic Mentor</h3>
+                <p className="text-amber-100/80">
+                  Take the Dunhuang Planet as example. Here, the senior creator acts as a "Cosmic Mentor." Through real-time communication and gentle on-site check-ins, they provide essential encouragement and guidance.
+                </p>
               </div>
-              <h3 className="font-semibold text-lg mb-3 text-amber-50">Precision Biometric Guidance</h3>
-              <p className="text-amber-100/80">
-                Galaxsync utilizes eye-monitoring technology to detect distraction in real-time. When the child's attention begins to drift, the environment responds with a brief, calming interaction that supports a natural return to focus.
-              </p>
-            </div>
 
-            {/* 5. ADHD Children - The Story Echo */}
-            <div className={`p-8 rounded-xl ${hoverScale}`} style={{ backgroundColor: '#563D33' }}>
-              <div className="flex items-center gap-4 mb-4">
-                <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">Step 5 · ADHD Children</span>
+              <div className="mx-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.15)' }} />
+
+              {/* Step 4 */}
+              <div className="p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">Step 4 · ADHD Children</span>
+                  </div>
                 </div>
+                <h3 className="font-semibold text-lg mb-3 text-amber-50">Precision Biometric Guidance</h3>
+                <p className="text-amber-100/80">
+                  Galaxsync utilizes eye-monitoring technology to detect distraction in real-time. When the child's attention begins to drift, the environment responds with a brief, calming interaction that supports a natural return to focus.
+                </p>
               </div>
-              <h3 className="font-semibold text-lg mb-3 text-amber-50">The Story Echo</h3>
-              <p className="text-amber-100/80">
-                After kids finish the stories, through story echo, we replace traditional scores with world-centric digital rewards, where the environment visibly heals and blooms, to validate their impact and build lasting confidence.
-              </p>
+
+              <div className="mx-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.15)' }} />
+
+              {/* Step 5 */}
+              <div className="p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">Step 5 · ADHD Children</span>
+                  </div>
+                </div>
+                <h3 className="font-semibold text-lg mb-3 text-amber-50">The Story Echo</h3>
+                <p className="text-amber-100/80">
+                  After kids finish the stories, through story echo, we replace traditional scores with world-centric digital rewards, where the environment visibly heals and blooms, to validate their impact and build lasting confidence.
+                </p>
+              </div>
             </div>
 
             {/* 6. Elders - My Constellation */}
