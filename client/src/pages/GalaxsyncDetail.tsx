@@ -300,9 +300,10 @@ export default function GalaxsyncDetail() {
                   </div>
                 </div>
                 <h3 className="font-semibold text-lg mb-3 text-amber-50">Dunhuang Planet – The Cosmic Mentor</h3>
-                <p className="text-amber-100/80">
+                <p className="text-amber-100/80 mb-6">
                   Take the Dunhuang Planet as example. Here, the senior creator acts as a "Cosmic Mentor." Through real-time communication and gentle on-site check-ins, they provide essential encouragement and guidance.
                 </p>
+                <img src="/step3-dunhuang.png" alt="Dunhuang Planet - Grandpa Tony" className="w-full rounded-2xl shadow-lg" />
               </div>
 
               <div className="mx-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.15)' }} />
