@@ -265,9 +265,10 @@ export default function GalaxsyncDetail() {
             </div>
 
             {/* Steps 2-5: ADHD Children — full-width dark background */}
-            <div className="overflow-hidden py-4" style={{ backgroundColor: '#97563D', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
+            <div className="overflow-hidden py-4 relative" style={{ backgroundColor: '#563D33', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
+              <div className="absolute inset-0" style={{ backgroundImage: 'url(/parisroom-night.png)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.5 }} />
               {/* Step 2 */}
-              <div className="p-8">
+              <div className="p-8 relative z-10">
                 <div className="flex items-center gap-4 mb-4">
                   <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
                   <div>
@@ -361,7 +362,7 @@ export default function GalaxsyncDetail() {
               <div className="mx-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.15)' }} />
 
               {/* Step 3 */}
-              <div className="p-8">
+              <div className="p-8 relative z-10">
                 <div className="flex items-center gap-4 mb-4">
                   <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
                   <div>
@@ -378,7 +379,7 @@ export default function GalaxsyncDetail() {
               <div className="mx-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.15)' }} />
 
               {/* Step 4 */}
-              <div className="p-8">
+              <div className="p-8 relative z-10">
                 <div className="flex items-center gap-4 mb-4">
                   <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
                   <div>
@@ -394,7 +395,7 @@ export default function GalaxsyncDetail() {
               <div className="mx-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.15)' }} />
 
               {/* Step 5 */}
-              <div className="p-8">
+              <div className="p-8 relative z-10">
                 <div className="flex items-center gap-4 mb-4">
                   <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
                   <div>
