@@ -266,7 +266,6 @@ export default function GalaxsyncDetail() {
 
             {/* Steps 2-5: ADHD Children — full-width dark background */}
             <div className="overflow-hidden py-4 relative" style={{ backgroundColor: '#563D33', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
-              <div className="absolute inset-0" style={{ backgroundImage: 'url(/parisroom-night.png)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.5 }} />
               {/* Step 2 */}
               <div className="p-8 relative z-10">
                 <div className="flex items-center gap-4 mb-4">
