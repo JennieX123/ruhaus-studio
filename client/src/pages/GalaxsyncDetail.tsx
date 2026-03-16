@@ -253,15 +253,17 @@ export default function GalaxsyncDetail() {
                         />
                         {/* Sub-planets for Art & Craft */}
                         {planet.hasSubPlanets && [
-                          { src: '/artcraft-sub1.png', x: -150, y: -70 },
-                          { src: '/artcraft-sub2.png', x: -150, y: 0 },
-                          { src: '/artcraft-sub3.png', x: -150, y: 70 },
-                          { src: '/artcraft-sub4.png', x: 150, y: -70 },
-                          { src: '/artcraft-sub5.png', x: 150, y: 0 },
-                          { src: '/artcraft-sub6.png', x: 150, y: 70 },
+                          { src: '/artcraft-sub1.png', angle: 150 },
+                          { src: '/artcraft-sub2.png', angle: 190 },
+                          { src: '/artcraft-sub3.png', angle: 230 },
+                          { src: '/artcraft-sub4.png', angle: 270 },
+                          { src: '/artcraft-sub5.png', angle: 310 },
+                          { src: '/artcraft-sub6.png', angle: 350 },
                         ].map((sub, i) => {
-                          const x = sub.x;
-                          const y = sub.y;
+                          const rad = (sub.angle * Math.PI) / 180;
+                          const radius = 170;
+                          const x = Math.cos(rad) * radius;
+                          const y = Math.sin(rad) * radius;
                           return (
                             <div
                               key={i}
