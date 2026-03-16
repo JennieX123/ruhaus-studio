@@ -276,7 +276,7 @@ export default function GalaxsyncDetail() {
                 </div>
                 <h3 className="font-semibold text-lg mb-3 text-amber-50">Game-Based The Six-Realm VR Experience Galaxy</h3>
                 <p className="text-amber-100/80 mb-8">
-                  The Galaxsync Galaxy generated entirely from the elders' diverse life stories. This VR universe features six cognitive realms. Each realm covers vast diversity, ensures every ADHD child can discover stories that spark their unique interests.
+                  Elders' diverse life stories collectively generate the entire Galaxsync Galaxy. This VR universe features six cognitive realms, each representing a wide range of narratives, ensuring every ADHD child can discover stories that spark their unique interests.
                 </p>
 
                 {/* Six Realm Planets - Row 1 */}
