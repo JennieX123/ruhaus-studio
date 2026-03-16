@@ -7,6 +7,7 @@ export default function GalaxsyncDetail() {
   const [, navigate] = useLocation();
   const [mounted, setMounted] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const [planetsExploded, setPlanetsExploded] = useState(false);
 
   
   const heroRef = useScrollAnimation();
@@ -232,45 +233,67 @@ export default function GalaxsyncDetail() {
                   The Galaxsync Galaxy generated entirely from the elders' diverse life stories. This VR universe features six cognitive realms. Each realm covers vast diversity, ensures every ADHD child can discover stories that spark their unique interests.
                 </p>
 
-                {/* Six Realm Planets - Row 1 */}
-                <div className="grid grid-cols-3 gap-6 mb-4">
-                  {[
-                    { src: '/planet-art-craft.png', name: 'Art & Craft' },
-                    { src: '/planet-life-nature.png', name: 'Life & Nature' },
-                    { src: '/planet-logic-science.png', name: 'Logic & Science' },
-                  ].map((planet) => (
-                    <div key={planet.name} className="group flex flex-col items-center gap-2 cursor-pointer">
-                      <div className="relative transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-2">
-                        <img
-                          src={planet.src}
-                          alt={planet.name}
-                          className="w-60 h-60 md:w-80 md:h-80 object-contain drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-[0_8px_24px_rgba(255,200,100,0.4)] group-hover:brightness-110"
-                          style={{ animation: 'float 3s ease-in-out infinite', animationDelay: `${Math.random() * 2}s` }}
-                        />
-                      </div>
-                      <span className="text-xs font-semibold text-amber-200/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{planet.name}</span>
+                {/* Six Realm Planets - Orbit System */}
+                <div className="flex justify-center my-8">
+                  <div
+                    className="relative cursor-pointer"
+                    style={{ width: '500px', height: '500px' }}
+                    onClick={() => setPlanetsExploded(!planetsExploded)}
+                  >
+                    {/* Center Art & Craft Planet */}
+                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                      <img
+                        src="/planet-art-craft.png"
+                        alt="Art & Craft"
+                        className="w-40 h-40 md:w-52 md:h-52 object-contain drop-shadow-[0_0_30px_rgba(255,180,80,0.3)] transition-transform duration-700"
+                        style={{
+                          animation: 'float 4s ease-in-out infinite',
+                          transform: planetsExploded ? 'scale(0.9)' : 'scale(1)',
+                        }}
+                      />
+                      <p className="text-center text-xs font-semibold text-amber-200/80 mt-1">
+                        {planetsExploded ? 'Click to collapse' : 'Click to explore'}
+                      </p>
                     </div>
-                  ))}
-                </div>
-                {/* Six Realm Planets - Row 2 */}
-                <div className="grid grid-cols-3 gap-6">
-                  {[
-                    { src: '/planet-skills-growth.png', name: 'Skills & Growth' },
-                    { src: '/planet-myths-tales.png', name: 'Myths & Tales' },
-                    { src: '/planet-heart-mind.png', name: 'Heart & Mind' },
-                  ].map((planet) => (
-                    <div key={planet.name} className="group flex flex-col items-center gap-2 cursor-pointer">
-                      <div className="relative transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-2">
-                        <img
-                          src={planet.src}
-                          alt={planet.name}
-                          className="w-60 h-60 md:w-80 md:h-80 object-contain drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-[0_8px_24px_rgba(255,200,100,0.4)] group-hover:brightness-110"
-                          style={{ animation: 'float 3s ease-in-out infinite', animationDelay: `${Math.random() * 2}s` }}
-                        />
-                      </div>
-                      <span className="text-xs font-semibold text-amber-200/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{planet.name}</span>
-                    </div>
-                  ))}
+
+                    {/* Orbiting Planets */}
+                    {[
+                      { src: '/planet-life-nature.png', name: 'Life & Nature', angle: 0 },
+                      { src: '/planet-logic-science.png', name: 'Logic & Science', angle: 60 },
+                      { src: '/planet-skills-growth.png', name: 'Skills & Growth', angle: 120 },
+                      { src: '/planet-myths-tales.png', name: 'Myths & Tales', angle: 180 },
+                      { src: '/planet-heart-mind.png', name: 'Heart & Mind', angle: 240 },
+                    ].map((planet, i) => {
+                      const rad = (planet.angle * Math.PI) / 180;
+                      const radius = 190;
+                      const x = Math.cos(rad) * radius;
+                      const y = Math.sin(rad) * radius;
+                      return (
+                        <div
+                          key={planet.name}
+                          className="absolute left-1/2 top-1/2 group"
+                          style={{
+                            transform: planetsExploded
+                              ? `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`
+                              : 'translate(-50%, -50%) scale(0)',
+                            opacity: planetsExploded ? 1 : 0,
+                            transition: `all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) ${i * 100}ms`,
+                          }}
+                        >
+                          <div style={{ animation: planetsExploded ? `orbit-float 3s ease-in-out infinite ${i * 0.5}s` : 'none' }}>
+                            <img
+                              src={planet.src}
+                              alt={planet.name}
+                              className="w-24 h-24 md:w-28 md:h-28 object-contain drop-shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:drop-shadow-[0_8px_24px_rgba(255,200,100,0.5)] group-hover:brightness-110"
+                            />
+                            <span className="block text-center text-[10px] font-semibold text-amber-200/80 mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              {planet.name}
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
 
