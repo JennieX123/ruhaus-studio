@@ -486,7 +486,7 @@ export default function GalaxsyncDetail() {
               </div>
 
               <div className={`p-8 rounded-lg border border-neutral-100 ${hoverScale} flex flex-col items-center text-center`} style={{ backgroundColor: '#FFECBD' }}>
-                <img src="/planet-heart-mind.png" alt="Connection" className="w-40 h-40 object-contain mb-5" />
+                <img src="/planet-heart-mind-crop.png" alt="Connection" className="w-40 h-40 object-contain mb-5" />
                 <h3 className="font-semibold text-lg mb-4">Meaningful Connection</h3>
                 <p className="text-neutral-600 text-sm">
                   Children and elders co-create stories together, building emotional bonds across generations and creating shared narratives of growth.
