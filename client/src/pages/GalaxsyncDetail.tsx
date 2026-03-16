@@ -448,9 +448,25 @@ export default function GalaxsyncDetail() {
                 </div>
               </div>
               <h3 className="font-semibold text-lg mb-3">Profile & Dashboard</h3>
-              <p className="text-neutral-600">
+              <p className="text-neutral-600 mb-8">
                 Elders can view dynamic summaries of each child's exploration—their highlights, progress, and moments of achievement. Every insight reaffirms how their guidance nurtures growth, turning mentorship into a tangible sense of purpose and impact.
               </p>
+              {/* iPad with Video */}
+              <div className="flex justify-center">
+                <div className="relative w-full max-w-4xl">
+                  <img src="/ipad-constellation.png" alt="iPad frame" className="w-full relative z-20 pointer-events-none" />
+                  <div className="absolute inset-0 z-30 flex items-center justify-center" style={{ padding: '3.2% 3.2% 2.8% 4.5%' }}>
+                    <video
+                      src="/elder-dashboard.mp4"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover rounded-[14px]"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
