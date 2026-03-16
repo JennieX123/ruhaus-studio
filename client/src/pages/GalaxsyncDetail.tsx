@@ -360,9 +360,9 @@ export default function GalaxsyncDetail() {
           >
             <h2 className="text-2xl font-semibold playground-heading">Impact</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className={`p-8 bg-neutral-50 rounded-lg border border-neutral-100 ${hoverScale}`}>
-                <h3 className="font-semibold text-lg mb-4">Reduced Isolation</h3>
-                <p className="text-neutral-600 text-sm">
+              <div className={`p-8 rounded-lg border border-neutral-100 ${hoverScale}`} style={{ backgroundColor: '#563D33' }}>
+                <h3 className="font-semibold text-lg mb-4 text-amber-50">Reduced Isolation</h3>
+                <p className="text-amber-100/80 text-sm">
                   Sharing stories gives elders purpose and connection, transforming memories into meaningful contribution and intergenerational bonds.
                 </p>
               </div>
@@ -374,9 +374,9 @@ export default function GalaxsyncDetail() {
                 </p>
               </div>
 
-              <div className={`p-8 bg-neutral-50 rounded-lg border border-neutral-100 ${hoverScale}`}>
-                <h3 className="font-semibold text-lg mb-4">ADHD Growth Reflection</h3>
-                <p className="text-neutral-600 text-sm">
+              <div className={`p-8 rounded-lg border border-neutral-100 ${hoverScale}`} style={{ backgroundColor: '#563D33' }}>
+                <h3 className="font-semibold text-lg mb-4 text-amber-50">ADHD Growth Reflection</h3>
+                <p className="text-amber-100/80 text-sm">
                   Children's choices and focus patterns become part of the evolving narrative world, showing measurable growth and meaningful progress.
                 </p>
               </div>
