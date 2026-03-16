@@ -204,7 +204,7 @@ export default function GalaxsyncDetail() {
             <h2 className="text-2xl font-semibold playground-heading">How It Works</h2>
 
             {/* 1. Elders - Digital Assets Curator */}
-            <div className={`p-8 rounded-xl border border-neutral-100 ${hoverScale}`} style={{ backgroundColor: 'rgba(254, 245, 228, 0.95)' }}>
+            <div className={`p-8 rounded-xl border border-neutral-100 ${hoverScale}`} style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
               <div className="flex items-center gap-4 mb-4">
                 <img src="/elder-avatar.png" alt="Elder" className="w-16 h-16 rounded-full object-cover" />
                 <div>
