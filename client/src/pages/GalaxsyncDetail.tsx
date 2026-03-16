@@ -503,7 +503,17 @@ export default function GalaxsyncDetail() {
             </div>
           </div>
           <div className="flex flex-col items-center gap-16 mt-32">
-            <img src="/sub-planets-all.png" alt="Story Sub-Planets" className="w-full max-w-5xl" />
+            <img 
+              src="/sub-planets-all.png" 
+              alt="Story Sub-Planets" 
+              className="w-full max-w-5xl hover:scale-105 transition-transform duration-700 ease-out"
+              style={{ 
+                animation: 'float 6s ease-in-out infinite',
+                filter: 'drop-shadow(0 0 20px rgba(255, 200, 120, 0.3))',
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.filter = 'drop-shadow(0 0 40px rgba(255, 200, 120, 0.6))'}
+              onMouseLeave={(e) => e.currentTarget.style.filter = 'drop-shadow(0 0 20px rgba(255, 200, 120, 0.3))'}
+            />
             <img src="/galaxsync-logo-original.png" alt="Galaxsync Logo" className="w-64" />
           </div>
         </div>
