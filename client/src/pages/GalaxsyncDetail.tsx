@@ -282,9 +282,9 @@ export default function GalaxsyncDetail() {
                 {/* Six Realm Planets - Row 1 */}
                 <div className="grid grid-cols-3 gap-6 mb-4">
                   {[
-                    { src: '/planet-art-craft.png', name: 'Art & Craft', hasSubPlanets: true },
-                    { src: '/planet-life-nature.png', name: 'Life & Nature', hasSubPlanets: false },
-                    { src: '/planet-logic-science.png', name: 'Logic & Science', hasSubPlanets: false },
+                    { src: '/planet-art-craft.png', name: 'Art & Craft', hasSubPlanets: true, floatDuration: '3.5s', floatDelay: '0s' },
+                    { src: '/planet-life-nature.png', name: 'Life & Nature', hasSubPlanets: false, floatDuration: '4.2s', floatDelay: '0.8s' },
+                    { src: '/planet-logic-science.png', name: 'Logic & Science', hasSubPlanets: false, floatDuration: '3.8s', floatDelay: '1.5s' },
                   ].map((planet) => (
                     <div key={planet.name} className="group flex flex-col items-center gap-2 cursor-pointer relative">
                       <div
@@ -295,7 +295,7 @@ export default function GalaxsyncDetail() {
                           src={planet.src}
                           alt={planet.name}
                           className="w-60 h-60 md:w-80 md:h-80 object-contain drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-[0_8px_24px_rgba(255,200,100,0.4)] group-hover:brightness-110"
-                          style={{ animation: 'float 3s ease-in-out infinite' }}
+                          style={{ animation: `float ${planet.floatDuration} ease-in-out ${planet.floatDelay} infinite` }}
                         />
                         {/* Sub-planets for Art & Craft */}
                         {planet.hasSubPlanets && [
@@ -339,9 +339,9 @@ export default function GalaxsyncDetail() {
                 {/* Six Realm Planets - Row 2 */}
                 <div className="grid grid-cols-3 gap-6">
                   {[
-                    { src: '/planet-skills-growth.png', name: 'Skills & Growth' },
-                    { src: '/planet-myths-tales.png', name: 'Myths & Tales' },
-                    { src: '/planet-heart-mind.png', name: 'Heart & Mind' },
+                    { src: '/planet-skills-growth.png', name: 'Skills & Growth', floatDuration: '4.5s', floatDelay: '0.5s' },
+                    { src: '/planet-myths-tales.png', name: 'Myths & Tales', floatDuration: '3.2s', floatDelay: '1.2s' },
+                    { src: '/planet-heart-mind.png', name: 'Heart & Mind', floatDuration: '4s', floatDelay: '2s' },
                   ].map((planet) => (
                     <div key={planet.name} className="group flex flex-col items-center gap-2 cursor-pointer">
                       <div className="relative transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-2">
@@ -349,7 +349,7 @@ export default function GalaxsyncDetail() {
                           src={planet.src}
                           alt={planet.name}
                           className="w-60 h-60 md:w-80 md:h-80 object-contain drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-[0_8px_24px_rgba(255,200,100,0.4)] group-hover:brightness-110"
-                          style={{ animation: 'float 3s ease-in-out infinite' }}
+                          style={{ animation: `float ${planet.floatDuration} ease-in-out ${planet.floatDelay} infinite` }}
                         />
                       </div>
                       <span className="text-xs font-semibold text-amber-200/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{planet.name}</span>
