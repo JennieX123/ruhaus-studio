@@ -236,14 +236,15 @@ export default function GalaxsyncDetail() {
               {/* iPad with Video */}
               <div className="flex justify-center">
                 <div className="relative w-full max-w-2xl">
-                  <div className="relative rounded-[20px] overflow-hidden border-[8px] border-neutral-800 bg-black shadow-2xl" style={{ aspectRatio: '4/3' }}>
+                  <img src="/ipad-constellation.png" alt="iPad frame" className="w-full relative z-10 pointer-events-none" />
+                  <div className="absolute inset-0 flex items-center justify-center" style={{ padding: '3.5% 5.5% 5% 5.5%' }}>
                     <video
                       ref={elderVideoRef}
                       src="/elder-recording.mp4"
                       muted
                       loop
                       playsInline
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover rounded-[12px]"
                     />
                   </div>
                 </div>
