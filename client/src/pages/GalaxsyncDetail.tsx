@@ -9,6 +9,7 @@ export default function GalaxsyncDetail() {
   const [isHovering, setIsHovering] = useState(false);
   const [planetsExploded, setPlanetsExploded] = useState(false);
   const elderVideoRef = useRef<HTMLVideoElement>(null);
+  const elderVideo2Ref = useRef<HTMLVideoElement>(null);
 
   const heroRef = useScrollAnimation();
   const problemRef = useScrollAnimation();
@@ -22,20 +23,23 @@ export default function GalaxsyncDetail() {
   }, []);
 
   useEffect(() => {
-    if (!elderVideoRef.current) return;
-    const video = elderVideoRef.current;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
-      },
-      { threshold: 0.3 }
-    );
-    observer.observe(video);
-    return () => observer.disconnect();
+    const videos = [elderVideoRef.current, elderVideo2Ref.current].filter(Boolean) as HTMLVideoElement[];
+    const observers: IntersectionObserver[] = [];
+    videos.forEach((video) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        },
+        { threshold: 0.3 }
+      );
+      observer.observe(video);
+      observers.push(observer);
+    });
+    return () => observers.forEach((o) => o.disconnect());
   }, [mounted]);
 
   if (!mounted) return null;
@@ -233,6 +237,22 @@ export default function GalaxsyncDetail() {
               <p className="text-neutral-600 mb-8">
                 Elders preserve real-life memories as digital assets, which are processed by AI into interactive story-based games for intergenerational engagement.
               </p>
+              {/* iPad with Video */}
+              <div className="flex justify-center">
+                <div className="relative w-full max-w-4xl">
+                  <img src="/ipad-constellation.png" alt="iPad frame" className="w-full relative z-10 pointer-events-none" />
+                  <div className="absolute inset-0 flex items-center justify-center" style={{ padding: '3.5% 5.5% 5% 5.5%' }}>
+                    <video
+                      ref={elderVideo2Ref}
+                      src="/elder-digital-assets.mp4"
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover rounded-[12px]"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Steps 2-5: ADHD Children — full-width dark background */}
