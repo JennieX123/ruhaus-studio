@@ -325,7 +325,7 @@ export default function GalaxsyncDetail() {
             </div>
 
             {/* 6. Elders - My Constellation */}
-            <div className={`p-8 bg-neutral-50 rounded-xl border border-neutral-100 ${hoverScale}`}>
+            <div className={`p-8 rounded-xl border border-neutral-100 ${hoverScale}`} style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
               <div className="flex items-center gap-4 mb-4">
                 <img src="/elder-avatar.png" alt="Elder" className="w-16 h-16 rounded-full object-cover" />
                 <div>
@@ -339,7 +339,7 @@ export default function GalaxsyncDetail() {
             </div>
 
             {/* 7. Elders - Profile & Dashboard */}
-            <div className={`p-8 bg-neutral-50 rounded-xl border border-neutral-100 ${hoverScale}`}>
+            <div className={`p-8 rounded-xl border border-neutral-100 ${hoverScale}`} style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
               <div className="flex items-center gap-4 mb-4">
                 <img src="/elder-avatar.png" alt="Elder" className="w-16 h-16 rounded-full object-cover" />
                 <div>
