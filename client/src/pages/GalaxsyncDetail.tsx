@@ -249,7 +249,7 @@ export default function GalaxsyncDetail() {
               <div className="flex justify-center">
                 <div className="relative w-full max-w-4xl">
                   <img src="/ipad-constellation.png" alt="iPad frame" className="w-full relative z-20 pointer-events-none" />
-                  <div className="absolute inset-0 z-30 flex items-center justify-center" style={{ padding: '4% 6% 5.5% 6%' }}>
+                  <div className="absolute inset-0 z-30 flex items-center justify-center" style={{ padding: '3.2% 4.5% 3.8% 4.5%' }}>
                     <video
                       ref={elderVideo2Ref}
                       src="/elder-digital-assets.mp4"
@@ -257,7 +257,7 @@ export default function GalaxsyncDetail() {
                       muted
                       loop
                       playsInline
-                      className="w-full h-full object-cover rounded-[8px]"
+                      className="w-full h-full object-cover rounded-[14px]"
                     />
                   </div>
                 </div>
@@ -424,7 +424,7 @@ export default function GalaxsyncDetail() {
               <div className="flex justify-center">
                 <div className="relative w-full max-w-4xl">
                   <img src="/ipad-constellation.png" alt="iPad frame" className="w-full relative z-20 pointer-events-none" />
-                  <div className="absolute inset-0 z-30 flex items-center justify-center" style={{ padding: '4% 6% 5.5% 6%' }}>
+                  <div className="absolute inset-0 z-30 flex items-center justify-center" style={{ padding: '3.2% 4.5% 3.8% 4.5%' }}>
                     <video
                       ref={elderVideoRef}
                       src="/elder-recording.mp4"
@@ -432,7 +432,7 @@ export default function GalaxsyncDetail() {
                       muted
                       loop
                       playsInline
-                      className="w-full h-full object-cover rounded-[8px]"
+                      className="w-full h-full object-cover rounded-[14px]"
                     />
                   </div>
                 </div>
