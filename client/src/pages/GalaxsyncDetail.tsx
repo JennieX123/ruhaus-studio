@@ -236,18 +236,55 @@ export default function GalaxsyncDetail() {
                 {/* Six Realm Planets - Row 1 */}
                 <div className="grid grid-cols-3 gap-6 mb-4">
                   {[
-                    { src: '/planet-art-craft.png', name: 'Art & Craft' },
-                    { src: '/planet-life-nature.png', name: 'Life & Nature' },
-                    { src: '/planet-logic-science.png', name: 'Logic & Science' },
+                    { src: '/planet-art-craft.png', name: 'Art & Craft', hasSubPlanets: true },
+                    { src: '/planet-life-nature.png', name: 'Life & Nature', hasSubPlanets: false },
+                    { src: '/planet-logic-science.png', name: 'Logic & Science', hasSubPlanets: false },
                   ].map((planet) => (
-                    <div key={planet.name} className="group flex flex-col items-center gap-2 cursor-pointer">
-                      <div className="relative transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-2">
+                    <div key={planet.name} className="group flex flex-col items-center gap-2 cursor-pointer relative">
+                      <div
+                        className="relative transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-2"
+                        onClick={() => planet.hasSubPlanets && setPlanetsExploded(!planetsExploded)}
+                      >
                         <img
                           src={planet.src}
                           alt={planet.name}
                           className="w-60 h-60 md:w-80 md:h-80 object-contain drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-[0_8px_24px_rgba(255,200,100,0.4)] group-hover:brightness-110"
                           style={{ animation: 'float 3s ease-in-out infinite' }}
                         />
+                        {/* Sub-planets for Art & Craft */}
+                        {planet.hasSubPlanets && [
+                          { src: '/artcraft-sub1.png', angle: 0 },
+                          { src: '/artcraft-sub2.png', angle: 60 },
+                          { src: '/artcraft-sub3.png', angle: 120 },
+                          { src: '/artcraft-sub4.png', angle: 180 },
+                          { src: '/artcraft-sub5.png', angle: 240 },
+                          { src: '/artcraft-sub6.png', angle: 300 },
+                        ].map((sub, i) => {
+                          const rad = (sub.angle * Math.PI) / 180;
+                          const radius = 160;
+                          const x = Math.cos(rad) * radius;
+                          const y = Math.sin(rad) * radius;
+                          return (
+                            <div
+                              key={i}
+                              className="absolute left-1/2 top-1/2 z-20"
+                              style={{
+                                transform: planetsExploded
+                                  ? `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(1)`
+                                  : 'translate(-50%, -50%) scale(0)',
+                                opacity: planetsExploded ? 1 : 0,
+                                transition: `all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${i * 80}ms`,
+                              }}
+                            >
+                              <img
+                                src={sub.src}
+                                alt={`Art & Craft detail ${i + 1}`}
+                                className="w-16 h-16 md:w-20 md:h-20 object-contain drop-shadow-md hover:scale-125 transition-transform duration-300"
+                                style={{ animation: planetsExploded ? `orbit-float 3s ease-in-out infinite ${i * 0.4}s` : 'none' }}
+                              />
+                            </div>
+                          );
+                        })}
                       </div>
                       <span className="text-xs font-semibold text-amber-200/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{planet.name}</span>
                     </div>
