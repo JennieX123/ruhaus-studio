@@ -205,9 +205,7 @@ export default function GalaxsyncDetail() {
             <h2 className="text-2xl font-semibold playground-heading">How It Works</h2>
 
             {/* 1. Elders - Digital Assets Curator */}
-            <div className={`p-8 rounded-xl border border-neutral-100 relative overflow-hidden ${hoverScale}`} style={{ backgroundImage: 'url(/galaxsync-galaxy.png)', backgroundSize: '100%', backgroundPosition: 'center' }}>
-              <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255, 255, 255, 0.5)', pointerEvents: 'none' }} />
-              <div className="relative z-10">
+            <div className={`p-8 rounded-xl border border-neutral-100 ${hoverScale}`} style={{ backgroundColor: 'rgba(254, 245, 228, 0.7)' }}>
               <div className="flex items-center gap-4 mb-4">
                 <img src="/elder-avatar.png" alt="Elder" className="w-16 h-16 rounded-full object-cover" />
                 <div>
@@ -218,7 +216,6 @@ export default function GalaxsyncDetail() {
               <p className="text-neutral-600">
                 Elders preserve real-life memories as digital assets, which are processed by AI into interactive story-based games for intergenerational engagement.
               </p>
-              </div>
             </div>
 
             {/* Steps 2-5: ADHD Children — full-width dark background */}
