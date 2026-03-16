@@ -235,7 +235,7 @@ export default function GalaxsyncDetail() {
               </p>
               {/* iPad with Video */}
               <div className="flex justify-center">
-                <div className="relative w-full max-w-2xl">
+                <div className="relative w-full max-w-4xl">
                   <img src="/ipad-constellation.png" alt="iPad frame" className="w-full relative z-10 pointer-events-none" />
                   <div className="absolute inset-0 flex items-center justify-center" style={{ padding: '3.5% 5.5% 5% 5.5%' }}>
                     <video
