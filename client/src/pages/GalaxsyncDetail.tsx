@@ -368,9 +368,9 @@ export default function GalaxsyncDetail() {
                     <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">Step 3 · ADHD Children</span>
                   </div>
                 </div>
-                <h3 className="font-semibold text-lg mb-3 text-amber-50">Dunhuang Planet – The Cosmic Mentor</h3>
+                <h3 className="font-semibold text-lg mb-3 text-amber-50">Example: Dunhuang Planet – The Cosmic Mentor</h3>
                 <p className="text-amber-100/80 mb-6">
-                  Take the Dunhuang Planet as example. Here, the senior creator acts as a "Cosmic Mentor." Through real-time communication and gentle on-site check-ins, they provide essential encouragement and guidance.
+                  Take the Dunhuang Planet as an example. Here, seniors are not only the creators of the stories but also serve as "Cosmic Mentors." Through real-time communication and gentle in-world check-ins, they offer encouragement, guidance, and emotional support to the child explorers.
                 </p>
                 <img src="/step3-dunhuang.png" alt="Dunhuang Planet - Grandpa Tony" className="w-full rounded-2xl" />
               </div>
