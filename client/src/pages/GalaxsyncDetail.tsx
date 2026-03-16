@@ -233,22 +233,6 @@ export default function GalaxsyncDetail() {
               <p className="text-neutral-600 mb-8">
                 Elders preserve real-life memories as digital assets, which are processed by AI into interactive story-based games for intergenerational engagement.
               </p>
-              {/* iPad with Video */}
-              <div className="flex justify-center">
-                <div className="relative w-full max-w-4xl">
-                  <img src="/ipad-constellation.png" alt="iPad frame" className="w-full relative z-10 pointer-events-none" />
-                  <div className="absolute inset-0 flex items-center justify-center" style={{ padding: '3.5% 5.5% 5% 5.5%' }}>
-                    <video
-                      ref={elderVideoRef}
-                      src="/elder-recording.mp4"
-                      muted
-                      loop
-                      playsInline
-                      className="w-full h-full object-cover rounded-[12px]"
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Steps 2-5: ADHD Children — full-width dark background */}
@@ -404,9 +388,25 @@ export default function GalaxsyncDetail() {
                 </div>
               </div>
               <h3 className="font-semibold text-lg mb-3">My Constellation</h3>
-              <p className="text-neutral-600">
+              <p className="text-neutral-600 mb-8">
                 Elders review story planets showing ADHD child interactions. Each session layers child's data onto the narrative, creating a co-created living memory legacy for future generations.
               </p>
+              {/* iPad with Video */}
+              <div className="flex justify-center">
+                <div className="relative w-full max-w-4xl">
+                  <img src="/ipad-constellation.png" alt="iPad frame" className="w-full relative z-10 pointer-events-none" />
+                  <div className="absolute inset-0 flex items-center justify-center" style={{ padding: '3.5% 5.5% 5% 5.5%' }}>
+                    <video
+                      ref={elderVideoRef}
+                      src="/elder-recording.mp4"
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover rounded-[12px]"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* 7. Elders - Profile & Dashboard */}
