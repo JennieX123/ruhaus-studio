@@ -23,9 +23,10 @@ export default function GalaxsyncDetail() {
   }, []);
 
   useEffect(() => {
-    const videos = [elderVideoRef.current, elderVideo2Ref.current].filter(Boolean) as HTMLVideoElement[];
-    const observers: IntersectionObserver[] = [];
-    videos.forEach((video) => {
+    if (!mounted) return;
+    let observers: IntersectionObserver[] = [];
+    const setupObserver = (video: HTMLVideoElement | null) => {
+      if (!video) return;
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
@@ -34,12 +35,19 @@ export default function GalaxsyncDetail() {
             video.pause();
           }
         },
-        { threshold: 0.3 }
+        { threshold: 0.2 }
       );
       observer.observe(video);
       observers.push(observer);
-    });
-    return () => observers.forEach((o) => o.disconnect());
+    };
+    const timer = setTimeout(() => {
+      setupObserver(elderVideoRef.current);
+      setupObserver(elderVideo2Ref.current);
+    }, 500);
+    return () => {
+      clearTimeout(timer);
+      observers.forEach((o) => o.disconnect());
+    };
   }, [mounted]);
 
   if (!mounted) return null;
