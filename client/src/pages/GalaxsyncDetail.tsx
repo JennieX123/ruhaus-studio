@@ -367,7 +367,7 @@ export default function GalaxsyncDetail() {
                 </p>
               </div>
 
-              <div className={`p-8 bg-neutral-50 rounded-lg border border-neutral-100 ${hoverScale}`}>
+              <div className={`p-8 rounded-lg border border-neutral-100 ${hoverScale}`} style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
                 <h3 className="font-semibold text-lg mb-4">Meaningful Connection</h3>
                 <p className="text-neutral-600 text-sm">
                   Children and elders co-create stories together, building emotional bonds across generations and creating shared narratives of growth.
