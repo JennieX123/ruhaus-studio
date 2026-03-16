@@ -1,6 +1,6 @@
 import { useLocation } from "wouter";
 import { ArrowLeft } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function GalaxsyncDetail() {
@@ -8,8 +8,8 @@ export default function GalaxsyncDetail() {
   const [mounted, setMounted] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [planetsExploded, setPlanetsExploded] = useState(false);
+  const elderVideoRef = useRef<HTMLVideoElement>(null);
 
-  
   const heroRef = useScrollAnimation();
   const problemRef = useScrollAnimation();
   const solutionRef = useScrollAnimation();
@@ -20,6 +20,23 @@ export default function GalaxsyncDetail() {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (!elderVideoRef.current) return;
+    const video = elderVideoRef.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, [mounted]);
 
   if (!mounted) return null;
 
@@ -213,9 +230,24 @@ export default function GalaxsyncDetail() {
                 </div>
               </div>
               <h3 className="font-semibold text-lg mb-3">Digital Assets Curator</h3>
-              <p className="text-neutral-600">
+              <p className="text-neutral-600 mb-8">
                 Elders preserve real-life memories as digital assets, which are processed by AI into interactive story-based games for intergenerational engagement.
               </p>
+              {/* iPad with Video */}
+              <div className="flex justify-center">
+                <div className="relative w-full max-w-2xl">
+                  <div className="relative rounded-[20px] overflow-hidden border-[8px] border-neutral-800 bg-black shadow-2xl" style={{ aspectRatio: '4/3' }}>
+                    <video
+                      ref={elderVideoRef}
+                      src="/elder-recording.mp4"
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Steps 2-5: ADHD Children — full-width dark background */}
