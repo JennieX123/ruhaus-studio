@@ -502,11 +502,11 @@ export default function GalaxsyncDetail() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-center gap-16 mt-32">
+          <div className="flex flex-col items-center gap-24 mt-48 mb-16">
             <img 
-              src="/sub-planets-all.png" 
+              src="/sub-planets-grid.png" 
               alt="Story Sub-Planets" 
-              className="w-full max-w-5xl hover:scale-105 transition-transform duration-700 ease-out"
+              className="w-full max-w-6xl hover:scale-105 transition-transform duration-700 ease-out"
               style={{ 
                 animation: 'float 6s ease-in-out infinite',
                 filter: 'drop-shadow(0 0 20px rgba(255, 200, 120, 0.3))',
