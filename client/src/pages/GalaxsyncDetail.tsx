@@ -502,7 +502,7 @@ export default function GalaxsyncDetail() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-center gap-16 mt-16">
+          <div className="flex flex-col items-center gap-16 mt-32">
             <img src="/sub-planets-all.png" alt="Story Sub-Planets" className="w-full max-w-5xl" />
             <img src="/galaxsync-logo-original.png" alt="Galaxsync Logo" className="w-64" />
           </div>
