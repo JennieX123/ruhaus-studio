@@ -248,15 +248,16 @@ export default function GalaxsyncDetail() {
               {/* iPad with Video */}
               <div className="flex justify-center">
                 <div className="relative w-full max-w-4xl">
-                  <img src="/ipad-constellation.png" alt="iPad frame" className="w-full relative z-10 pointer-events-none" />
-                  <div className="absolute inset-0 flex items-center justify-center" style={{ padding: '3.5% 5.5% 5% 5.5%' }}>
+                  <img src="/ipad-constellation.png" alt="iPad frame" className="w-full relative z-20 pointer-events-none" />
+                  <div className="absolute inset-0 z-30 flex items-center justify-center" style={{ padding: '4% 6% 5.5% 6%' }}>
                     <video
                       ref={elderVideo2Ref}
                       src="/elder-digital-assets.mp4"
+                      autoPlay
                       muted
                       loop
                       playsInline
-                      className="w-full h-full object-cover rounded-[12px]"
+                      className="w-full h-full object-cover rounded-[8px]"
                     />
                   </div>
                 </div>
@@ -422,15 +423,16 @@ export default function GalaxsyncDetail() {
               {/* iPad with Video */}
               <div className="flex justify-center">
                 <div className="relative w-full max-w-4xl">
-                  <img src="/ipad-constellation.png" alt="iPad frame" className="w-full relative z-10 pointer-events-none" />
-                  <div className="absolute inset-0 flex items-center justify-center" style={{ padding: '3.5% 5.5% 5% 5.5%' }}>
+                  <img src="/ipad-constellation.png" alt="iPad frame" className="w-full relative z-20 pointer-events-none" />
+                  <div className="absolute inset-0 z-30 flex items-center justify-center" style={{ padding: '4% 6% 5.5% 6%' }}>
                     <video
                       ref={elderVideoRef}
                       src="/elder-recording.mp4"
+                      autoPlay
                       muted
                       loop
                       playsInline
-                      className="w-full h-full object-cover rounded-[12px]"
+                      className="w-full h-full object-cover rounded-[8px]"
                     />
                   </div>
                 </div>
