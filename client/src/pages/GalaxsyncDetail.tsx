@@ -6,7 +6,7 @@ import { useScrollAnimation } from "../hooks/useScrollAnimation";
 export default function GalaxsyncDetail() {
   const [, navigate] = useLocation();
   const [mounted, setMounted] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
+
   
   const heroRef = useScrollAnimation();
   const problemRef = useScrollAnimation();
@@ -164,20 +164,10 @@ export default function GalaxsyncDetail() {
           >
             <h2 className="text-2xl font-semibold playground-heading">Solution</h2>
             <div 
-              className="p-12 rounded-lg border border-neutral-100 relative overflow-hidden transition-all duration-300 cursor-pointer"
-              style={{ 
-                backgroundImage: 'url(/galaxsync-galaxy.png)', 
-                backgroundSize: isHovering ? '130%' : '100%',
-                backgroundPosition: 'center',
-                transition: 'background-size 0.3s ease-out'
-              }}
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
+              className="p-12 rounded-lg border border-neutral-100 relative overflow-hidden"
+              style={{ backgroundColor: 'rgba(254, 245, 228, 0.7)' }}
             >
-              {/* Semi-transparent overlay for background image */}
-              <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255, 255, 255, 0.5)', pointerEvents: 'none' }} />
-              {/* Content */}
-              <div className="relative z-10 space-y-6 text-center">
+              <div className="space-y-6 text-center">
                 <div>
                   <p className="text-lg text-neutral-700 leading-relaxed">
                     The gap could be bridged. Two generations could be connected.
