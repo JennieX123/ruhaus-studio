@@ -253,12 +253,12 @@ export default function GalaxsyncDetail() {
                         />
                         {/* Sub-planets for Art & Craft */}
                         {planet.hasSubPlanets && [
-                          { src: '/artcraft-sub1.png', x: -130, y: -60 },
-                          { src: '/artcraft-sub2.png', x: -130, y: 0 },
-                          { src: '/artcraft-sub3.png', x: -130, y: 60 },
-                          { src: '/artcraft-sub4.png', x: 130, y: -60 },
-                          { src: '/artcraft-sub5.png', x: 130, y: 0 },
-                          { src: '/artcraft-sub6.png', x: 130, y: 60 },
+                          { src: '/artcraft-sub1.png', x: -150, y: -70 },
+                          { src: '/artcraft-sub2.png', x: -150, y: 0 },
+                          { src: '/artcraft-sub3.png', x: -150, y: 70 },
+                          { src: '/artcraft-sub4.png', x: 150, y: -70 },
+                          { src: '/artcraft-sub5.png', x: 150, y: 0 },
+                          { src: '/artcraft-sub6.png', x: 150, y: 70 },
                         ].map((sub, i) => {
                           const x = sub.x;
                           const y = sub.y;
