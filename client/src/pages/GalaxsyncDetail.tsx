@@ -506,7 +506,7 @@ export default function GalaxsyncDetail() {
             <img 
               src="/sub-planets-grid.png" 
               alt="Story Sub-Planets" 
-              className="w-full max-w-6xl hover:scale-105 transition-transform duration-700 ease-out"
+              className="w-full max-w-3xl hover:scale-105 transition-transform duration-700 ease-out"
               style={{ 
                 animation: 'float 6s ease-in-out infinite',
                 filter: 'drop-shadow(0 0 20px rgba(255, 200, 120, 0.3))',
