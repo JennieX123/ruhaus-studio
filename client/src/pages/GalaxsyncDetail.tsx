@@ -220,7 +220,7 @@ export default function GalaxsyncDetail() {
             <h2 className="text-2xl font-semibold playground-heading">How It Works</h2>
 
             {/* 1. Elders - Digital Assets Curator */}
-            <div className="p-4 md:p-8 rounded-xl">
+            <div className="py-4 md:py-8">
               <div className="flex items-center gap-4 mb-4">
                 <img src="/elder-avatar.png" alt="Elder" className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover" />
                 <div>
@@ -407,7 +407,7 @@ export default function GalaxsyncDetail() {
             </div>
 
             {/* 6. Elders - My Constellation */}
-            <div className="p-4 md:p-8 rounded-xl">
+            <div className="py-4 md:py-8">
               <div className="flex items-center gap-4 mb-4">
                 <img src="/elder-avatar.png" alt="Elder" className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover" />
                 <div>
@@ -438,7 +438,7 @@ export default function GalaxsyncDetail() {
             </div>
 
             {/* 7. Elders - Profile & Dashboard */}
-            <div className="p-4 md:p-8 rounded-xl">
+            <div className="py-4 md:py-8">
               <div className="flex items-center gap-4 mb-4">
                 <img src="/elder-avatar.png" alt="Elder" className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover" />
                 <div>
