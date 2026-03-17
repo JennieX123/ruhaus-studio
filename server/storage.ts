@@ -31,9 +31,9 @@ export class MemStorage implements IStorage {
         slug: "soma",
         title: "Soma",
         domain: "#Health #Wellness",
-        intro: "An AI-powered wearable ecosystem designed for neurodivergent children aged 6–12, providing a critical window for behavioral support.",
+        intro: "An AI wearable ecosystem addressing self co-regulation in autism education.",
         image: "/soma-logo.png",
-        tags: ["ASD", "IDENTITY"]
+        tags: ["AI Wearable Ecosystem", "Smart Phone", "ASD"]
       },
       {
         slug: "galaxsync",
