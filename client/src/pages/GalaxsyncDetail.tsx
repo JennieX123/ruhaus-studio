@@ -369,13 +369,14 @@ export default function GalaxsyncDetail() {
                 <p className="text-amber-100/80 mb-6">
                   Take the Dunhuang Planet as an example. Here, seniors are not only the creators of the stories but also serve as "Cosmic Mentors."
                 </p>
-                <div className="flex justify-center mb-8 overflow-hidden rounded-2xl">
+                <div className="overflow-hidden rounded-2xl -mx-8">
                   <img src="/step3-gif1.gif" alt="Dunhuang Planet Gameplay" className="w-full" style={{ margin: '-2.5%', width: '105%', maxWidth: '105%' }} />
                 </div>
+                <div className="mb-8" />
                 <p className="text-amber-100/80 mb-6">
                   Through real-time communication and gentle in-world check-ins, they offer encouragement, guidance, and emotional support to the child explorers.
                 </p>
-                <div className="flex justify-center overflow-hidden rounded-2xl">
+                <div className="overflow-hidden rounded-2xl -mx-8">
                   <img src="/step3-gif2.gif" alt="Cosmic Mentor Interaction" className="w-full" style={{ margin: '-2.5%', width: '105%', maxWidth: '105%' }} />
                 </div>
               </div>
@@ -394,7 +395,7 @@ export default function GalaxsyncDetail() {
                 <p className="text-amber-100/80 mb-6">
                   Galaxsync utilizes eye-monitoring technology to detect distraction in real-time. When the child's attention begins to drift, the environment responds with a brief, calming interaction that supports a natural return to focus.
                 </p>
-                <div className="flex justify-center overflow-hidden rounded-2xl">
+                <div className="overflow-hidden rounded-2xl -mx-8">
                   <img src="/step3-gif3.gif" alt="Biometric Guidance" className="w-full" style={{ margin: '-2.5%', width: '105%', maxWidth: '105%' }} />
                 </div>
               </div>
@@ -413,7 +414,7 @@ export default function GalaxsyncDetail() {
                 <p className="text-amber-100/80 mb-6">
                   After kids finish the stories, through story echo, we replace traditional scores with world-centric digital rewards, where the environment visibly heals and blooms, to validate their impact and build lasting confidence.
                 </p>
-                <div className="flex justify-center overflow-hidden rounded-2xl">
+                <div className="overflow-hidden rounded-2xl -mx-8">
                   <img src="/step5-gif4.gif" alt="Story Echo Rewards" className="w-full" style={{ margin: '-2.5%', width: '105%', maxWidth: '105%' }} />
                 </div>
               </div>
