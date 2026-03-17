@@ -636,6 +636,13 @@ export default function GalaxsyncDetail() {
                 </RevealSection>
               </div>
 
+              {/* The Loop Completes */}
+              <RevealSection>
+                <div className="text-center py-16 md:py-24">
+                  <h2 className="text-4xl md:text-6xl font-bold" style={{ color: '#563D33' }}>The Loop Completes.</h2>
+                </div>
+              </RevealSection>
+
               {/* Step 6 */}
               <RevealSection>
                 <div className="py-4 md:py-8 relative">
@@ -706,13 +713,6 @@ export default function GalaxsyncDetail() {
               </RevealSection>
             </div>
 
-            {/* The Loop Completes */}
-            <RevealSection>
-              <div className="text-center py-16 md:py-24">
-                <h2 className="text-4xl md:text-6xl font-bold" style={{ color: '#563D33' }}>The Loop Completes.</h2>
-              </div>
-            </RevealSection>
-
             {/* Impact Section - Apple Style with images */}
             <div className="py-16 md:py-24" style={{ backgroundColor: '#563D33', color: '#FEF5E4', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
               <RevealSection>
@@ -721,38 +721,44 @@ export default function GalaxsyncDetail() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
                 <RevealSection delay={100}>
-                  <div className="pt-6 md:pt-8" style={{ borderTop: '1px solid rgba(255,236,189,0.3)' }}>
-                    <div className="flex justify-center mb-6">
-                      <img src="/elder-avatar.png" alt="Elder" className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover" />
+                  <div>
+                    <div className="mb-4">
+                      <img src="/elder-avatar.png" alt="Elder" className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover" />
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4" style={{ color: '#FFECBD' }}>Reduced Isolation</h3>
-                    <p className="text-base md:text-lg font-light leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                      Sharing stories gives elders purpose and connection, transforming memories into meaningful contribution and intergenerational bonds.
-                    </p>
+                    <div className="pt-6 md:pt-8" style={{ borderTop: '1px solid rgba(255,236,189,0.3)' }}>
+                      <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4" style={{ color: '#FFECBD' }}>Reduced Isolation</h3>
+                      <p className="text-base md:text-lg font-light leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                        Sharing stories gives elders purpose and connection, transforming memories into meaningful contribution and intergenerational bonds.
+                      </p>
+                    </div>
                   </div>
                 </RevealSection>
 
                 <RevealSection delay={300}>
-                  <div className="pt-6 md:pt-8" style={{ borderTop: '1px solid rgba(255,236,189,0.3)' }}>
-                    <div className="flex justify-center mb-6">
-                      <img src="/planet-heart-mind-crop.png" alt="Connection" className="w-24 h-24 md:w-32 md:h-32 object-contain" />
+                  <div>
+                    <div className="mb-4">
+                      <img src="/planet-heart-mind-crop.png" alt="Connection" className="w-16 h-16 md:w-20 md:h-20 object-contain" />
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4" style={{ color: '#FFECBD' }}>Meaningful Connection</h3>
-                    <p className="text-base md:text-lg font-light leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                      Children and elders co-create stories together, building emotional bonds across generations and creating shared narratives of growth.
-                    </p>
+                    <div className="pt-6 md:pt-8" style={{ borderTop: '1px solid rgba(255,236,189,0.3)' }}>
+                      <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4" style={{ color: '#FFECBD' }}>Meaningful Connection</h3>
+                      <p className="text-base md:text-lg font-light leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                        Children and elders co-create stories together, building emotional bonds across generations and creating shared narratives of growth.
+                      </p>
+                    </div>
                   </div>
                 </RevealSection>
 
                 <RevealSection delay={500}>
-                  <div className="pt-6 md:pt-8" style={{ borderTop: '1px solid rgba(255,236,189,0.3)' }}>
-                    <div className="flex justify-center mb-6">
-                      <img src="/child-avatar-new.png" alt="Child" className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover" />
+                  <div>
+                    <div className="mb-4">
+                      <img src="/child-avatar-new.png" alt="Child" className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover" />
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4" style={{ color: '#FFECBD' }}>ADHD Growth</h3>
-                    <p className="text-base md:text-lg font-light leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                      Children engage longer in therapy through immersive, narrative-driven VR environments tailored to their needs.
-                    </p>
+                    <div className="pt-6 md:pt-8" style={{ borderTop: '1px solid rgba(255,236,189,0.3)' }}>
+                      <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4" style={{ color: '#FFECBD' }}>ADHD Growth</h3>
+                      <p className="text-base md:text-lg font-light leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                        Children engage longer in therapy through immersive, narrative-driven VR environments tailored to their needs.
+                      </p>
+                    </div>
                   </div>
                 </RevealSection>
               </div>
