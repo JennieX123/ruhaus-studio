@@ -294,10 +294,10 @@ export default function GalaxsyncDetail() {
             ref={featuresRef.ref}
             className={`space-y-6 scroll-section ${featuresRef.isVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}
           >
-            <h2 className="text-2xl font-semibold playground-heading">How It Works</h2>
+            <h2 className="text-2xl font-semibold playground-heading mb-2">How It Works</h2>
 
             {/* 1. Elders - Digital Assets Curator */}
-            <div className="py-4 md:py-8">
+            <div className="pt-0 pb-4 md:pb-8">
               <div className="flex items-center gap-4 mb-4">
                 <img src="/elder-avatar.png" alt="Elder" className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover" />
                 <div>
