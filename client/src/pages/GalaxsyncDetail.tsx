@@ -344,84 +344,79 @@ export default function GalaxsyncDetail() {
               </div>
             </RevealSection>
 
-            {/* Problem Section */}
-            <div>
+            {/* Problem Section - Apple Style */}
+            <div className="py-12 md:py-20" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
               <RevealSection>
-                <h2 className="text-2xl font-semibold playground-heading mb-8" data-testid="text-problem-heading">Problem</h2>
+                <div className="text-center mb-12 md:mb-20">
+                  <h2 className="text-4xl md:text-6xl font-light mb-4 md:mb-6" data-testid="text-problem-heading" style={{ letterSpacing: '-0.02em' }}>The Disconnect.</h2>
+                  <p className="text-lg md:text-2xl max-w-3xl mx-auto" style={{ color: 'rgba(86,61,51,0.6)' }}>Bridging the gap between two isolated generations.</p>
+                </div>
               </RevealSection>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
                 <RevealSection delay={100} direction="left">
                   <MagneticCard
-                    className="hover-lift"
+                    className="hover-lift h-full"
                     style={{
-                      padding: '20px', borderRadius: '16px', backgroundColor: '#FFECBD', color: '#563D33',
-                      display: 'flex', alignItems: 'center', gap: '16px', cursor: 'default',
+                      padding: '32px', borderRadius: '2.5rem', backgroundColor: '#FFECBD', color: '#563D33',
+                      display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center',
+                      cursor: 'default', boxShadow: '0 25px 50px -12px rgba(86,61,51,0.15)',
                     }}
                   >
-                    <div style={{ flex: 1 }}>
-                      <h3 className="font-semibold text-base md:text-lg mb-3 md:mb-4">Empty-Nest Seniors</h3>
-                      <ul className="space-y-2 text-neutral-600 text-xs md:text-sm">
-                        <li>• <CountUp end={200} suffix="M" /> seniors living alone worldwide</li>
-                        <li>• Lifetimes of wisdom and rich personal histories</li>
-                        <li>• Decreasing social interaction and isolation</li>
-                        <li>• Seeking meaningful connection and purpose</li>
-                      </ul>
+                    <div className="w-32 h-32 md:w-44 md:h-44 rounded-full overflow-hidden mb-6 md:mb-8" style={{ boxShadow: '0 0 0 6px rgba(255,255,255,0.3)' }}>
+                      <img src="/elder-avatar.png" alt="Elder" className="w-full h-full object-cover" />
                     </div>
-                    <div className="flex-shrink-0">
-                      <img src="/elder-avatar.png" alt="Elder" className="w-20 h-20 md:w-40 md:h-40 object-contain" />
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-5">Elders</h3>
+                    <p className="text-base md:text-lg font-light leading-relaxed mb-6 md:mb-8" style={{ color: 'rgba(86,61,51,0.75)' }}>
+                      Experiencing memory decline and severe social isolation, leading to an exacerbated sense of worthlessness.
+                    </p>
+                    <div className="mt-auto">
+                      <div className="text-4xl md:text-5xl font-bold mb-1" style={{ color: '#563D33' }}><CountUp end={43} suffix="%" /></div>
+                      <div className="text-xs md:text-sm font-semibold uppercase tracking-wider" style={{ color: 'rgba(86,61,51,0.5)' }}>Feel socially isolated</div>
                     </div>
                   </MagneticCard>
                 </RevealSection>
 
-                <RevealSection delay={250} direction="right">
+                <RevealSection delay={300} direction="right">
                   <MagneticCard
-                    className="hover-lift"
+                    className="hover-lift h-full"
                     style={{
-                      padding: '20px', borderRadius: '16px', backgroundColor: '#563D33', color: '#FFECBD',
-                      display: 'flex', alignItems: 'center', gap: '16px', cursor: 'default',
+                      padding: '32px', borderRadius: '2.5rem', backgroundColor: '#563D33', color: '#FFECBD',
+                      display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center',
+                      cursor: 'default', boxShadow: '0 25px 50px -12px rgba(86,61,51,0.3)',
                     }}
                   >
-                    <div style={{ flex: 1 }}>
-                      <h3 className="font-semibold text-base md:text-lg mb-3 md:mb-4">Children with ADHD</h3>
-                      <ul className="space-y-2 text-xs md:text-sm" style={{ color: 'rgba(255,236,189,0.8)' }}>
-                        <li>• <CountUp end={366} suffix="M" /> children globally struggle with attention</li>
-                        <li>• High energy and fragmented focus</li>
-                        <li>• Often misunderstood for their intensity</li>
-                        <li>• Thrive in immersive, structured environments</li>
-                      </ul>
+                    <div className="w-32 h-32 md:w-44 md:h-44 rounded-full overflow-hidden mb-6 md:mb-8" style={{ boxShadow: '0 0 0 6px rgba(255,236,189,0.1)' }}>
+                      <img src="/child-avatar-new.png" alt="Child" className="w-full h-full object-cover" />
                     </div>
-                    <div className="flex-shrink-0">
-                      <img src="/child-avatar-new.png" alt="Child" className="w-20 h-20 md:w-40 md:h-40 object-contain" />
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-5 text-[#FFECBD]">ADHD Children</h3>
+                    <p className="text-base md:text-lg font-light leading-relaxed mb-6 md:mb-8" style={{ color: 'rgba(255,236,189,0.75)' }}>
+                      Struggling with focus and social skills, finding traditional therapy methods unengaging and ineffective.
+                    </p>
+                    <div className="mt-auto">
+                      <div className="text-4xl md:text-5xl font-bold text-[#FFECBD] mb-1"><CountUp end={6} suffix="M+" /></div>
+                      <div className="text-xs md:text-sm font-semibold uppercase tracking-wider" style={{ color: 'rgba(255,236,189,0.5)' }}>Children diagnosed</div>
                     </div>
                   </MagneticCard>
                 </RevealSection>
               </div>
             </div>
 
-            {/* Solution Overview */}
-            <RevealSection direction="scale">
-              <h2 className="text-2xl font-semibold playground-heading mb-8" data-testid="text-solution-heading">Solution</h2>
-              <div className="relative p-6 md:p-10 rounded-2xl border border-neutral-100 bg-[#FFECBD] overflow-hidden">
-                <div className="shimmer-line absolute inset-0 rounded-2xl" />
-                <div className="relative z-10 space-y-4 md:space-y-6 text-center">
-                  <RevealSection delay={100}>
-                    <p className="text-sm md:text-lg text-neutral-700 leading-relaxed">
-                      The gap could be bridged. Two generations could be connected.
-                    </p>
-                  </RevealSection>
-                  <RevealSection delay={300}>
-                    <p className="text-lg md:text-2xl font-semibold playground-heading text-neutral-800 leading-relaxed">
-                      Through the Neuro-Reciprocal Interaction Model, seniors' life stories are transformed into interactive VR worlds where children explore narrative missions while elders rediscover purpose and companionship.
-                    </p>
-                  </RevealSection>
-                  <RevealSection delay={500}>
-                    <p className="text-sm md:text-lg text-neutral-700 leading-relaxed">
-                      Rather than one-way care, Galaxsync creates a reciprocal healing loop where memories become exploration and attention becomes connection.
-                    </p>
-                  </RevealSection>
-                </div>
+            {/* Solution - Apple Style */}
+            <div className="py-16 md:py-32" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
+              <div className="max-w-5xl mx-auto text-center" data-testid="text-solution-heading">
+                <RevealSection>
+                  <h2 className="text-4xl md:text-6xl lg:text-7xl leading-tight mb-8 md:mb-12" style={{ fontFamily: "'Georgia', serif", color: '#563D33' }}>
+                    This changes <br /><span className="italic">everything.</span>
+                  </h2>
+                </RevealSection>
+                <RevealSection delay={200}>
+                  <p className="text-lg md:text-2xl lg:text-3xl font-light leading-relaxed max-w-4xl mx-auto" style={{ color: 'rgba(86,61,51,0.6)' }}>
+                    We connect elder wisdom with childhood wonder. Through AI and VR, memories aren't just preserved — they become interactive worlds for ADHD therapy.
+                  </p>
+                </RevealSection>
               </div>
-            </RevealSection>
+            </div>
 
             {/* How It Works */}
             <div className="space-y-6">
