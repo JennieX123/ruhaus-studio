@@ -234,7 +234,7 @@ export default function GalaxsyncDetail() {
             <h2 className="text-2xl font-semibold playground-heading">How It Works</h2>
 
             {/* 1. Elders - Digital Assets Curator */}
-            <div className={`p-8 rounded-xl ${hoverScale}`}>
+            <div className="p-8 rounded-xl">
               <div className="flex items-center gap-4 mb-4">
                 <img src="/elder-avatar.png" alt="Elder" className="w-16 h-16 rounded-full object-cover" />
                 <div>
@@ -409,7 +409,7 @@ export default function GalaxsyncDetail() {
             </div>
 
             {/* 6. Elders - My Constellation */}
-            <div className={`p-8 rounded-xl ${hoverScale}`}>
+            <div className="p-8 rounded-xl">
               <div className="flex items-center gap-4 mb-4">
                 <img src="/elder-avatar.png" alt="Elder" className="w-16 h-16 rounded-full object-cover" />
                 <div>
@@ -440,7 +440,7 @@ export default function GalaxsyncDetail() {
             </div>
 
             {/* 7. Elders - Profile & Dashboard */}
-            <div className={`p-8 rounded-xl ${hoverScale}`}>
+            <div className="p-8 rounded-xl">
               <div className="flex items-center gap-4 mb-4">
                 <img src="/elder-avatar.png" alt="Elder" className="w-16 h-16 rounded-full object-cover" />
                 <div>
@@ -477,7 +477,7 @@ export default function GalaxsyncDetail() {
           >
             <h2 className="text-2xl font-semibold playground-heading">Impact</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className={`p-8 rounded-lg border border-neutral-100 ${hoverScale} flex flex-col items-center text-center`} style={{ backgroundColor: '#563D33' }}>
+              <div className="p-8 rounded-lg border border-neutral-100 flex flex-col items-center text-center" style={{ backgroundColor: '#563D33' }}>
                 <img src="/elder-avatar.png" alt="Elder" className="w-40 h-40 rounded-full object-cover mb-5" />
                 <h3 className="font-semibold text-lg mb-4 text-amber-50">Reduced Isolation</h3>
                 <p className="text-amber-100/80 text-sm">
@@ -485,7 +485,7 @@ export default function GalaxsyncDetail() {
                 </p>
               </div>
 
-              <div className={`p-8 rounded-lg border border-neutral-100 ${hoverScale} flex flex-col items-center text-center`} style={{ backgroundColor: '#FFECBD' }}>
+              <div className="p-8 rounded-lg border border-neutral-100 flex flex-col items-center text-center" style={{ backgroundColor: '#FFECBD' }}>
                 <img src="/planet-heart-mind-crop.png" alt="Connection" className="w-40 h-40 object-contain mb-5" />
                 <h3 className="font-semibold text-lg mb-4">Meaningful Connection</h3>
                 <p className="text-neutral-600 text-sm">
@@ -493,7 +493,7 @@ export default function GalaxsyncDetail() {
                 </p>
               </div>
 
-              <div className={`p-8 rounded-lg border border-neutral-100 ${hoverScale} flex flex-col items-center text-center`} style={{ backgroundColor: '#563D33' }}>
+              <div className="p-8 rounded-lg border border-neutral-100 flex flex-col items-center text-center" style={{ backgroundColor: '#563D33' }}>
                 <img src="/child-avatar.png" alt="Child" className="w-40 h-40 rounded-full object-cover mb-5" />
                 <h3 className="font-semibold text-lg mb-4 text-amber-50">ADHD Growth Reflection</h3>
                 <p className="text-amber-100/80 text-sm">
