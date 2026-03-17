@@ -364,17 +364,13 @@ export default function GalaxsyncDetail() {
                   Take the Dunhuang Planet as an example. Here, seniors are not only the creators of the stories but also serve as "Cosmic Mentors."
                 </p>
                 <div className="flex justify-center mb-8">
-                  <div className="w-full max-w-4xl rounded-xl overflow-hidden" style={{ backgroundColor: '#563D33' }}>
-                    <video src="/step3-gif1.mp4" autoPlay muted loop playsInline className="w-full block scale-[1.02] object-cover" />
-                  </div>
+                  <img src="/step3-gif1-opt.gif" alt="Dunhuang Planet Gameplay" className="w-full max-w-4xl rounded-xl" />
                 </div>
                 <p className="text-amber-100/80 mb-6 text-sm md:text-base">
                   Through real-time communication and gentle in-world check-ins, they offer encouragement, guidance, and emotional support to the child explorers.
                 </p>
                 <div className="flex justify-center">
-                  <div className="w-full max-w-4xl rounded-xl overflow-hidden" style={{ backgroundColor: '#563D33' }}>
-                    <video src="/step3-gif2.mp4" autoPlay muted loop playsInline className="w-full block scale-[1.02] object-cover" />
-                  </div>
+                  <img src="/step3-gif2-opt.gif" alt="Cosmic Mentor Interaction" className="w-full max-w-4xl rounded-xl" />
                 </div>
               </div>
 
@@ -393,9 +389,7 @@ export default function GalaxsyncDetail() {
                   Galaxsync utilizes eye-monitoring technology to detect distraction in real-time. When the child's attention begins to drift, the environment responds with a brief, calming interaction that supports a natural return to focus.
                 </p>
                 <div className="flex justify-center">
-                  <div className="w-full max-w-4xl rounded-xl overflow-hidden" style={{ backgroundColor: '#563D33' }}>
-                    <video src="/step3-gif3.mp4" autoPlay muted loop playsInline className="w-full block scale-[1.02] object-cover" />
-                  </div>
+                  <img src="/step3-gif3-opt.gif" alt="Biometric Guidance" className="w-full max-w-4xl rounded-xl" />
                 </div>
               </div>
 
@@ -414,9 +408,7 @@ export default function GalaxsyncDetail() {
                   After kids finish the stories, through story echo, we replace traditional scores with world-centric digital rewards, where the environment visibly heals and blooms, to validate their impact and build lasting confidence.
                 </p>
                 <div className="flex justify-center">
-                  <div className="w-full max-w-4xl rounded-xl overflow-hidden" style={{ backgroundColor: '#563D33' }}>
-                    <video src="/step5-gif4.mp4" autoPlay muted loop playsInline className="w-full block scale-[1.02] object-cover" />
-                  </div>
+                  <img src="/step5-gif4-opt.gif" alt="Story Echo Rewards" className="w-full max-w-4xl rounded-xl" />
                 </div>
               </div>
             </div>
