@@ -356,83 +356,83 @@ export default function EnhancedMotion() {
               </div>
             </RevealSection>
 
-            {/* Problem Section */}
-            <div>
+            {/* Problem Section - Apple Style */}
+            <div style={{ padding: '48px 0 80px' }}>
               <RevealSection>
-                <h2 style={{ fontSize: '1.75rem', fontWeight: 700, letterSpacing: '-0.02em', marginBottom: '32px' }}>Problem</h2>
+                <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+                  <h2 style={{ fontSize: '3.5rem', fontWeight: 300, marginBottom: '16px', letterSpacing: '-0.02em', color: '#563D33' }}>The Disconnect.</h2>
+                  <p style={{ fontSize: '1.4rem', color: 'rgba(86,61,51,0.6)', maxWidth: '640px', margin: '0 auto' }}>Bridging the gap between two isolated generations.</p>
+                </div>
               </RevealSection>
+
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
                 <RevealSection delay={100} direction="left">
                   <MagneticCard
                     className="hover-lift"
                     style={{
-                      padding: '32px', borderRadius: '16px', backgroundColor: '#FFECBD', color: '#563D33',
-                      display: 'flex', alignItems: 'center', gap: '32px', cursor: 'default',
+                      padding: '40px', borderRadius: '2.5rem', backgroundColor: '#FFECBD', color: '#563D33',
+                      display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center',
+                      cursor: 'default', boxShadow: '0 25px 50px -12px rgba(86,61,51,0.15)', height: '100%',
                     }}
                   >
-                    <div style={{ flex: 1 }}>
-                      <h3 style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '16px' }}>Empty-Nest Seniors</h3>
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px', color: 'rgba(86,61,51,0.7)', fontSize: '0.85rem' }}>
-                        <li>• <CountUp end={200} suffix="M" /> seniors living alone worldwide</li>
-                        <li>• Lifetimes of wisdom and rich personal histories</li>
-                        <li>• Decreasing social interaction and isolation</li>
-                        <li>• Seeking meaningful connection and purpose</li>
-                      </ul>
+                    <div style={{ width: '160px', height: '160px', borderRadius: '50%', overflow: 'hidden', marginBottom: '32px', boxShadow: '0 0 0 6px rgba(255,255,255,0.3)' }}>
+                      <img src="/__mockup/images/elder-avatar.png" alt="Elder" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
-                    <img src="/__mockup/images/elder-avatar.png" alt="Elder" style={{ width: '140px', height: '140px', objectFit: 'contain', flexShrink: 0 }} />
+                    <h3 style={{ fontWeight: 700, fontSize: '2rem', marginBottom: '16px' }}>Elders</h3>
+                    <p style={{ fontSize: '1.1rem', fontWeight: 300, lineHeight: 1.6, color: 'rgba(86,61,51,0.75)', marginBottom: '32px' }}>
+                      Experiencing memory decline and severe social isolation, leading to an exacerbated sense of worthlessness.
+                    </p>
+                    <div style={{ marginTop: 'auto' }}>
+                      <div style={{ fontSize: '3rem', fontWeight: 700, color: '#563D33', marginBottom: '4px' }}><CountUp end={43} suffix="%" /></div>
+                      <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(86,61,51,0.5)' }}>Feel socially isolated</div>
+                    </div>
                   </MagneticCard>
                 </RevealSection>
 
-                <RevealSection delay={250} direction="right">
+                <RevealSection delay={300} direction="right">
                   <MagneticCard
                     className="hover-lift"
                     style={{
-                      padding: '32px', borderRadius: '16px', backgroundColor: '#563D33', color: '#FFECBD',
-                      display: 'flex', alignItems: 'center', gap: '32px', cursor: 'default',
+                      padding: '40px', borderRadius: '2.5rem', backgroundColor: '#563D33', color: '#FFECBD',
+                      display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center',
+                      cursor: 'default', boxShadow: '0 25px 50px -12px rgba(86,61,51,0.3)', height: '100%',
                     }}
                   >
-                    <div style={{ flex: 1 }}>
-                      <h3 style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '16px' }}>Children with ADHD</h3>
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px', color: 'rgba(255,236,189,0.8)', fontSize: '0.85rem' }}>
-                        <li>• <CountUp end={366} suffix="M" /> children globally struggle with attention</li>
-                        <li>• High energy and fragmented focus</li>
-                        <li>• Often misunderstood for their intensity</li>
-                        <li>• Thrive in immersive, structured environments</li>
-                      </ul>
+                    <div style={{ width: '160px', height: '160px', borderRadius: '50%', overflow: 'hidden', marginBottom: '32px', boxShadow: '0 0 0 6px rgba(255,236,189,0.1)' }}>
+                      <img src="/__mockup/images/child-avatar-new.png" alt="Child" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
-                    <img src="/__mockup/images/child-avatar-new.png" alt="Child" style={{ width: '140px', height: '140px', objectFit: 'contain', flexShrink: 0 }} />
+                    <h3 style={{ fontWeight: 700, fontSize: '2rem', marginBottom: '16px', color: '#FFECBD' }}>ADHD Children</h3>
+                    <p style={{ fontSize: '1.1rem', fontWeight: 300, lineHeight: 1.6, color: 'rgba(255,236,189,0.75)', marginBottom: '32px' }}>
+                      Struggling with focus and social skills, finding traditional therapy methods unengaging and ineffective.
+                    </p>
+                    <div style={{ marginTop: 'auto' }}>
+                      <div style={{ fontSize: '3rem', fontWeight: 700, color: '#FFECBD', marginBottom: '4px' }}><CountUp end={6} suffix="M+" /></div>
+                      <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,236,189,0.5)' }}>Children diagnosed</div>
+                    </div>
                   </MagneticCard>
                 </RevealSection>
               </div>
             </div>
 
-            {/* Solution */}
-            <RevealSection direction="scale">
-              <h2 style={{ fontSize: '1.75rem', fontWeight: 700, letterSpacing: '-0.02em', marginBottom: '32px' }}>Solution</h2>
-              <div style={{
-                padding: '48px', borderRadius: '20px', backgroundColor: '#FFECBD',
-                textAlign: 'center', position: 'relative', overflow: 'hidden',
-              }}>
-                <div className="shimmer-line" style={{ position: 'absolute', inset: 0, borderRadius: '20px' }} />
-                <div style={{ position: 'relative', zIndex: 1 }}>
-                  <RevealSection delay={100}>
-                    <p style={{ fontSize: '1rem', color: 'rgba(86,61,51,0.7)', lineHeight: 1.7, marginBottom: '20px' }}>
-                      The gap could be bridged. Two generations could be connected.
-                    </p>
-                  </RevealSection>
-                  <RevealSection delay={300}>
-                    <p style={{ fontSize: '1.4rem', fontWeight: 700, color: '#3a2a20', lineHeight: 1.5, marginBottom: '20px' }}>
-                      Through the Neuro-Reciprocal Interaction Model, seniors' life stories are transformed into interactive VR worlds where children explore narrative missions while elders rediscover purpose and companionship.
-                    </p>
-                  </RevealSection>
-                  <RevealSection delay={500}>
-                    <p style={{ fontSize: '1rem', color: 'rgba(86,61,51,0.7)', lineHeight: 1.7 }}>
-                      Rather than one-way care, Galaxsync creates a reciprocal healing loop where memories become exploration and attention becomes connection.
-                    </p>
-                  </RevealSection>
-                </div>
+            {/* Solution - Apple Style */}
+            <div style={{
+              padding: '80px 0', backgroundColor: 'white',
+              marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)',
+              paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)',
+            }}>
+              <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+                <RevealSection>
+                  <h2 style={{ fontSize: '3.5rem', fontFamily: "'Georgia', serif", color: '#563D33', lineHeight: 1.15, marginBottom: '40px' }}>
+                    This changes <br /><span style={{ fontStyle: 'italic' }}>everything.</span>
+                  </h2>
+                </RevealSection>
+                <RevealSection delay={200}>
+                  <p style={{ fontSize: '1.5rem', fontWeight: 300, lineHeight: 1.6, color: 'rgba(86,61,51,0.6)', maxWidth: '800px', margin: '0 auto' }}>
+                    We connect elder wisdom with childhood wonder. Through AI and VR, memories aren't just preserved — they become interactive worlds for ADHD therapy.
+                  </p>
+                </RevealSection>
               </div>
-            </RevealSection>
+            </div>
 
             {/* How It Works */}
             <div>
