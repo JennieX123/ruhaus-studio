@@ -638,7 +638,7 @@ export default function GalaxsyncDetail() {
 
               {/* The Loop Completes */}
               <RevealSection>
-                <div className="text-center py-16 md:py-24">
+                <div className="text-center pt-16 md:pt-24 pb-6 md:pb-8">
                   <h2 className="text-4xl md:text-6xl font-bold" style={{ color: '#563D33' }}>The Loop Completes.</h2>
                 </div>
               </RevealSection>
