@@ -10,6 +10,7 @@ export default function GalaxsyncDetail() {
   const [planetsExploded, setPlanetsExploded] = useState(false);
   const elderVideoRef = useRef<HTMLVideoElement>(null);
   const elderVideo2Ref = useRef<HTMLVideoElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const heroRef = useScrollAnimation();
   const problemRef = useScrollAnimation();
@@ -20,6 +21,16 @@ export default function GalaxsyncDetail() {
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(docHeight > 0 ? scrollTop / docHeight : 0);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
@@ -62,18 +73,86 @@ export default function GalaxsyncDetail() {
 
   return (
     <div className="min-h-screen selection:bg-current selection:text-white relative" style={{ backgroundColor: '#FEF5E4', fontFamily: "'Nunito', sans-serif" }}>
-      {/* Background galaxy image */}
-      <div 
-        className="fixed inset-0 pointer-events-none"
-        style={{
-          backgroundImage: 'url(/galaxsync-galaxy.png)',
-          backgroundSize: '600px 600px',
-          backgroundPosition: 'right bottom',
-          backgroundRepeat: 'no-repeat',
-          opacity: 0.2,
-          zIndex: 0
-        }}
-      />
+      {/* Background planet images that transition on scroll */}
+      <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 0 }}>
+        <img
+          src="/galaxsync-galaxy.png"
+          alt=""
+          className="absolute transition-opacity duration-700"
+          style={{
+            width: '500px',
+            right: '-50px',
+            bottom: '-50px',
+            opacity: scrollProgress < 0.15 ? 0.08 : 0,
+          }}
+        />
+        <img
+          src="/planet-nature.png"
+          alt=""
+          className="absolute transition-opacity duration-700"
+          style={{
+            width: '350px',
+            right: '5%',
+            top: '10%',
+            opacity: scrollProgress >= 0.1 && scrollProgress < 0.35 ? 0.07 : 0,
+          }}
+        />
+        <img
+          src="/planet-tale.png"
+          alt=""
+          className="absolute transition-opacity duration-700"
+          style={{
+            width: '300px',
+            left: '3%',
+            bottom: '15%',
+            opacity: scrollProgress >= 0.1 && scrollProgress < 0.35 ? 0.08 : 0,
+          }}
+        />
+        <img
+          src="/planet-logic.png"
+          alt=""
+          className="absolute transition-opacity duration-700"
+          style={{
+            width: '400px',
+            right: '8%',
+            bottom: '10%',
+            opacity: scrollProgress >= 0.35 && scrollProgress < 0.65 ? 0.07 : 0,
+          }}
+        />
+        <img
+          src="/planet-mind.png"
+          alt=""
+          className="absolute transition-opacity duration-700"
+          style={{
+            width: '320px',
+            left: '5%',
+            top: '20%',
+            opacity: scrollProgress >= 0.35 && scrollProgress < 0.65 ? 0.08 : 0,
+          }}
+        />
+        <img
+          src="/planet-nature.png"
+          alt=""
+          className="absolute transition-opacity duration-700"
+          style={{
+            width: '280px',
+            left: '8%',
+            top: '15%',
+            opacity: scrollProgress >= 0.65 ? 0.07 : 0,
+          }}
+        />
+        <img
+          src="/planet-tale.png"
+          alt=""
+          className="absolute transition-opacity duration-700"
+          style={{
+            width: '360px',
+            right: '3%',
+            bottom: '20%',
+            opacity: scrollProgress >= 0.65 ? 0.08 : 0,
+          }}
+        />
+      </div>
       {/* Content wrapper */}
       <div className="relative z-10">
         <style>{`
@@ -195,17 +274,11 @@ export default function GalaxsyncDetail() {
             className={`space-y-8 scroll-section ${solutionRef.isVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}
           >
             <h2 className="text-2xl font-semibold playground-heading">Solution</h2>
-            <div className="relative p-6 md:p-10 rounded-lg border border-neutral-100 bg-[#FFECBD] overflow-hidden" style={{
-              backgroundImage: 'url(/galaxsync-galaxy.png)',
-              backgroundSize: '600px 600px',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              backgroundAttachment: 'fixed'
-            }}>
-              <div className="absolute inset-0 rounded-lg" style={{
-                backgroundColor: 'rgba(255, 236, 189, 0.9)',
-                pointerEvents: 'none'
-              }} />
+            <div className="relative p-6 md:p-10 rounded-lg border border-neutral-100 bg-[#FFECBD] overflow-hidden">
+              <div className="absolute inset-0 rounded-lg pointer-events-none" style={{ opacity: 0.06 }}>
+                <img src="/planet-mind.png" alt="" className="absolute" style={{ width: '200px', right: '-30px', top: '-30px' }} />
+                <img src="/planet-nature.png" alt="" className="absolute" style={{ width: '150px', left: '-20px', bottom: '-20px' }} />
+              </div>
               <div className="relative z-10 space-y-4 md:space-y-6 text-center">
                 <p className="text-sm md:text-lg text-neutral-700 leading-relaxed">
                   The gap could be bridged. Two generations could be connected.
