@@ -376,7 +376,7 @@ export default function GalaxsyncDetail() {
                   Through real-time communication and gentle in-world check-ins, they offer encouragement, guidance, and emotional support to the child explorers.
                 </p>
                 <div className="flex justify-center">
-                  <img src="/step3-gif3.gif" alt="Cosmic Mentor Interaction" className="rounded-2xl" style={{ maxWidth: '80%' }} />
+                  <img src="/step3-gif2.gif" alt="Cosmic Mentor Interaction" className="rounded-2xl" style={{ maxWidth: '80%' }} />
                 </div>
               </div>
 
@@ -391,9 +391,12 @@ export default function GalaxsyncDetail() {
                   </div>
                 </div>
                 <h3 className="font-semibold text-lg mb-3 text-amber-50">Precision Biometric Guidance</h3>
-                <p className="text-amber-100/80">
+                <p className="text-amber-100/80 mb-6">
                   Galaxsync utilizes eye-monitoring technology to detect distraction in real-time. When the child's attention begins to drift, the environment responds with a brief, calming interaction that supports a natural return to focus.
                 </p>
+                <div className="flex justify-center">
+                  <img src="/step3-gif3.gif" alt="Biometric Guidance" className="rounded-2xl" style={{ maxWidth: '80%' }} />
+                </div>
               </div>
 
               <div className="mx-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.15)' }} />
