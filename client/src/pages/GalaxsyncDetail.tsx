@@ -80,9 +80,9 @@ export default function GalaxsyncDetail() {
           alt=""
           className="absolute transition-opacity duration-700"
           style={{
-            width: '500px',
-            right: '-50px',
-            bottom: '-50px',
+            width: '700px',
+            right: '-80px',
+            bottom: '-80px',
             opacity: scrollProgress < 0.15 ? 0.08 : 0,
           }}
         />
@@ -91,9 +91,9 @@ export default function GalaxsyncDetail() {
           alt=""
           className="absolute transition-opacity duration-700"
           style={{
-            width: '350px',
-            right: '5%',
-            top: '10%',
+            width: '550px',
+            right: '-5%',
+            top: '5%',
             opacity: scrollProgress >= 0.1 && scrollProgress < 0.35 ? 0.07 : 0,
           }}
         />
@@ -102,9 +102,9 @@ export default function GalaxsyncDetail() {
           alt=""
           className="absolute transition-opacity duration-700"
           style={{
-            width: '300px',
-            left: '3%',
-            bottom: '15%',
+            width: '480px',
+            left: '-3%',
+            bottom: '8%',
             opacity: scrollProgress >= 0.1 && scrollProgress < 0.35 ? 0.08 : 0,
           }}
         />
@@ -113,9 +113,9 @@ export default function GalaxsyncDetail() {
           alt=""
           className="absolute transition-opacity duration-700"
           style={{
-            width: '400px',
-            right: '8%',
-            bottom: '10%',
+            width: '600px',
+            right: '-5%',
+            bottom: '5%',
             opacity: scrollProgress >= 0.35 && scrollProgress < 0.65 ? 0.07 : 0,
           }}
         />
@@ -124,9 +124,9 @@ export default function GalaxsyncDetail() {
           alt=""
           className="absolute transition-opacity duration-700"
           style={{
-            width: '320px',
-            left: '5%',
-            top: '20%',
+            width: '500px',
+            left: '-3%',
+            top: '12%',
             opacity: scrollProgress >= 0.35 && scrollProgress < 0.65 ? 0.08 : 0,
           }}
         />
@@ -135,9 +135,9 @@ export default function GalaxsyncDetail() {
           alt=""
           className="absolute transition-opacity duration-700"
           style={{
-            width: '280px',
-            left: '8%',
-            top: '15%',
+            width: '450px',
+            left: '-5%',
+            top: '10%',
             opacity: scrollProgress >= 0.65 ? 0.07 : 0,
           }}
         />
@@ -146,9 +146,9 @@ export default function GalaxsyncDetail() {
           alt=""
           className="absolute transition-opacity duration-700"
           style={{
-            width: '360px',
-            right: '3%',
-            bottom: '20%',
+            width: '550px',
+            right: '-5%',
+            bottom: '12%',
             opacity: scrollProgress >= 0.65 ? 0.08 : 0,
           }}
         />
