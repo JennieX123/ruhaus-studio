@@ -182,7 +182,7 @@ export default function GalaxsyncDetail() {
                   </ul>
                 </div>
                 <div className="flex-shrink-0">
-                  <img src="/child-avatar.png" alt="Child" className="w-40 h-40 object-contain" />
+                  <img src="/child-avatar-new.png" alt="Child" className="w-40 h-40 object-contain" />
                 </div>
               </div>
             </div>
@@ -198,14 +198,14 @@ export default function GalaxsyncDetail() {
               className="p-12 rounded-lg border border-neutral-100 relative overflow-hidden transition-all duration-300 cursor-pointer"
               style={{ 
                 backgroundImage: 'url(/galaxsync-galaxy.png)', 
-                backgroundSize: isHovering ? '130%' : '100%',
+                backgroundSize: isHovering ? '120%' : 'cover',
                 backgroundPosition: 'center',
                 transition: 'background-size 0.3s ease-out'
               }}
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
             >
-              <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255, 255, 255, 0.5)', pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255, 255, 255, 0.65)', pointerEvents: 'none' }} />
               <div className="relative z-10 space-y-6 text-center">
                 <div>
                   <p className="text-lg text-neutral-700 leading-relaxed">
@@ -505,7 +505,7 @@ export default function GalaxsyncDetail() {
               </div>
 
               <div className="p-8 rounded-lg border border-neutral-100 flex flex-col items-center text-center" style={{ backgroundColor: '#563D33' }}>
-                <img src="/child-avatar.png" alt="Child" className="w-40 h-40 rounded-full object-cover mb-5" />
+                <img src="/child-avatar-new.png" alt="Child" className="w-40 h-40 rounded-full object-cover mb-5" />
                 <h3 className="font-semibold text-lg mb-4 text-amber-50">ADHD Growth Reflection</h3>
                 <p className="text-amber-100/80 text-sm">
                   Children's choices and focus patterns become part of the evolving narrative world, showing measurable growth and meaningful progress.
