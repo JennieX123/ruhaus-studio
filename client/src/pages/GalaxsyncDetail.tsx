@@ -205,7 +205,7 @@ export default function GalaxsyncDetail() {
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
             >
-              <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255, 255, 255, 0.65)', pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255, 255, 255, 0.85)', pointerEvents: 'none' }} />
               <div className="relative z-10 space-y-6 text-center">
                 <div>
                   <p className="text-lg text-neutral-700 leading-relaxed">
