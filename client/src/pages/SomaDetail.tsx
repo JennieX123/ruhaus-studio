@@ -171,7 +171,7 @@ export default function SomaDetail() {
             <div className="py-12 md:py-20" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
               <RevealSection>
                 <div className="text-center mb-12 md:mb-20">
-                  <h2 className="text-4xl md:text-6xl font-light mb-4 md:mb-6" style={{ letterSpacing: '-0.02em', color: '#1a3a4a' }}>Current Challenges.</h2>
+                  <h2 className="text-4xl md:text-6xl font-light mb-4 md:mb-6" style={{ letterSpacing: '-0.02em', color: '#1a3a4a' }}>Current Challenges</h2>
                 </div>
               </RevealSection>
 
@@ -343,17 +343,17 @@ export default function SomaDetail() {
                       <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 1</span>
                       <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Simplifies ASD Emotion to Practice Regulation</h3>
                     </div>
-                    <div className="grid grid-cols-5 gap-2 md:gap-4" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: '2vw', paddingRight: '2vw' }}>
+                    <div className="grid grid-cols-5" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', gap: '4px' }}>
                       {phoneImages.map((phone, i) => (
                         <RevealSection key={i} delay={i * 120}>
-                          <div className="flex flex-col items-center gap-2">
+                          <div className="flex flex-col items-center gap-1">
                             <img
                               src={phone.src}
                               alt={phone.label}
-                              className="w-full h-auto rounded-xl md:rounded-2xl"
+                              className="w-full h-auto"
                               data-testid={`img-phone-${i}`}
                             />
-                            <span className="text-[9px] md:text-xs text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
+                            <span className="text-[8px] md:text-[11px] text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
                           </div>
                         </RevealSection>
                       ))}
@@ -450,7 +450,7 @@ export default function SomaDetail() {
             {/* 11. Impact — Image */}
             <div className="py-16 md:py-24" style={{ backgroundColor: '#1a3a4a', color: '#EFF6FA', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
               <RevealSection>
-                <h2 className="text-4xl md:text-6xl font-light text-center mb-12 md:mb-20" style={{ color: '#EFF6FA' }}>Impact.</h2>
+                <h2 className="text-4xl md:text-6xl font-light text-center mb-12 md:mb-20" style={{ color: '#EFF6FA' }}>Impact</h2>
               </RevealSection>
 
               <RevealSection delay={200}>
