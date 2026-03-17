@@ -138,8 +138,8 @@ export default function GalaxsyncDetail() {
             </div>
 
             <div className="max-w-3xl space-y-4">
-              <h1 className="text-4xl font-semibold playground-heading">Galaxsync</h1>
-              <p className="text-lg text-neutral-500 leading-relaxed">
+              <h1 className="text-2xl md:text-4xl font-semibold playground-heading">Galaxsync</h1>
+              <p className="text-base md:text-lg text-neutral-500 leading-relaxed">
                 A reciprocal AI-driven VR-integrated care ecosystem connecting generations through shared stories and meaningful interaction.
               </p>
               <div className="flex gap-2 flex-wrap pt-4">
@@ -156,10 +156,10 @@ export default function GalaxsyncDetail() {
           >
             <h2 className="text-2xl font-semibold playground-heading">Problem</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="p-8 rounded-lg border border-neutral-100 hover:scale-105 transition-transform duration-300 flex items-center gap-8 bg-[#FFECBD] text-[#563D33]">
+              <div className="p-5 md:p-8 rounded-lg border border-neutral-100 hover:scale-105 transition-transform duration-300 flex items-center gap-4 md:gap-8 bg-[#FFECBD] text-[#563D33]">
                 <div className="flex-1">
-                  <h3 className="font-semibold text-lg mb-4">Empty-Nest Seniors</h3>
-                  <ul className="space-y-2 text-neutral-600 text-sm">
+                  <h3 className="font-semibold text-base md:text-lg mb-3 md:mb-4">Empty-Nest Seniors</h3>
+                  <ul className="space-y-2 text-neutral-600 text-xs md:text-sm">
                     <li>• 200M seniors living alone worldwide</li>
                     <li>• Lifetimes of wisdom and rich personal histories</li>
                     <li>• Decreasing social interaction and isolation</li>
@@ -167,14 +167,14 @@ export default function GalaxsyncDetail() {
                   </ul>
                 </div>
                 <div className="flex-shrink-0">
-                  <img src="/elder-avatar.png" alt="Elder" className="w-40 h-40 object-contain" />
+                  <img src="/elder-avatar.png" alt="Elder" className="w-20 h-20 md:w-40 md:h-40 object-contain" />
                 </div>
               </div>
 
-              <div className="p-8 rounded-lg border border-neutral-100 hover:scale-105 transition-transform duration-300 flex items-center gap-8 text-[#FFECBD] bg-[#563D33]">
+              <div className="p-5 md:p-8 rounded-lg border border-neutral-100 hover:scale-105 transition-transform duration-300 flex items-center gap-4 md:gap-8 text-[#FFECBD] bg-[#563D33]">
                 <div className="flex-1">
-                  <h3 className="font-semibold text-lg mb-4">Children with ADHD</h3>
-                  <ul className="space-y-2 text-sm text-[#FFECBD]">
+                  <h3 className="font-semibold text-base md:text-lg mb-3 md:mb-4">Children with ADHD</h3>
+                  <ul className="space-y-2 text-xs md:text-sm text-[#FFECBD]">
                     <li>• 366M children globally struggle with attention</li>
                     <li>• High energy and fragmented focus</li>
                     <li>• Often misunderstood for their intensity</li>
@@ -182,7 +182,7 @@ export default function GalaxsyncDetail() {
                   </ul>
                 </div>
                 <div className="flex-shrink-0">
-                  <img src="/child-avatar-new.png" alt="Child" className="w-40 h-40 object-contain" />
+                  <img src="/child-avatar-new.png" alt="Child" className="w-20 h-20 md:w-40 md:h-40 object-contain" />
                 </div>
               </div>
             </div>
@@ -194,18 +194,18 @@ export default function GalaxsyncDetail() {
             className={`space-y-8 scroll-section ${solutionRef.isVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}
           >
             <h2 className="text-2xl font-semibold playground-heading">Solution</h2>
-            <div className="flex items-center gap-12 rounded-lg">
-              <div className="flex-shrink-0 w-2/5">
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12 rounded-lg">
+              <div className="flex-shrink-0 w-3/5 md:w-2/5">
                 <img src="/galaxsync-sphere.gif" alt="Galaxsync Sphere" className="w-full rounded-2xl" />
               </div>
-              <div className="flex-1 p-10 rounded-lg border border-neutral-100 bg-[#FFECBD] space-y-6 text-left">
-                <p className="text-lg text-neutral-700 leading-relaxed">
+              <div className="flex-1 p-6 md:p-10 rounded-lg border border-neutral-100 bg-[#FFECBD] space-y-4 md:space-y-6 text-left">
+                <p className="text-sm md:text-lg text-neutral-700 leading-relaxed">
                   The gap could be bridged. Two generations could be connected.
                 </p>
-                <p className="text-2xl font-semibold playground-heading text-neutral-800 leading-relaxed">
+                <p className="text-lg md:text-2xl font-semibold playground-heading text-neutral-800 leading-relaxed">
                   Through the Neuro-Reciprocal Interaction Model, seniors' life stories are transformed into interactive VR worlds where children explore narrative missions while elders rediscover purpose and companionship.
                 </p>
-                <p className="text-lg text-neutral-700 leading-relaxed">
+                <p className="text-sm md:text-lg text-neutral-700 leading-relaxed">
                   Rather than one-way care, Galaxsync creates a reciprocal healing loop where memories become exploration and attention becomes connection.
                 </p>
               </div>
@@ -220,15 +220,15 @@ export default function GalaxsyncDetail() {
             <h2 className="text-2xl font-semibold playground-heading">How It Works</h2>
 
             {/* 1. Elders - Digital Assets Curator */}
-            <div className="p-8 rounded-xl">
+            <div className="p-4 md:p-8 rounded-xl">
               <div className="flex items-center gap-4 mb-4">
-                <img src="/elder-avatar.png" alt="Elder" className="w-16 h-16 rounded-full object-cover" />
+                <img src="/elder-avatar.png" alt="Elder" className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover" />
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">Step 1 · Elders</span>
                 </div>
               </div>
-              <h3 className="font-semibold text-lg mb-3">Digital Assets Curator</h3>
-              <p className="text-neutral-600 mb-8">
+              <h3 className="font-semibold text-base md:text-lg mb-3">Digital Assets Curator</h3>
+              <p className="text-neutral-600 mb-6 md:mb-8 text-sm md:text-base">
                 Elders preserve real-life memories as digital assets, which are processed by AI into interactive story-based games for intergenerational engagement.
               </p>
               {/* iPad with Video */}
@@ -253,20 +253,20 @@ export default function GalaxsyncDetail() {
             {/* Steps 2-5: ADHD Children — full-width dark background */}
             <div className="overflow-hidden py-4 relative" style={{ backgroundColor: '#563D33', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
               {/* Step 2 */}
-              <div className="p-8 relative z-10">
+              <div className="p-4 md:p-8 relative z-10">
                 <div className="flex items-center gap-4 mb-4">
-                  <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
+                  <img src="/child-avatar.png" alt="Child" className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover" />
                   <div>
                     <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">Step 2 · ADHD Children</span>
                   </div>
                 </div>
-                <h3 className="font-semibold text-lg mb-3 text-amber-50">Game-Based The Six-Realm VR Experience Galaxy</h3>
-                <p className="text-amber-100/80 mb-8">
+                <h3 className="font-semibold text-base md:text-lg mb-3 text-amber-50">Game-Based The Six-Realm VR Experience Galaxy</h3>
+                <p className="text-amber-100/80 mb-6 md:mb-8 text-sm md:text-base">
                   Elders' diverse life stories collectively generate the entire Galaxsync Galaxy. This VR universe features six cognitive realms, each representing a wide range of narratives, ensuring every ADHD child can discover stories that spark their unique interests.
                 </p>
 
                 {/* Six Realm Planets - Row 1 */}
-                <div className="grid grid-cols-3 gap-6 mb-4">
+                <div className="grid grid-cols-3 gap-2 md:gap-6 mb-4">
                   {[
                     { src: '/planet-art-craft.png', name: 'Art & Craft', hasSubPlanets: true, floatDuration: '3.5s', floatDelay: '0s' },
                     { src: '/planet-life-nature.png', name: 'Life & Nature', hasSubPlanets: false, floatDuration: '4.2s', floatDelay: '0.8s' },
@@ -280,7 +280,7 @@ export default function GalaxsyncDetail() {
                         <img
                           src={planet.src}
                           alt={planet.name}
-                          className="w-60 h-60 md:w-80 md:h-80 object-contain drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-[0_8px_24px_rgba(255,200,100,0.4)] group-hover:brightness-110"
+                          className="w-24 h-24 md:w-80 md:h-80 object-contain drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-[0_8px_24px_rgba(255,200,100,0.4)] group-hover:brightness-110"
                           style={{ animation: `float ${planet.floatDuration} ease-in-out ${planet.floatDelay} infinite` }}
                         />
                         {/* Sub-planets for Art & Craft */}
@@ -293,7 +293,8 @@ export default function GalaxsyncDetail() {
                           { src: '/artcraft-sub6.png', angle: 30 },
                         ].map((sub, i) => {
                           const rad = (sub.angle * Math.PI) / 180;
-                          const radius = 170;
+                          const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+                          const radius = isMobile ? 60 : 170;
                           const x = Math.cos(rad) * radius;
                           const y = Math.sin(rad) * radius;
                           return (
@@ -308,7 +309,7 @@ export default function GalaxsyncDetail() {
                               <img
                                 src={sub.src}
                                 alt={`Art & Craft detail ${i + 1}`}
-                                className="w-16 h-16 md:w-20 md:h-20 object-contain drop-shadow-md transition-transform duration-300 hover:scale-125"
+                                className="w-8 h-8 md:w-20 md:h-20 object-contain drop-shadow-md transition-transform duration-300 hover:scale-125"
                                 style={{ animation: `orbit-float 3s ease-in-out infinite ${i * 0.4}s` }}
                               />
                             </div>
@@ -320,7 +321,7 @@ export default function GalaxsyncDetail() {
                   ))}
                 </div>
                 {/* Six Realm Planets - Row 2 */}
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-3 gap-2 md:gap-6">
                   {[
                     { src: '/planet-skills-growth.png', name: 'Skills & Growth', floatDuration: '4.5s', floatDelay: '0.5s' },
                     { src: '/planet-myths-tales.png', name: 'Myths & Tales', floatDuration: '3.2s', floatDelay: '1.2s' },
@@ -331,7 +332,7 @@ export default function GalaxsyncDetail() {
                         <img
                           src={planet.src}
                           alt={planet.name}
-                          className="w-60 h-60 md:w-80 md:h-80 object-contain drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-[0_8px_24px_rgba(255,200,100,0.4)] group-hover:brightness-110"
+                          className="w-24 h-24 md:w-80 md:h-80 object-contain drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-[0_8px_24px_rgba(255,200,100,0.4)] group-hover:brightness-110"
                           style={{ animation: `float ${planet.floatDuration} ease-in-out ${planet.floatDelay} infinite` }}
                         />
                       </div>
@@ -344,21 +345,21 @@ export default function GalaxsyncDetail() {
               <div className="mx-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.15)' }} />
 
               {/* Step 3 */}
-              <div className="p-8 relative z-10">
+              <div className="p-4 md:p-8 relative z-10">
                 <div className="flex items-center gap-4 mb-4">
-                  <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
+                  <img src="/child-avatar.png" alt="Child" className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover" />
                   <div>
                     <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">Step 3 · ADHD Children</span>
                   </div>
                 </div>
-                <h3 className="font-semibold text-lg mb-3 text-amber-50">Example: Dunhuang Planet – The Cosmic Mentor</h3>
-                <p className="text-amber-100/80 mb-6">
+                <h3 className="font-semibold text-base md:text-lg mb-3 text-amber-50">Example: Dunhuang Planet – The Cosmic Mentor</h3>
+                <p className="text-amber-100/80 mb-6 text-sm md:text-base">
                   Take the Dunhuang Planet as an example. Here, seniors are not only the creators of the stories but also serve as "Cosmic Mentors."
                 </p>
                 <div className="flex justify-center mb-8">
                   <img src="/step3-gif1.gif" alt="Dunhuang Planet Gameplay" className="w-full max-w-4xl rounded-2xl" />
                 </div>
-                <p className="text-amber-100/80 mb-6">
+                <p className="text-amber-100/80 mb-6 text-sm md:text-base">
                   Through real-time communication and gentle in-world check-ins, they offer encouragement, guidance, and emotional support to the child explorers.
                 </p>
                 <div className="flex justify-center">
@@ -369,15 +370,15 @@ export default function GalaxsyncDetail() {
               <div className="mx-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.15)' }} />
 
               {/* Step 4 */}
-              <div className="p-8 relative z-10">
+              <div className="p-4 md:p-8 relative z-10">
                 <div className="flex items-center gap-4 mb-4">
-                  <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
+                  <img src="/child-avatar.png" alt="Child" className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover" />
                   <div>
                     <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">Step 4 · ADHD Children</span>
                   </div>
                 </div>
-                <h3 className="font-semibold text-lg mb-3 text-amber-50">Precision Biometric Guidance</h3>
-                <p className="text-amber-100/80 mb-6">
+                <h3 className="font-semibold text-base md:text-lg mb-3 text-amber-50">Precision Biometric Guidance</h3>
+                <p className="text-amber-100/80 mb-6 text-sm md:text-base">
                   Galaxsync utilizes eye-monitoring technology to detect distraction in real-time. When the child's attention begins to drift, the environment responds with a brief, calming interaction that supports a natural return to focus.
                 </p>
                 <div className="flex justify-center">
@@ -388,15 +389,15 @@ export default function GalaxsyncDetail() {
               <div className="mx-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.15)' }} />
 
               {/* Step 5 */}
-              <div className="p-8 relative z-10">
+              <div className="p-4 md:p-8 relative z-10">
                 <div className="flex items-center gap-4 mb-4">
-                  <img src="/child-avatar.png" alt="Child" className="w-16 h-16 rounded-full object-cover" />
+                  <img src="/child-avatar.png" alt="Child" className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover" />
                   <div>
                     <span className="text-xs font-bold uppercase tracking-wider text-amber-200/70">Step 5 · ADHD Children</span>
                   </div>
                 </div>
-                <h3 className="font-semibold text-lg mb-3 text-amber-50">The Story Echo</h3>
-                <p className="text-amber-100/80 mb-6">
+                <h3 className="font-semibold text-base md:text-lg mb-3 text-amber-50">The Story Echo</h3>
+                <p className="text-amber-100/80 mb-6 text-sm md:text-base">
                   After kids finish the stories, through story echo, we replace traditional scores with world-centric digital rewards, where the environment visibly heals and blooms, to validate their impact and build lasting confidence.
                 </p>
                 <div className="flex justify-center">
@@ -406,15 +407,15 @@ export default function GalaxsyncDetail() {
             </div>
 
             {/* 6. Elders - My Constellation */}
-            <div className="p-8 rounded-xl">
+            <div className="p-4 md:p-8 rounded-xl">
               <div className="flex items-center gap-4 mb-4">
-                <img src="/elder-avatar.png" alt="Elder" className="w-16 h-16 rounded-full object-cover" />
+                <img src="/elder-avatar.png" alt="Elder" className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover" />
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">Step 6 · Elders</span>
                 </div>
               </div>
-              <h3 className="font-semibold text-lg mb-3">My Constellation</h3>
-              <p className="text-neutral-600 mb-8">
+              <h3 className="font-semibold text-base md:text-lg mb-3">My Constellation</h3>
+              <p className="text-neutral-600 mb-6 md:mb-8 text-sm md:text-base">
                 Elders review story planets showing ADHD child interactions. Each session layers child's data onto the narrative, creating a co-created living memory legacy for future generations.
               </p>
               {/* iPad with Video */}
@@ -437,15 +438,15 @@ export default function GalaxsyncDetail() {
             </div>
 
             {/* 7. Elders - Profile & Dashboard */}
-            <div className="p-8 rounded-xl">
+            <div className="p-4 md:p-8 rounded-xl">
               <div className="flex items-center gap-4 mb-4">
-                <img src="/elder-avatar.png" alt="Elder" className="w-16 h-16 rounded-full object-cover" />
+                <img src="/elder-avatar.png" alt="Elder" className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover" />
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">Step 7 · Elders</span>
                 </div>
               </div>
-              <h3 className="font-semibold text-lg mb-3">Profile & Dashboard</h3>
-              <p className="text-neutral-600 mb-8">
+              <h3 className="font-semibold text-base md:text-lg mb-3">Profile & Dashboard</h3>
+              <p className="text-neutral-600 mb-6 md:mb-8 text-sm md:text-base">
                 Elders can view dynamic summaries of each child's exploration—their highlights, progress, and moments of achievement. Every insight reaffirms how their guidance nurtures growth, turning mentorship into a tangible sense of purpose and impact.
               </p>
               {/* iPad with Video */}
@@ -473,42 +474,42 @@ export default function GalaxsyncDetail() {
             className={`space-y-8 scroll-section ${impactRef.isVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}
           >
             <h2 className="text-2xl font-semibold playground-heading">Impact</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-8 rounded-lg border border-neutral-100 flex flex-col items-center text-center" style={{ backgroundColor: '#563D33' }}>
-                <img src="/elder-avatar.png" alt="Elder" className="w-40 h-40 rounded-full object-cover mb-5" />
-                <h3 className="font-semibold text-lg mb-4 text-amber-50">Reduced Isolation</h3>
-                <p className="text-amber-100/80 text-sm">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+              <div className="p-5 md:p-8 rounded-lg border border-neutral-100 flex flex-col items-center text-center" style={{ backgroundColor: '#563D33' }}>
+                <img src="/elder-avatar.png" alt="Elder" className="w-24 h-24 md:w-40 md:h-40 rounded-full object-cover mb-4 md:mb-5" />
+                <h3 className="font-semibold text-base md:text-lg mb-3 md:mb-4 text-amber-50">Reduced Isolation</h3>
+                <p className="text-amber-100/80 text-xs md:text-sm">
                   Sharing stories gives elders purpose and connection, transforming memories into meaningful contribution and intergenerational bonds.
                 </p>
               </div>
 
-              <div className="p-8 rounded-lg border border-neutral-100 flex flex-col items-center text-center" style={{ backgroundColor: '#FFECBD' }}>
-                <img src="/planet-heart-mind-crop.png" alt="Connection" className="w-40 h-40 object-contain mb-5" />
-                <h3 className="font-semibold text-lg mb-4">Meaningful Connection</h3>
-                <p className="text-neutral-600 text-sm">
+              <div className="p-5 md:p-8 rounded-lg border border-neutral-100 flex flex-col items-center text-center" style={{ backgroundColor: '#FFECBD' }}>
+                <img src="/planet-heart-mind-crop.png" alt="Connection" className="w-24 h-24 md:w-40 md:h-40 object-contain mb-4 md:mb-5" />
+                <h3 className="font-semibold text-base md:text-lg mb-3 md:mb-4">Meaningful Connection</h3>
+                <p className="text-neutral-600 text-xs md:text-sm">
                   Children and elders co-create stories together, building emotional bonds across generations and creating shared narratives of growth.
                 </p>
               </div>
 
-              <div className="p-8 rounded-lg border border-neutral-100 flex flex-col items-center text-center" style={{ backgroundColor: '#563D33' }}>
-                <img src="/child-avatar-new.png" alt="Child" className="w-40 h-40 rounded-full object-cover mb-5" />
-                <h3 className="font-semibold text-lg mb-4 text-amber-50">ADHD Growth Reflection</h3>
-                <p className="text-amber-100/80 text-sm">
+              <div className="p-5 md:p-8 rounded-lg border border-neutral-100 flex flex-col items-center text-center" style={{ backgroundColor: '#563D33' }}>
+                <img src="/child-avatar-new.png" alt="Child" className="w-24 h-24 md:w-40 md:h-40 rounded-full object-cover mb-4 md:mb-5" />
+                <h3 className="font-semibold text-base md:text-lg mb-3 md:mb-4 text-amber-50">ADHD Growth Reflection</h3>
+                <p className="text-amber-100/80 text-xs md:text-sm">
                   Children's choices and focus patterns become part of the evolving narrative world, showing measurable growth and meaningful progress.
                 </p>
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-center gap-24 mt-48 mb-16">
+          <div className="flex flex-col items-center gap-12 md:gap-24 mt-24 md:mt-48 mb-16">
             <img 
               src="/sub-planets-grid.png" 
               alt="Story Sub-Planets" 
-              className="w-full max-w-xl"
+              className="w-full max-w-sm md:max-w-xl"
               style={{ 
                 filter: 'drop-shadow(0 0 20px rgba(255, 200, 120, 0.3))',
               }}
             />
-            <img src="/galaxsync-logo-detail.png" alt="Galaxsync Logo" className="w-64" />
+            <img src="/galaxsync-logo-detail.png" alt="Galaxsync Logo" className="w-40 md:w-64" />
           </div>
         </div>
       </main>
