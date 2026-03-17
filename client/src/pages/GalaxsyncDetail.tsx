@@ -198,7 +198,7 @@ export default function GalaxsyncDetail() {
               <div className="flex-shrink-0 w-1/3">
                 <img src="/galaxsync-sphere.gif" alt="Galaxsync Sphere" className="w-full rounded-2xl" />
               </div>
-              <div className="flex-1 space-y-6 text-left">
+              <div className="flex-1 p-10 rounded-lg border border-neutral-100 bg-[#FFECBD] space-y-6 text-left">
                 <p className="text-lg text-neutral-700 leading-relaxed">
                   The gap could be bridged. Two generations could be connected.
                 </p>
