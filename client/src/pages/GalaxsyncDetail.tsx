@@ -774,6 +774,7 @@ export default function GalaxsyncDetail() {
                   style={{ filter: 'drop-shadow(0 0 30px rgba(255, 200, 120, 0.25))' }}
                 />
                 <img src="/galaxsync-logo-detail.png" alt="Galaxsync Logo" className="w-40 md:w-64" />
+                <p className="text-sm tracking-widest uppercase" style={{ color: 'rgba(86,61,51,0.4)' }}>Transforming Memories into Healing Worlds</p>
               </div>
             </RevealSection>
           </div>
