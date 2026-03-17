@@ -289,7 +289,7 @@ export default function GalaxsyncDetail() {
                     <div key={planet.name} className="group flex flex-col items-center gap-2 cursor-pointer relative">
                       <div
                         className="relative transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-2"
-                        onClick={() => planet.hasSubPlanets && setPlanetsExploded(!planetsExploded)}
+                        
                       >
                         <img
                           src={planet.src}
@@ -313,20 +313,17 @@ export default function GalaxsyncDetail() {
                           return (
                             <div
                               key={i}
-                              className="absolute left-1/2 top-1/2 z-20"
+                              className="absolute left-1/2 top-1/2 z-20 opacity-30 group-hover:opacity-100 transition-opacity duration-500"
                               style={{
-                                transform: planetsExploded
-                                  ? `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(1)`
-                                  : 'translate(-50%, -50%) scale(0)',
-                                opacity: planetsExploded ? 1 : 0,
-                                transition: `all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${i * 80}ms`,
+                                transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(1)`,
+                                transitionDelay: `${i * 60}ms`,
                               }}
                             >
                               <img
                                 src={sub.src}
                                 alt={`Art & Craft detail ${i + 1}`}
-                                className="w-16 h-16 md:w-20 md:h-20 object-contain drop-shadow-md hover:scale-125 transition-transform duration-300"
-                                style={{ animation: planetsExploded ? `orbit-float 3s ease-in-out infinite ${i * 0.4}s` : 'none' }}
+                                className="w-16 h-16 md:w-20 md:h-20 object-contain drop-shadow-md transition-transform duration-300 hover:scale-125"
+                                style={{ animation: `orbit-float 3s ease-in-out infinite ${i * 0.4}s` }}
                               />
                             </div>
                           );
@@ -370,9 +367,17 @@ export default function GalaxsyncDetail() {
                 </div>
                 <h3 className="font-semibold text-lg mb-3 text-amber-50">Example: Dunhuang Planet – The Cosmic Mentor</h3>
                 <p className="text-amber-100/80 mb-6">
-                  Take the Dunhuang Planet as an example. Here, seniors are not only the creators of the stories but also serve as "Cosmic Mentors." Through real-time communication and gentle in-world check-ins, they offer encouragement, guidance, and emotional support to the child explorers.
+                  Take the Dunhuang Planet as an example. Here, seniors are not only the creators of the stories but also serve as "Cosmic Mentors."
                 </p>
-                <img src="/step3-dunhuang.png" alt="Dunhuang Planet - Grandpa Tony" className="w-full rounded-2xl" />
+                <div className="flex justify-center mb-8">
+                  <img src="/step3-gif1.gif" alt="Dunhuang Planet Gameplay" className="rounded-2xl" style={{ maxWidth: '80%' }} />
+                </div>
+                <p className="text-amber-100/80 mb-6">
+                  Through real-time communication and gentle in-world check-ins, they offer encouragement, guidance, and emotional support to the child explorers.
+                </p>
+                <div className="flex justify-center">
+                  <img src="/step3-gif3.gif" alt="Cosmic Mentor Interaction" className="rounded-2xl" style={{ maxWidth: '80%' }} />
+                </div>
               </div>
 
               <div className="mx-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.15)' }} />
@@ -402,9 +407,12 @@ export default function GalaxsyncDetail() {
                   </div>
                 </div>
                 <h3 className="font-semibold text-lg mb-3 text-amber-50">The Story Echo</h3>
-                <p className="text-amber-100/80">
+                <p className="text-amber-100/80 mb-6">
                   After kids finish the stories, through story echo, we replace traditional scores with world-centric digital rewards, where the environment visibly heals and blooms, to validate their impact and build lasting confidence.
                 </p>
+                <div className="flex justify-center">
+                  <img src="/step5-gif4.gif" alt="Story Echo Rewards" className="rounded-2xl" style={{ maxWidth: '80%' }} />
+                </div>
               </div>
             </div>
 
