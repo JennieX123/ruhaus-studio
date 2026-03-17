@@ -67,9 +67,28 @@ function MagneticCard({ children, className = "", style }: { children: React.Rea
   );
 }
 
+function useScrollParallax() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [progress, setProgress] = useState(0);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!ref.current) return;
+      const rect = ref.current.getBoundingClientRect();
+      const viewH = window.innerHeight;
+      const p = Math.max(0, Math.min(1, 1 - (rect.bottom / (viewH + rect.height))));
+      setProgress(p);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  return { ref, progress };
+}
+
 export default function SomaDetail() {
   const [, navigate] = useLocation();
   const [mounted, setMounted] = useState(false);
+  const heroParallax = useScrollParallax();
 
   useEffect(() => { setMounted(true); }, []);
 
@@ -82,6 +101,8 @@ export default function SomaDetail() {
     { src: "/soma-phone-overwhelmed.png", label: "Overwhelmed" },
     { src: "/soma-phone-balance.png", label: "Returning to Balance" },
   ];
+
+  const heroScale = 1 + heroParallax.progress * 0.08;
 
   return (
     <div className="min-h-screen selection:bg-current selection:text-white relative" style={{ backgroundColor: '#EFF4FB', fontFamily: "'Nunito', sans-serif" }}>
@@ -113,6 +134,26 @@ export default function SomaDetail() {
           transform: translateY(-8px);
           box-shadow: 0 20px 60px rgba(0, 50, 80, 0.1);
         }
+        .full-bleed-video {
+          width: 100vw;
+          margin-left: calc(-50vw + 50%);
+          margin-right: calc(-50vw + 50%);
+        }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(40px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scaleIn {
+          from { opacity: 0; transform: scale(0.9); }
+          to { opacity: 1; transform: scale(1); }
+        }
+        .phone-card {
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+        }
+        .phone-card:hover {
+          transform: translateY(-12px) scale(1.03);
+          box-shadow: 0 30px 80px rgba(0, 50, 80, 0.15);
+        }
       `}</style>
 
       <div className="film-grain" />
@@ -137,346 +178,372 @@ export default function SomaDetail() {
           </div>
         </header>
 
-        <main className="max-w-7xl mx-auto px-6 pb-12 md:pb-20" style={{ paddingTop: 0 }}>
-          <div className="space-y-16 md:space-y-20">
+        <main className="pb-12 md:pb-20" style={{ paddingTop: 0 }}>
 
-            {/* 1. Hero Image */}
+          {/* 1. Hero — Parallax zoom on scroll */}
+          <div ref={heroParallax.ref} className="overflow-hidden" style={{ width: '100vw' }}>
             <RevealSection direction="scale">
-              <div className="space-y-8">
-                <div className="overflow-hidden flex items-center justify-center mt-8" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)' }}>
-                  <img src="/soma-hero.jpg" alt="Soma Hero" className="w-full h-auto object-cover" data-testid="img-hero" />
-                </div>
-
-                <div className="max-w-4xl mx-auto space-y-4 text-center">
-                  <RevealSection delay={200}>
-                    <h1 className="text-3xl md:text-5xl font-semibold playground-heading" data-testid="text-title" style={{ color: '#1a3a4a' }}>Soma</h1>
-                  </RevealSection>
-                  <RevealSection delay={400}>
-                    <p className="text-base md:text-xl leading-relaxed whitespace-nowrap" data-testid="text-subtitle" style={{ color: 'rgba(26,58,74,0.6)' }}>
-                      An AI wearable ecosystem addressing self co-regulation in autism education.
-                    </p>
-                  </RevealSection>
-                  <RevealSection delay={600}>
-                    <div className="flex gap-2 flex-wrap pt-4 justify-center" data-testid="tags-container">
-                      {["AI Wearable Ecosystem", "Smart Phone", "ASD"].map(tag => (
-                        <span key={tag} className="text-xs tracking-wider py-2 px-4 border rounded-full font-bold uppercase" style={{ borderColor: 'rgba(26,58,74,0.15)', color: 'rgba(26,58,74,0.4)' }}>{tag}</span>
-                      ))}
-                    </div>
-                  </RevealSection>
-                </div>
+              <div className="overflow-hidden">
+                <img
+                  src="/soma-hero.jpg"
+                  alt="Soma Hero"
+                  className="w-full h-auto object-cover"
+                  data-testid="img-hero"
+                  style={{ transform: `scale(${heroScale})`, transition: 'transform 0.1s linear', transformOrigin: 'center center' }}
+                />
               </div>
             </RevealSection>
+          </div>
 
-            {/* 2 & 3. Current Challenges */}
-            <div className="py-12 md:py-20" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
-              <RevealSection>
-                <div className="text-center mb-12 md:mb-20">
-                  <h2 className="text-4xl md:text-6xl font-light mb-4 md:mb-6" style={{ letterSpacing: '-0.02em', color: '#1a3a4a' }}>Current Challenges</h2>
-                </div>
-              </RevealSection>
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="space-y-16 md:space-y-20">
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
-                <RevealSection delay={100} direction="left">
-                  <MagneticCard className="h-full" style={{ display: 'flex', flexDirection: 'column', cursor: 'default' }}>
-                    <div className="overflow-hidden rounded-2xl">
-                      <img src="/soma-children-challenge.jpg" alt="Children regulation challenge" className="w-full object-cover transition-transform duration-700 hover:scale-105" style={{ aspectRatio: '4/3' }} data-testid="img-children-challenge" />
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-bold mt-6 mb-4" style={{ color: '#1a3a4a' }}>Autism Children Regulation Challenge</h3>
-                    <p className="text-sm md:text-base font-light leading-relaxed" style={{ color: 'rgba(26,58,74,0.6)' }}>
-                      Autism is not a behavior problem. It is often a 1-to-1 aid intensive problem. Most autistic children attend mainstream schools. Emotional regulation is a daily concern. Physiological signals change first.
-                    </p>
-                  </MagneticCard>
-                </RevealSection>
-
-                <RevealSection delay={300} direction="right">
-                  <MagneticCard className="h-full" style={{ display: 'flex', flexDirection: 'column', cursor: 'default' }}>
-                    <div className="overflow-hidden rounded-2xl">
-                      <img src="/soma-teacher-challenge.jpg" alt="Teacher's limited attention" className="w-full object-cover transition-transform duration-700 hover:scale-105" style={{ aspectRatio: '4/3' }} data-testid="img-teacher-challenge" />
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-bold mt-6 mb-4" style={{ color: '#1a3a4a' }}>Teacher's Limited Attention</h3>
-                    <p className="text-sm md:text-base font-light leading-relaxed" style={{ color: 'rgba(26,58,74,0.6)' }}>
-                      Teachers rely on experience and constant attention. 1 teacher, 20–30 students. And the harder part is not knowing if support is needed.
-                    </p>
-                  </MagneticCard>
-                </RevealSection>
-              </div>
-
-              <RevealSection delay={400}>
-                <div className="text-center mt-20 md:mt-32 mb-4">
-                  <p className="text-2xl md:text-4xl lg:text-5xl font-light italic leading-snug" style={{ color: 'rgba(26,58,74,0.45)', transition: 'all 1.2s cubic-bezier(0.16, 1, 0.3, 1)' }}>
-                    <span style={{ display: 'inline-block', opacity: 0.6 }}>"</span>What if regulation could begin<br />before escalation?<span style={{ display: 'inline-block', opacity: 0.6 }}>"</span>
-                  </p>
-                </div>
-              </RevealSection>
-            </div>
-
-            {/* 4. Innovation — Introduce Soma with 3 large product images */}
-            <div className="py-16 md:py-32" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
-              <div className="max-w-6xl mx-auto text-center">
-                <RevealSection>
-                  <h2 className="text-4xl md:text-6xl lg:text-7xl leading-tight mb-8 md:mb-12" style={{ fontFamily: "'Georgia', serif", color: '#1a3a4a' }}>
-                    Introducing <br /><span className="italic">Soma</span>
-                  </h2>
-                </RevealSection>
+              <div className="max-w-4xl mx-auto space-y-4 text-center pt-12 md:pt-16">
                 <RevealSection delay={200}>
-                  <p className="text-lg md:text-2xl font-light leading-relaxed whitespace-nowrap mb-16" style={{ color: 'rgba(26,58,74,0.6)' }}>
-                    An AI-wearable ecosystem addressing self co-regulation in autism education.
+                  <h1 className="text-3xl md:text-5xl font-semibold playground-heading" data-testid="text-title" style={{ color: '#1a3a4a' }}>Soma</h1>
+                </RevealSection>
+                <RevealSection delay={400}>
+                  <p className="text-base md:text-xl leading-relaxed whitespace-nowrap" data-testid="text-subtitle" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                    An AI wearable ecosystem addressing self co-regulation in autism education.
                   </p>
                 </RevealSection>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <RevealSection delay={600}>
+                  <div className="flex gap-2 flex-wrap pt-4 justify-center" data-testid="tags-container">
+                    {["AI Wearable Ecosystem", "Smart Phone", "ASD"].map(tag => (
+                      <span key={tag} className="text-xs tracking-wider py-2 px-4 border rounded-full font-bold uppercase" style={{ borderColor: 'rgba(26,58,74,0.15)', color: 'rgba(26,58,74,0.4)' }}>{tag}</span>
+                    ))}
+                  </div>
+                </RevealSection>
+              </div>
+
+              {/* 2 & 3. Current Challenges */}
+              <div className="py-12 md:py-20" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
+                <RevealSection>
+                  <div className="text-center mb-12 md:mb-20">
+                    <h2 className="text-4xl md:text-6xl font-light mb-4 md:mb-6" style={{ letterSpacing: '-0.02em', color: '#1a3a4a' }}>Current Challenges</h2>
+                  </div>
+                </RevealSection>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
+                  <RevealSection delay={100} direction="left">
+                    <MagneticCard className="h-full" style={{ display: 'flex', flexDirection: 'column', cursor: 'default' }}>
+                      <div className="overflow-hidden rounded-2xl">
+                        <img src="/soma-children-challenge.jpg" alt="Children regulation challenge" className="w-full object-cover transition-transform duration-700 hover:scale-105" style={{ aspectRatio: '4/3' }} data-testid="img-children-challenge" />
+                      </div>
+                      <h3 className="text-xl md:text-2xl font-bold mt-6 mb-4" style={{ color: '#1a3a4a' }}>Autism Children Regulation Challenge</h3>
+                      <p className="text-sm md:text-base font-light leading-relaxed" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                        Autism is not a behavior problem. It is often a 1-to-1 aid intensive problem. Most autistic children attend mainstream schools. Emotional regulation is a daily concern. Physiological signals change first.
+                      </p>
+                    </MagneticCard>
+                  </RevealSection>
+
+                  <RevealSection delay={300} direction="right">
+                    <MagneticCard className="h-full" style={{ display: 'flex', flexDirection: 'column', cursor: 'default' }}>
+                      <div className="overflow-hidden rounded-2xl">
+                        <img src="/soma-teacher-challenge.jpg" alt="Teacher's limited attention" className="w-full object-cover transition-transform duration-700 hover:scale-105" style={{ aspectRatio: '4/3' }} data-testid="img-teacher-challenge" />
+                      </div>
+                      <h3 className="text-xl md:text-2xl font-bold mt-6 mb-4" style={{ color: '#1a3a4a' }}>Teacher's Limited Attention</h3>
+                      <p className="text-sm md:text-base font-light leading-relaxed" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                        Teachers rely on experience and constant attention. 1 teacher, 20–30 students. And the harder part is not knowing if support is needed.
+                      </p>
+                    </MagneticCard>
+                  </RevealSection>
+                </div>
+
+                <RevealSection delay={400}>
+                  <div className="text-center mt-20 md:mt-32 mb-4">
+                    <p className="text-2xl md:text-4xl lg:text-5xl font-light italic leading-snug" style={{ color: 'rgba(26,58,74,0.45)' }}>
+                      <span style={{ display: 'inline-block', opacity: 0.6 }}>"</span>What if regulation could begin<br />before escalation?<span style={{ display: 'inline-block', opacity: 0.6 }}>"</span>
+                    </p>
+                  </div>
+                </RevealSection>
+              </div>
+
+              {/* 4. Innovation — Introduce Soma */}
+              <div className="py-16 md:py-32" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
+                <div className="max-w-6xl mx-auto text-center">
+                  <RevealSection>
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl leading-tight mb-8 md:mb-12" style={{ fontFamily: "'Georgia', serif", color: '#1a3a4a' }}>
+                      Introducing <br /><span className="italic">Soma</span>
+                    </h2>
+                  </RevealSection>
                   <RevealSection delay={200}>
-                    <div className="flex flex-col items-center gap-5">
-                      <img src="/soma-patch-image.jpg" alt="Soma Patch" className="w-full rounded-3xl object-cover" style={{ aspectRatio: '1/1' }} data-testid="img-patch-intro" />
-                      <p className="text-sm md:text-base font-medium" style={{ color: 'rgba(26,58,74,0.7)' }}>A patch that senses early shifts</p>
-                    </div>
+                    <p className="text-lg md:text-2xl font-light leading-relaxed whitespace-nowrap mb-16" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                      An AI-wearable ecosystem addressing self co-regulation in autism education.
+                    </p>
                   </RevealSection>
-                  <RevealSection delay={400}>
-                    <div className="flex flex-col items-center gap-5">
-                      <img src="/soma-ring-image.jpg" alt="Soma Ring" className="w-full rounded-3xl object-cover" style={{ aspectRatio: '1/1' }} data-testid="img-ring-intro" />
-                      <p className="text-sm md:text-base font-medium" style={{ color: 'rgba(26,58,74,0.7)' }}>A ring that translates insight into action</p>
-                    </div>
-                  </RevealSection>
-                  <RevealSection delay={600}>
-                    <div className="flex flex-col items-center gap-5">
-                      <img src="/soma-app-image.jpg" alt="Soma App" className="w-full rounded-3xl object-cover" style={{ aspectRatio: '1/1' }} data-testid="img-app-intro" />
-                      <p className="text-sm md:text-base font-medium" style={{ color: 'rgba(26,58,74,0.7)' }}>An app that learns patterns</p>
-                    </div>
-                  </RevealSection>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <RevealSection delay={200}>
+                      <div className="flex flex-col items-center gap-5">
+                        <img src="/soma-patch-image.jpg" alt="Soma Patch" className="w-full rounded-3xl object-cover" style={{ aspectRatio: '1/1' }} data-testid="img-patch-intro" />
+                        <p className="text-sm md:text-base font-medium" style={{ color: 'rgba(26,58,74,0.7)' }}>A patch that senses early shifts</p>
+                      </div>
+                    </RevealSection>
+                    <RevealSection delay={400}>
+                      <div className="flex flex-col items-center gap-5">
+                        <img src="/soma-ring-image.jpg" alt="Soma Ring" className="w-full rounded-3xl object-cover" style={{ aspectRatio: '1/1' }} data-testid="img-ring-intro" />
+                        <p className="text-sm md:text-base font-medium" style={{ color: 'rgba(26,58,74,0.7)' }}>A ring that translates insight into action</p>
+                      </div>
+                    </RevealSection>
+                    <RevealSection delay={600}>
+                      <div className="flex flex-col items-center gap-5">
+                        <img src="/soma-app-image.jpg" alt="Soma App" className="w-full rounded-3xl object-cover" style={{ aspectRatio: '1/1' }} data-testid="img-app-intro" />
+                        <p className="text-sm md:text-base font-medium" style={{ color: 'rgba(26,58,74,0.7)' }}>An app that learns patterns</p>
+                      </div>
+                    </RevealSection>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* 5. Soma Patch — Video */}
-            <div className="space-y-6">
-              <RevealSection>
-                <div className="text-center mb-12 md:mb-16">
-                  <h2 className="text-4xl md:text-6xl font-bold" style={{ color: '#1a3a4a' }}>Soma Patch</h2>
-                </div>
-              </RevealSection>
+              {/* 5. Soma Patch — Full-bleed Video */}
+              <div className="space-y-6">
+                <RevealSection>
+                  <div className="text-center mb-6 md:mb-8">
+                    <h2 className="text-4xl md:text-6xl font-bold" style={{ color: '#1a3a4a' }}>Soma Patch</h2>
+                  </div>
+                </RevealSection>
 
-              <RevealSection>
-                <div className="relative">
-                  <div className="max-w-4xl mx-auto text-center mb-12">
+                <RevealSection>
+                  <div className="max-w-4xl mx-auto text-center mb-8">
                     <p className="text-base md:text-lg font-light leading-relaxed" style={{ color: 'rgba(26,58,74,0.6)' }}>
                       A soft, skin-like patch that monitors physiological signals of stress inside the palm.<br />A flexible sensing system continuously captures biometric signals.
                     </p>
                   </div>
-                  <RevealSection direction="scale" delay={200}>
-                    <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden">
-                      <video
-                        src="/soma-patch-video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full h-auto"
-                        data-testid="video-patch"
-                      />
-                    </div>
-                  </RevealSection>
-                </div>
-              </RevealSection>
-            </div>
+                </RevealSection>
 
-            {/* 6. Soma Ring — Video */}
-            <div className="space-y-6">
-              <RevealSection>
-                <div className="text-center mb-6 md:mb-8">
-                  <h2 className="text-4xl md:text-6xl font-bold" style={{ color: '#1a3a4a' }}>Soma Ring</h2>
-                </div>
-              </RevealSection>
+                <RevealSection direction="scale" delay={200}>
+                  <div className="full-bleed-video overflow-hidden">
+                    <video
+                      src="/soma-patch-video.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-auto"
+                      data-testid="video-patch"
+                    />
+                  </div>
+                </RevealSection>
+              </div>
 
-              <RevealSection>
-                <div className="max-w-4xl mx-auto text-center mb-12">
-                  <p className="text-base md:text-lg font-light leading-relaxed" style={{ color: 'rgba(26,58,74,0.6)' }}>
-                    A wearable for intuitive co-regulation. Receives real-time biometric data.<br />Multi-modal alerts through LED and vibration. Touch-to-guide regulation — teacher and child synchronize.
-                  </p>
-                  <ul className="flex flex-wrap justify-center gap-4 mt-6">
-                    {[
-                      "Real-time biometric data",
-                      "Multi-level alerts",
-                      "Time constraints",
-                      "Touch-to-guide",
-                      "Teacher-child sync",
-                    ].map((item, i) => (
-                      <RevealSection key={i} delay={200 + i * 80}>
-                        <li className="flex items-center gap-2 text-xs md:text-sm px-4 py-2 rounded-full" style={{ color: 'rgba(26,58,74,0.6)', backgroundColor: 'rgba(91,164,217,0.08)' }}>
-                          <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: '#5BA4D9' }} />
-                          {item}
-                        </li>
-                      </RevealSection>
-                    ))}
-                  </ul>
-                </div>
-              </RevealSection>
+              {/* 6. Soma Ring — Full-bleed Video */}
+              <div className="space-y-6">
+                <RevealSection>
+                  <div className="text-center mb-6 md:mb-8">
+                    <h2 className="text-4xl md:text-6xl font-bold" style={{ color: '#1a3a4a' }}>Soma Ring</h2>
+                  </div>
+                </RevealSection>
 
-              <RevealSection direction="scale" delay={200}>
-                <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden">
-                  <video
-                    src="/soma-ring-video.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-auto"
-                    data-testid="video-ring"
-                  />
-                </div>
-              </RevealSection>
-            </div>
-
-            {/* Soma App */}
-            <div className="space-y-6">
-              {/* 7. Feature 1 — 5 phone screenshots */}
-              <RevealSection>
-                <div className="py-12 md:py-16 relative" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
-                  <div className="max-w-7xl mx-auto">
-                    <RevealSection>
-                      <div className="text-center mb-8 md:mb-12">
-                        <h2 className="text-4xl md:text-6xl font-bold mb-4" style={{ color: '#1a3a4a' }}>Soma App</h2>
-                        <p className="text-base md:text-lg font-light leading-relaxed max-w-3xl mx-auto" style={{ color: 'rgba(26,58,74,0.6)' }}>
-                          The Soma app quietly monitors emotional patterns in the background.
-                        </p>
-                      </div>
-                    </RevealSection>
-                    <div className="mb-8">
-                      <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 1</span>
-                      <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Simplifies ASD Emotion to Practice Regulation</h3>
-                    </div>
-                    <div className="grid grid-cols-5" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', gap: '4px' }}>
-                      {phoneImages.map((phone, i) => (
-                        <RevealSection key={i} delay={i * 120}>
-                          <div className="flex flex-col items-center gap-1">
-                            <img
-                              src={phone.src}
-                              alt={phone.label}
-                              className="w-full h-auto"
-                              data-testid={`img-phone-${i}`}
-                            />
-                            <span className="text-[8px] md:text-[11px] text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
-                          </div>
+                <RevealSection>
+                  <div className="max-w-4xl mx-auto text-center mb-8">
+                    <p className="text-base md:text-lg font-light leading-relaxed" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                      A wearable for intuitive co-regulation. Receives real-time biometric data.<br />Multi-modal alerts through LED and vibration. Touch-to-guide regulation — teacher and child synchronize.
+                    </p>
+                    <ul className="flex flex-wrap justify-center gap-3 mt-6">
+                      {[
+                        "Real-time biometric data",
+                        "Multi-level alerts",
+                        "Time constraints",
+                        "Touch-to-guide",
+                        "Teacher-child sync",
+                      ].map((item, i) => (
+                        <RevealSection key={i} delay={200 + i * 80}>
+                          <li className="flex items-center gap-2 text-xs md:text-sm px-4 py-2 rounded-full" style={{ color: 'rgba(26,58,74,0.6)', backgroundColor: 'rgba(91,164,217,0.08)' }}>
+                            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: '#5BA4D9' }} />
+                            {item}
+                          </li>
                         </RevealSection>
                       ))}
-                    </div>
+                    </ul>
                   </div>
-                </div>
-              </RevealSection>
+                </RevealSection>
 
-              {/* 8. Feature 2 — Video */}
-              <RevealSection>
-                <div className="py-8 md:py-12">
-                  <div className="max-w-7xl mx-auto">
-                    <div className="mb-8">
-                      <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 2</span>
-                      <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Co-regulation Synchronizes Activities & Suggestions</h3>
-                      <p className="text-sm md:text-base font-light leading-relaxed mt-3" style={{ color: 'rgba(26,58,74,0.6)' }}>
-                        Guidance appears when support is needed. Breathing guidance aligned with the child's rhythm. Or simple playful activities.
-                      </p>
-                    </div>
-                    <RevealSection direction="scale" delay={200}>
-                      <div className="rounded-2xl overflow-hidden">
-                        <video
-                          src="/soma-app-feature2.mp4"
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="w-full h-auto"
-                          data-testid="video-feature2"
-                        />
+                <RevealSection direction="scale" delay={200}>
+                  <div className="full-bleed-video overflow-hidden">
+                    <video
+                      src="/soma-ring-video.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-auto"
+                      data-testid="video-ring"
+                    />
+                  </div>
+                </RevealSection>
+              </div>
+
+              {/* Soma App */}
+              <div className="space-y-6">
+                {/* Feature 1 — 5 phone screenshots — 3+2 layout */}
+                <RevealSection>
+                  <div className="py-16 md:py-24 relative" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
+                    <div className="max-w-7xl mx-auto">
+                      <RevealSection>
+                        <div className="text-center mb-8 md:mb-12">
+                          <h2 className="text-4xl md:text-6xl font-bold mb-4" style={{ color: '#1a3a4a' }}>Soma App</h2>
+                          <p className="text-base md:text-lg font-light leading-relaxed max-w-3xl mx-auto" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                            The Soma app quietly monitors emotional patterns in the background.
+                          </p>
+                        </div>
+                      </RevealSection>
+                      <div className="text-center mb-10">
+                        <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 1</span>
+                        <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Simplifies ASD Emotion to Practice Regulation</h3>
                       </div>
-                    </RevealSection>
-                  </div>
-                </div>
-              </RevealSection>
 
-              {/* 9. Feature 3 — Video */}
-              <RevealSection>
-                <div className="py-8 md:py-12" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
-                  <div className="max-w-7xl mx-auto">
-                    <div className="mb-8">
-                      <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 3</span>
-                      <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Personalized Learning Patterns</h3>
-                      <p className="text-sm md:text-base font-light leading-relaxed mt-3" style={{ color: 'rgba(26,58,74,0.6)' }}>
-                        An AI/LLM that learns which strategies work best. And builds personalized support patterns.
-                      </p>
-                    </div>
-                    <RevealSection direction="scale" delay={200}>
-                      <div className="rounded-2xl overflow-hidden">
-                        <video
-                          src="/soma-app-feature3.mp4"
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="w-full h-auto"
-                          data-testid="video-feature3"
-                        />
+                      <div className="flex justify-center gap-3 md:gap-5 mb-6">
+                        {phoneImages.slice(0, 3).map((phone, i) => (
+                          <RevealSection key={i} delay={i * 150}>
+                            <div className="phone-card flex flex-col items-center gap-2" style={{ width: 'min(28vw, 300px)' }}>
+                              <img
+                                src={phone.src}
+                                alt={phone.label}
+                                className="w-full h-auto rounded-2xl md:rounded-3xl"
+                                data-testid={`img-phone-${i}`}
+                                style={{ filter: 'drop-shadow(0 10px 40px rgba(0,50,80,0.12))' }}
+                              />
+                              <span className="text-[10px] md:text-sm text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
+                            </div>
+                          </RevealSection>
+                        ))}
                       </div>
-                    </RevealSection>
-                  </div>
-                </div>
-              </RevealSection>
-
-              {/* 10. Feature 4 — Video */}
-              <RevealSection>
-                <div className="py-8 md:py-12">
-                  <div className="max-w-7xl mx-auto">
-                    <div className="mb-8">
-                      <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 4</span>
-                      <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Adjustable AI Wearable Setting</h3>
-                      <p className="text-sm md:text-base font-light leading-relaxed mt-3" style={{ color: 'rgba(26,58,74,0.6)' }}>
-                        Teachers can adjust patch and ring settings/activities.
-                      </p>
-                    </div>
-                    <RevealSection direction="scale" delay={200}>
-                      <div className="rounded-2xl overflow-hidden">
-                        <video
-                          src="/soma-app-feature4.mp4"
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="w-full h-auto"
-                          data-testid="video-feature4"
-                        />
+                      <div className="flex justify-center gap-3 md:gap-5">
+                        {phoneImages.slice(3).map((phone, i) => (
+                          <RevealSection key={i + 3} delay={(i + 3) * 150}>
+                            <div className="phone-card flex flex-col items-center gap-2" style={{ width: 'min(28vw, 300px)' }}>
+                              <img
+                                src={phone.src}
+                                alt={phone.label}
+                                className="w-full h-auto rounded-2xl md:rounded-3xl"
+                                data-testid={`img-phone-${i + 3}`}
+                                style={{ filter: 'drop-shadow(0 10px 40px rgba(0,50,80,0.12))' }}
+                              />
+                              <span className="text-[10px] md:text-sm text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
+                            </div>
+                          </RevealSection>
+                        ))}
                       </div>
-                    </RevealSection>
+                    </div>
                   </div>
-                </div>
-              </RevealSection>
-            </div>
+                </RevealSection>
 
-            {/* 11. Impact — Image */}
-            <div className="py-16 md:py-24" style={{ backgroundColor: '#1a3a4a', color: '#EFF6FA', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
-              <RevealSection>
-                <h2 className="text-4xl md:text-6xl font-light text-center mb-12 md:mb-20" style={{ color: '#EFF6FA' }}>Impact</h2>
-              </RevealSection>
+                {/* Feature 2 — Video */}
+                <RevealSection>
+                  <div className="py-8 md:py-12">
+                    <div className="max-w-7xl mx-auto px-6">
+                      <div className="mb-8">
+                        <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 2</span>
+                        <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Co-regulation Synchronizes Activities & Suggestions</h3>
+                        <p className="text-sm md:text-base font-light leading-relaxed mt-3" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                          Guidance appears when support is needed. Breathing guidance aligned with the child's rhythm. Or simple playful activities.
+                        </p>
+                      </div>
+                      <RevealSection direction="scale" delay={200}>
+                        <div className="rounded-2xl overflow-hidden">
+                          <video
+                            src="/soma-app-feature2.mp4"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-full h-auto"
+                            data-testid="video-feature2"
+                          />
+                        </div>
+                      </RevealSection>
+                    </div>
+                  </div>
+                </RevealSection>
 
-              <RevealSection delay={200}>
-                <div className="max-w-4xl mx-auto text-center mb-16">
-                  <p className="text-lg md:text-xl font-light leading-relaxed" style={{ color: 'rgba(239,246,250,0.7)' }}>
-                    Soma bridges the gap between physiological distress and classroom support, empowering children to make more intuitive pairing and transitions.
+                {/* Feature 3 — Video */}
+                <RevealSection>
+                  <div className="py-8 md:py-12" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
+                    <div className="max-w-7xl mx-auto">
+                      <div className="mb-8">
+                        <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 3</span>
+                        <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Personalized Learning Patterns</h3>
+                        <p className="text-sm md:text-base font-light leading-relaxed mt-3" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                          An AI/LLM that learns which strategies work best. And builds personalized support patterns.
+                        </p>
+                      </div>
+                      <RevealSection direction="scale" delay={200}>
+                        <div className="rounded-2xl overflow-hidden">
+                          <video
+                            src="/soma-app-feature3.mp4"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-full h-auto"
+                            data-testid="video-feature3"
+                          />
+                        </div>
+                      </RevealSection>
+                    </div>
+                  </div>
+                </RevealSection>
+
+                {/* Feature 4 — Video */}
+                <RevealSection>
+                  <div className="py-8 md:py-12">
+                    <div className="max-w-7xl mx-auto px-6">
+                      <div className="mb-8">
+                        <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 4</span>
+                        <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Adjustable AI Wearable Setting</h3>
+                        <p className="text-sm md:text-base font-light leading-relaxed mt-3" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                          Teachers can adjust patch and ring settings/activities.
+                        </p>
+                      </div>
+                      <RevealSection direction="scale" delay={200}>
+                        <div className="rounded-2xl overflow-hidden">
+                          <video
+                            src="/soma-app-feature4.mp4"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-full h-auto"
+                            data-testid="video-feature4"
+                          />
+                        </div>
+                      </RevealSection>
+                    </div>
+                  </div>
+                </RevealSection>
+              </div>
+
+              {/* Impact */}
+              <div className="py-16 md:py-24" style={{ backgroundColor: '#1a3a4a', color: '#EFF6FA', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
+                <RevealSection>
+                  <h2 className="text-4xl md:text-6xl font-light text-center mb-12 md:mb-20" style={{ color: '#EFF6FA' }}>Impact</h2>
+                </RevealSection>
+
+                <RevealSection delay={200}>
+                  <div className="max-w-4xl mx-auto text-center mb-16">
+                    <p className="text-lg md:text-xl font-light leading-relaxed" style={{ color: 'rgba(239,246,250,0.7)' }}>
+                      Soma bridges the gap between physiological distress and classroom support, empowering children to make more intuitive pairing and transitions.
+                    </p>
+                  </div>
+                </RevealSection>
+
+                <RevealSection direction="scale" delay={300}>
+                  <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden">
+                    <img src="/soma-impact.jpg" alt="Impact" className="w-full h-auto" data-testid="img-impact" />
+                  </div>
+                </RevealSection>
+              </div>
+
+              {/* Closing + Logo */}
+              <RevealSection direction="scale">
+                <div className="flex flex-col items-center gap-6 py-16 md:py-24 text-center">
+                  <img src="/soma-logo-detail.png" alt="Soma Logo" className="w-48 md:w-72" data-testid="img-logo" />
+                  <p className="text-sm tracking-widest uppercase" style={{ color: 'rgba(26,58,74,0.4)' }}>
+                    Small signals. Gentle support. Lasting connection.
                   </p>
                 </div>
               </RevealSection>
-
-              <RevealSection direction="scale" delay={300}>
-                <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden">
-                  <img src="/soma-impact.jpg" alt="Impact" className="w-full h-auto" data-testid="img-impact" />
-                </div>
-              </RevealSection>
             </div>
-
-            {/* 12. Closing + Logo */}
-            <RevealSection direction="scale">
-              <div className="flex flex-col items-center gap-6 py-16 md:py-24 text-center">
-                <img src="/soma-logo-detail.png" alt="Soma Logo" className="w-48 md:w-72" data-testid="img-logo" />
-                <p className="text-sm tracking-widest uppercase" style={{ color: 'rgba(26,58,74,0.4)' }}>
-                  Small signals. Gentle support. Lasting connection.
-                </p>
-              </div>
-            </RevealSection>
           </div>
         </main>
 
