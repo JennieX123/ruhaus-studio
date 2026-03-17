@@ -313,7 +313,7 @@ export default function GalaxsyncDetail() {
                           return (
                             <div
                               key={i}
-                              className="absolute left-1/2 top-1/2 z-20 opacity-30 group-hover:opacity-100 transition-opacity duration-500"
+                              className="absolute left-1/2 top-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                               style={{
                                 transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(1)`,
                                 transitionDelay: `${i * 60}ms`,
