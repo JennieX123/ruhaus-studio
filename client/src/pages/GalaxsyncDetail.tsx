@@ -292,7 +292,7 @@ export default function GalaxsyncDetail() {
           {/* Solution Components */}
           <div 
             ref={featuresRef.ref}
-            className={`space-y-12 scroll-section ${featuresRef.isVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}
+            className={`space-y-6 scroll-section ${featuresRef.isVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}
           >
             <h2 className="text-2xl font-semibold playground-heading">How It Works</h2>
 
