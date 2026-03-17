@@ -508,7 +508,7 @@ export default function GalaxsyncDetail() {
                 filter: 'drop-shadow(0 0 20px rgba(255, 200, 120, 0.3))',
               }}
             />
-            <img src="/galaxsync-logo-original.png" alt="Galaxsync Logo" className="w-64" />
+            <img src="/galaxsync-logo-detail.png" alt="Galaxsync Logo" className="w-64" />
           </div>
         </div>
       </main>
