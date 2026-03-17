@@ -194,11 +194,21 @@ export default function GalaxsyncDetail() {
             className={`space-y-8 scroll-section ${solutionRef.isVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}
           >
             <h2 className="text-2xl font-semibold playground-heading">Solution</h2>
-            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12 rounded-lg">
-              <div className="flex-shrink-0 w-3/5 md:w-2/5">
-                <img src="/galaxsync-sphere.gif" alt="Galaxsync Sphere" className="w-full rounded-2xl" />
-              </div>
-              <div className="flex-1 p-6 md:p-10 rounded-lg border border-neutral-100 bg-[#FFECBD] space-y-4 md:space-y-6 text-left">
+            <div className="relative p-6 md:p-10 rounded-lg border border-neutral-100 bg-[#FFECBD] overflow-hidden" style={{
+              backgroundImage: 'url(/galaxsync-sphere.gif)',
+              backgroundSize: '800px 800px',
+              backgroundPosition: 'right bottom',
+              backgroundRepeat: 'no-repeat'
+            }}>
+              <div className="absolute inset-0 rounded-lg" style={{
+                backgroundImage: 'url(/galaxsync-sphere.gif)',
+                backgroundSize: '800px 800px',
+                backgroundPosition: 'right bottom',
+                backgroundRepeat: 'no-repeat',
+                opacity: 0.08,
+                pointerEvents: 'none'
+              }} />
+              <div className="relative z-10 space-y-4 md:space-y-6 text-left max-w-2xl">
                 <p className="text-sm md:text-lg text-neutral-700 leading-relaxed">
                   The gap could be bridged. Two generations could be connected.
                 </p>
