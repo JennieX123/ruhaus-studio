@@ -503,15 +503,12 @@ export default function GalaxsyncDetail() {
             <img 
               src="/sub-planets-grid.png" 
               alt="Story Sub-Planets" 
-              className="w-full max-w-xl hover:scale-105 transition-transform duration-700 ease-out"
+              className="w-full max-w-xl"
               style={{ 
-                animation: 'float 6s ease-in-out infinite',
                 filter: 'drop-shadow(0 0 20px rgba(255, 200, 120, 0.3))',
               }}
-              onMouseEnter={(e) => e.currentTarget.style.filter = 'drop-shadow(0 0 40px rgba(255, 200, 120, 0.6))'}
-              onMouseLeave={(e) => e.currentTarget.style.filter = 'drop-shadow(0 0 20px rgba(255, 200, 120, 0.3))'}
             />
-            <img src="/galaxsync-logo-original.png" alt="Galaxsync Logo" className="w-64" />
+            <span className="text-4xl font-bold tracking-tight text-amber-50">Ruhaus</span>
           </div>
         </div>
       </main>
