@@ -156,33 +156,29 @@ export default function GalaxsyncDetail() {
           >
             <h2 className="text-2xl font-semibold playground-heading">Problem</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="p-8 rounded-lg border border-neutral-100 hover:scale-105 transition-transform duration-300 flex items-center gap-8 bg-[#FFECBD] text-[#563D33]">
-                <div className="flex-1">
+              <div className="p-8 rounded-lg border border-neutral-100 flex flex-col items-center text-center gap-6 bg-[#FFECBD] text-[#563D33]">
+                <img src="/elder-avatar.png" alt="Elder" className="w-32 h-32 rounded-full object-cover" />
+                <div>
                   <h3 className="font-semibold text-lg mb-4">Empty-Nest Seniors</h3>
-                  <ul className="space-y-2 text-neutral-600 text-sm">
+                  <ul className="space-y-2 text-neutral-600 text-sm text-left">
                     <li>• 200M seniors living alone worldwide</li>
                     <li>• Lifetimes of wisdom and rich personal histories</li>
                     <li>• Decreasing social interaction and isolation</li>
                     <li>• Seeking meaningful connection and purpose</li>
                   </ul>
                 </div>
-                <div className="flex-shrink-0">
-                  <img src="/elder-avatar.png" alt="Elder" className="w-40 h-40 object-contain" />
-                </div>
               </div>
 
-              <div className="p-8 rounded-lg border border-neutral-100 hover:scale-105 transition-transform duration-300 flex items-center gap-8 text-[#FFECBD] bg-[#563D33]">
-                <div className="flex-1">
+              <div className="p-8 rounded-lg border border-neutral-100 flex flex-col items-center text-center gap-6 text-[#FFECBD] bg-[#563D33]">
+                <img src="/child-avatar-new.png" alt="Child" className="w-32 h-32 rounded-full object-cover" />
+                <div>
                   <h3 className="font-semibold text-lg mb-4">Children with ADHD</h3>
-                  <ul className="space-y-2 text-sm text-[#FFECBD]">
+                  <ul className="space-y-2 text-sm text-[#FFECBD] text-left">
                     <li>• 366M children globally struggle with attention</li>
                     <li>• High energy and fragmented focus</li>
                     <li>• Often misunderstood for their intensity</li>
                     <li>• Thrive in immersive, structured environments</li>
                   </ul>
-                </div>
-                <div className="flex-shrink-0">
-                  <img src="/child-avatar-new.png" alt="Child" className="w-40 h-40 object-contain" />
                 </div>
               </div>
             </div>
@@ -205,7 +201,7 @@ export default function GalaxsyncDetail() {
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
             >
-              <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255, 255, 255, 0.85)', pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255, 236, 189, 0.88)', pointerEvents: 'none' }} />
               <div className="relative z-10 space-y-6 text-center">
                 <div>
                   <p className="text-lg text-neutral-700 leading-relaxed">
