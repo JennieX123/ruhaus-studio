@@ -8,3 +8,5 @@ client/public/step3-gif3.gif filter=lfs diff=lfs merge=lfs -text
 attached_assets/2_1773723630914.gif filter=lfs diff=lfs merge=lfs -text
 client/public/step3-gif2.gif filter=lfs diff=lfs merge=lfs -text
 client/public/step5-gif4.gif filter=lfs diff=lfs merge=lfs -text
+attached_assets/galaxsync_sphere_1773725516018.gif filter=lfs diff=lfs merge=lfs -text
+client/public/galaxsync-sphere.gif filter=lfs diff=lfs merge=lfs -text

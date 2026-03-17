@@ -194,34 +194,20 @@ export default function GalaxsyncDetail() {
             className={`space-y-8 scroll-section ${solutionRef.isVisible ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}
           >
             <h2 className="text-2xl font-semibold playground-heading">Solution</h2>
-            <div 
-              className="p-12 rounded-lg border border-neutral-100 relative overflow-hidden transition-all duration-300 cursor-pointer"
-              style={{ 
-                backgroundImage: 'url(/galaxsync-galaxy.png)', 
-                backgroundSize: isHovering ? '120%' : 'cover',
-                backgroundPosition: 'center',
-                transition: 'background-size 0.3s ease-out'
-              }}
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
-            >
-              <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255, 236, 189, 0.88)', pointerEvents: 'none' }} />
-              <div className="relative z-10 space-y-6 text-center">
-                <div>
-                  <p className="text-lg text-neutral-700 leading-relaxed">
-                    The gap could be bridged. Two generations could be connected.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-2xl font-semibold playground-heading text-neutral-800">
-                    Through the Neuro-Reciprocal Interaction Model, seniors' life stories are transformed into interactive VR worlds where children explore narrative missions while elders rediscover purpose and companionship.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-lg text-neutral-700 leading-relaxed">
-                    Rather than one-way care, Galaxsync creates a reciprocal healing loop where memories become exploration and attention becomes connection.
-                  </p>
-                </div>
+            <div className="flex items-center gap-12 rounded-lg">
+              <div className="flex-shrink-0 w-1/3">
+                <img src="/galaxsync-sphere.gif" alt="Galaxsync Sphere" className="w-full rounded-2xl" />
+              </div>
+              <div className="flex-1 space-y-6 text-left">
+                <p className="text-lg text-neutral-700 leading-relaxed">
+                  The gap could be bridged. Two generations could be connected.
+                </p>
+                <p className="text-2xl font-semibold playground-heading text-neutral-800 leading-relaxed">
+                  Through the Neuro-Reciprocal Interaction Model, seniors' life stories are transformed into interactive VR worlds where children explore narrative missions while elders rediscover purpose and companionship.
+                </p>
+                <p className="text-lg text-neutral-700 leading-relaxed">
+                  Rather than one-way care, Galaxsync creates a reciprocal healing loop where memories become exploration and attention becomes connection.
+                </p>
               </div>
             </div>
           </div>
