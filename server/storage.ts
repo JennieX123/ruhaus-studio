@@ -41,7 +41,7 @@ export class MemStorage implements IStorage {
         domain: "#Data #Sci-Fi",
         intro: "Real-time data synchronization visualizer crossing vast digital distances.",
         image: "/galaxsync-logo-original.png",
-        tags: ["DATA VIZ", "SYSTEMS"]
+        tags: ["Reciprocal AI-VR Ecosystem", "ADHD", "Elders"]
       },
       {
         slug: "hear-me",

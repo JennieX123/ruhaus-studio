@@ -143,8 +143,9 @@ export default function GalaxsyncDetail() {
                 A reciprocal AI-driven VR-integrated care ecosystem connecting generations through shared stories and meaningful interaction.
               </p>
               <div className="flex gap-2 flex-wrap pt-4">
-                <span className="text-xs tracking-wider py-2 px-4 border border-neutral-200 rounded-full text-neutral-400 font-bold uppercase">DATA VIZ</span>
-                <span className="text-xs tracking-wider py-2 px-4 border border-neutral-200 rounded-full text-neutral-400 font-bold uppercase">SYSTEMS</span>
+                <span className="text-xs tracking-wider py-2 px-4 border border-neutral-200 rounded-full text-neutral-400 font-bold uppercase">Reciprocal AI-VR Ecosystem</span>
+                <span className="text-xs tracking-wider py-2 px-4 border border-neutral-200 rounded-full text-neutral-400 font-bold uppercase">ADHD</span>
+                <span className="text-xs tracking-wider py-2 px-4 border border-neutral-200 rounded-full text-neutral-400 font-bold uppercase">Elders</span>
               </div>
             </div>
           </div>
