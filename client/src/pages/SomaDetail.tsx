@@ -84,7 +84,7 @@ export default function SomaDetail() {
   ];
 
   return (
-    <div className="min-h-screen selection:bg-current selection:text-white relative" style={{ backgroundColor: '#EFF6FA', fontFamily: "'Nunito', sans-serif" }}>
+    <div className="min-h-screen selection:bg-current selection:text-white relative" style={{ backgroundColor: '#EFF4FB', fontFamily: "'Nunito', sans-serif" }}>
       <style>{`
         @keyframes grain {
           0%, 100% { transform: translate(0, 0); }
@@ -119,7 +119,7 @@ export default function SomaDetail() {
 
       <div className="relative z-10">
         <header className="sticky top-0 z-50 py-4" style={{
-          backgroundColor: 'rgba(239, 246, 250, 0.85)',
+          backgroundColor: 'rgba(239, 244, 251, 0.85)',
           backdropFilter: 'blur(20px) saturate(180%)',
           borderBottom: '1px solid rgba(0, 50, 80, 0.06)',
         }}>
@@ -144,7 +144,7 @@ export default function SomaDetail() {
             <RevealSection direction="scale">
               <div className="space-y-8">
                 <div className="overflow-hidden flex items-center justify-center mt-8" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)' }}>
-                  <img src="/soma-hero.png" alt="Soma Hero" className="w-full h-auto object-cover" data-testid="img-hero" />
+                  <img src="/soma-hero.jpg" alt="Soma Hero" className="w-full h-auto object-cover" data-testid="img-hero" />
                 </div>
 
                 <div className="max-w-4xl mx-auto space-y-4 text-center">
@@ -152,7 +152,7 @@ export default function SomaDetail() {
                     <h1 className="text-3xl md:text-5xl font-semibold playground-heading" data-testid="text-title" style={{ color: '#1a3a4a' }}>Soma</h1>
                   </RevealSection>
                   <RevealSection delay={400}>
-                    <p className="text-base md:text-xl leading-relaxed max-w-2xl mx-auto" data-testid="text-subtitle" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                    <p className="text-base md:text-xl leading-relaxed whitespace-nowrap" data-testid="text-subtitle" style={{ color: 'rgba(26,58,74,0.6)' }}>
                       An AI wearable ecosystem addressing self co-regulation in autism education.
                     </p>
                   </RevealSection>
@@ -177,31 +177,23 @@ export default function SomaDetail() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
                 <RevealSection delay={100} direction="left">
-                  <MagneticCard className="hover-lift h-full" style={{
-                    padding: '32px', borderRadius: '2.5rem', backgroundColor: 'white',
-                    display: 'flex', flexDirection: 'column', cursor: 'default',
-                    boxShadow: '0 25px 50px -12px rgba(0,50,80,0.08)',
-                  }}>
+                  <div className="h-full flex flex-col cursor-default">
                     <img src="/soma-children-challenge.jpg" alt="Children regulation challenge" className="w-full rounded-2xl object-cover" style={{ aspectRatio: '4/3' }} data-testid="img-children-challenge" />
                     <h3 className="text-xl md:text-2xl font-bold mt-6 mb-4" style={{ color: '#1a3a4a' }}>Autism Children Regulation Challenge</h3>
                     <p className="text-sm md:text-base font-light leading-relaxed" style={{ color: 'rgba(26,58,74,0.6)' }}>
                       Autism is not a behavior problem. It is often a 1-to-1 aid intensive problem. Most autistic children attend mainstream schools. Emotional regulation is a daily concern. Physiological signals change first.
                     </p>
-                  </MagneticCard>
+                  </div>
                 </RevealSection>
 
                 <RevealSection delay={300} direction="right">
-                  <MagneticCard className="hover-lift h-full" style={{
-                    padding: '32px', borderRadius: '2.5rem', backgroundColor: 'white',
-                    display: 'flex', flexDirection: 'column', cursor: 'default',
-                    boxShadow: '0 25px 50px -12px rgba(0,50,80,0.08)',
-                  }}>
+                  <div className="h-full flex flex-col cursor-default">
                     <img src="/soma-teacher-challenge.jpg" alt="Teacher's limited attention" className="w-full rounded-2xl object-cover" style={{ aspectRatio: '4/3' }} data-testid="img-teacher-challenge" />
                     <h3 className="text-xl md:text-2xl font-bold mt-6 mb-4" style={{ color: '#1a3a4a' }}>Teacher's Limited Attention</h3>
                     <p className="text-sm md:text-base font-light leading-relaxed" style={{ color: 'rgba(26,58,74,0.6)' }}>
                       Teachers rely on experience and constant attention. 1 teacher, 20–30 students. And the harder part is not knowing if support is needed.
                     </p>
-                  </MagneticCard>
+                  </div>
                 </RevealSection>
               </div>
 
@@ -223,7 +215,7 @@ export default function SomaDetail() {
                   </h2>
                 </RevealSection>
                 <RevealSection delay={200}>
-                  <p className="text-lg md:text-2xl font-light leading-relaxed max-w-3xl mx-auto mb-16" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                  <p className="text-lg md:text-2xl font-light leading-relaxed whitespace-nowrap mb-16" style={{ color: 'rgba(26,58,74,0.6)' }}>
                     An AI-wearable ecosystem addressing self co-regulation in autism education.
                   </p>
                 </RevealSection>
@@ -348,17 +340,17 @@ export default function SomaDetail() {
                       <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 1</span>
                       <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Simplifies ASD Emotion to Practice Regulation</h3>
                     </div>
-                    <div className="grid grid-cols-5 gap-3 md:gap-6">
+                    <div className="flex gap-4 md:gap-8 overflow-x-auto pb-4" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
                       {phoneImages.map((phone, i) => (
                         <RevealSection key={i} delay={i * 120}>
-                          <div className="flex flex-col items-center gap-3">
+                          <div className="flex flex-col items-center gap-3 flex-shrink-0" style={{ width: '280px' }}>
                             <img
                               src={phone.src}
                               alt={phone.label}
-                              className="w-full h-auto rounded-xl md:rounded-2xl"
+                              className="w-full h-auto rounded-2xl"
                               data-testid={`img-phone-${i}`}
                             />
-                            <span className="text-[10px] md:text-xs text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
+                            <span className="text-xs text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
                           </div>
                         </RevealSection>
                       ))}
