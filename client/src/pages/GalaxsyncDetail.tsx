@@ -324,17 +324,17 @@ export default function GalaxsyncDetail() {
                   />
                 </div>
 
-                <div className="max-w-3xl space-y-4">
+                <div className="max-w-4xl mx-auto space-y-4 text-center">
                   <RevealSection delay={200}>
-                    <h1 className="text-2xl md:text-4xl font-semibold playground-heading" data-testid="text-title">Galaxsync</h1>
+                    <h1 className="text-3xl md:text-5xl font-semibold playground-heading" data-testid="text-title">Galaxsync</h1>
                   </RevealSection>
                   <RevealSection delay={400}>
-                    <p className="text-base md:text-lg text-neutral-500 leading-relaxed" data-testid="text-subtitle">
+                    <p className="text-base md:text-xl text-neutral-500 leading-relaxed max-w-2xl mx-auto" data-testid="text-subtitle">
                       A reciprocal AI-driven VR-integrated care ecosystem connecting generations through shared stories and meaningful interaction.
                     </p>
                   </RevealSection>
                   <RevealSection delay={600}>
-                    <div className="flex gap-2 flex-wrap pt-4" data-testid="tags-container">
+                    <div className="flex gap-2 flex-wrap pt-4 justify-center" data-testid="tags-container">
                       <span className="text-xs tracking-wider py-2 px-4 border border-neutral-200 rounded-full text-neutral-400 font-bold uppercase">Reciprocal AI-VR Ecosystem</span>
                       <span className="text-xs tracking-wider py-2 px-4 border border-neutral-200 rounded-full text-neutral-400 font-bold uppercase">ADHD</span>
                       <span className="text-xs tracking-wider py-2 px-4 border border-neutral-200 rounded-full text-neutral-400 font-bold uppercase">Elders</span>
