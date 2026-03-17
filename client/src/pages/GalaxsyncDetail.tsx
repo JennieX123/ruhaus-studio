@@ -508,7 +508,7 @@ export default function GalaxsyncDetail() {
                 filter: 'drop-shadow(0 0 20px rgba(255, 200, 120, 0.3))',
               }}
             />
-            <span className="text-4xl font-bold tracking-tight text-amber-50">Ruhaus</span>
+            <img src="/galaxsync-logo-original.png" alt="Galaxsync Logo" className="w-64" />
           </div>
         </div>
       </main>
