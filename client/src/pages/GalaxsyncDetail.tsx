@@ -195,7 +195,7 @@ export default function GalaxsyncDetail() {
           >
             <h2 className="text-2xl font-semibold playground-heading">Solution</h2>
             <div className="flex items-center gap-12 rounded-lg">
-              <div className="flex-shrink-0 w-1/3">
+              <div className="flex-shrink-0 w-2/5">
                 <img src="/galaxsync-sphere.gif" alt="Galaxsync Sphere" className="w-full rounded-2xl" />
               </div>
               <div className="flex-1 p-10 rounded-lg border border-neutral-100 bg-[#FFECBD] space-y-6 text-left">
