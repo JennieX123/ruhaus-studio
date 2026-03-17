@@ -67,39 +67,21 @@ function MagneticCard({ children, className = "", style }: { children: React.Rea
   );
 }
 
-function Placeholder({ label, aspect = "16/9", dark = false }: { label: string; aspect?: string; dark?: boolean }) {
-  return (
-    <div
-      className="rounded-2xl flex items-center justify-center"
-      style={{
-        aspectRatio: aspect,
-        backgroundColor: dark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.04)',
-        border: dark ? '2px dashed rgba(255,255,255,0.15)' : '2px dashed rgba(0,0,0,0.1)',
-      }}
-    >
-      <span style={{ color: dark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.2)', fontSize: '0.85rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>{label}</span>
-    </div>
-  );
-}
-
 export default function SomaDetail() {
   const [, navigate] = useLocation();
   const [mounted, setMounted] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => { setMounted(true); }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setScrollProgress(docHeight > 0 ? scrollTop / docHeight : 0);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   if (!mounted) return null;
+
+  const phoneImages = [
+    { src: "/soma-phone-waiting.png", label: "Waiting to Connect" },
+    { src: "/soma-phone-steady.png", label: "Steady & At Ease" },
+    { src: "/soma-phone-unsettled.png", label: "Unsettled" },
+    { src: "/soma-phone-overwhelmed.png", label: "Overwhelmed" },
+    { src: "/soma-phone-balance.png", label: "Returning to Balance" },
+  ];
 
   return (
     <div className="min-h-screen selection:bg-current selection:text-white relative" style={{ backgroundColor: '#EFF6FA', fontFamily: "'Nunito', sans-serif" }}>
@@ -136,7 +118,6 @@ export default function SomaDetail() {
       <div className="film-grain" />
 
       <div className="relative z-10">
-        {/* Header */}
         <header className="sticky top-0 z-50 py-4" style={{
           backgroundColor: 'rgba(239, 246, 250, 0.85)',
           backdropFilter: 'blur(20px) saturate(180%)',
@@ -159,11 +140,11 @@ export default function SomaDetail() {
         <main className="max-w-7xl mx-auto px-6 pb-12 md:pb-20" style={{ paddingTop: 0 }}>
           <div className="space-y-16 md:space-y-20">
 
-            {/* Hero Section */}
+            {/* 1. Hero Image */}
             <RevealSection direction="scale">
               <div className="space-y-8">
-                <div className="overflow-hidden flex items-center justify-center rounded-2xl mt-8" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)' }}>
-                  <Placeholder label="Hero Image / Video" aspect="21/9" />
+                <div className="overflow-hidden flex items-center justify-center mt-8" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)' }}>
+                  <img src="/soma-hero.png" alt="Soma Hero" className="w-full h-auto object-cover" data-testid="img-hero" />
                 </div>
 
                 <div className="max-w-4xl mx-auto space-y-4 text-center">
@@ -186,7 +167,7 @@ export default function SomaDetail() {
               </div>
             </RevealSection>
 
-            {/* Current Challenges */}
+            {/* 2 & 3. Current Challenges */}
             <div className="py-12 md:py-20" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
               <RevealSection>
                 <div className="text-center mb-12 md:mb-20">
@@ -201,7 +182,7 @@ export default function SomaDetail() {
                     display: 'flex', flexDirection: 'column', cursor: 'default',
                     boxShadow: '0 25px 50px -12px rgba(0,50,80,0.08)',
                   }}>
-                    <Placeholder label="Child Image" aspect="4/3" />
+                    <img src="/soma-children-challenge.jpg" alt="Children regulation challenge" className="w-full rounded-2xl object-cover" style={{ aspectRatio: '4/3' }} data-testid="img-children-challenge" />
                     <h3 className="text-xl md:text-2xl font-bold mt-6 mb-4" style={{ color: '#1a3a4a' }}>Autism Children Regulation Challenge</h3>
                     <p className="text-sm md:text-base font-light leading-relaxed" style={{ color: 'rgba(26,58,74,0.6)' }}>
                       Autism is not a behavior problem. It is often a 1-to-1 aid intensive problem. Most autistic children attend mainstream schools. Emotional regulation is a daily concern. Physiological signals change first.
@@ -215,7 +196,7 @@ export default function SomaDetail() {
                     display: 'flex', flexDirection: 'column', cursor: 'default',
                     boxShadow: '0 25px 50px -12px rgba(0,50,80,0.08)',
                   }}>
-                    <Placeholder label="Teacher Image" aspect="4/3" />
+                    <img src="/soma-teacher-challenge.jpg" alt="Teacher's limited attention" className="w-full rounded-2xl object-cover" style={{ aspectRatio: '4/3' }} data-testid="img-teacher-challenge" />
                     <h3 className="text-xl md:text-2xl font-bold mt-6 mb-4" style={{ color: '#1a3a4a' }}>Teacher's Limited Attention</h3>
                     <p className="text-sm md:text-base font-light leading-relaxed" style={{ color: 'rgba(26,58,74,0.6)' }}>
                       Teachers rely on experience and constant attention. 1 teacher, 20–30 students. And the harder part is not knowing if support is needed.
@@ -233,9 +214,9 @@ export default function SomaDetail() {
               </RevealSection>
             </div>
 
-            {/* Innovation - Solution */}
+            {/* 4. Innovation — Introduce Soma with 3 large product images */}
             <div className="py-16 md:py-32" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
-              <div className="max-w-5xl mx-auto text-center">
+              <div className="max-w-6xl mx-auto text-center">
                 <RevealSection>
                   <h2 className="text-4xl md:text-6xl lg:text-7xl leading-tight mb-8 md:mb-12" style={{ fontFamily: "'Georgia', serif", color: '#1a3a4a' }}>
                     Introducing <br /><span className="italic">Soma.</span>
@@ -246,26 +227,30 @@ export default function SomaDetail() {
                     An AI-wearable ecosystem addressing self co-regulation in autism education.
                   </p>
                 </RevealSection>
-                <RevealSection delay={400}>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                    <div className="flex flex-col items-center gap-4">
-                      <Placeholder label="Patch Icon" aspect="1/1" />
-                      <p className="text-sm font-medium" style={{ color: 'rgba(26,58,74,0.7)' }}>A patch that senses early shifts</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                  <RevealSection delay={200}>
+                    <div className="flex flex-col items-center gap-5">
+                      <img src="/soma-patch-image.jpg" alt="Soma Patch" className="w-full rounded-3xl object-cover" style={{ aspectRatio: '1/1' }} data-testid="img-patch-intro" />
+                      <p className="text-sm md:text-base font-medium" style={{ color: 'rgba(26,58,74,0.7)' }}>A patch that senses early shifts</p>
                     </div>
-                    <div className="flex flex-col items-center gap-4">
-                      <Placeholder label="Ring Icon" aspect="1/1" />
-                      <p className="text-sm font-medium" style={{ color: 'rgba(26,58,74,0.7)' }}>A ring that translates insight into action</p>
+                  </RevealSection>
+                  <RevealSection delay={400}>
+                    <div className="flex flex-col items-center gap-5">
+                      <img src="/soma-ring-image.jpg" alt="Soma Ring" className="w-full rounded-3xl object-cover" style={{ aspectRatio: '1/1' }} data-testid="img-ring-intro" />
+                      <p className="text-sm md:text-base font-medium" style={{ color: 'rgba(26,58,74,0.7)' }}>A ring that translates insight into action</p>
                     </div>
-                    <div className="flex flex-col items-center gap-4">
-                      <Placeholder label="App Icon" aspect="1/1" />
-                      <p className="text-sm font-medium" style={{ color: 'rgba(26,58,74,0.7)' }}>An app that learns patterns</p>
+                  </RevealSection>
+                  <RevealSection delay={600}>
+                    <div className="flex flex-col items-center gap-5">
+                      <img src="/soma-app-image.jpg" alt="Soma App" className="w-full rounded-3xl object-cover" style={{ aspectRatio: '1/1' }} data-testid="img-app-intro" />
+                      <p className="text-sm md:text-base font-medium" style={{ color: 'rgba(26,58,74,0.7)' }}>An app that learns patterns</p>
                     </div>
-                  </div>
-                </RevealSection>
+                  </RevealSection>
+                </div>
               </div>
             </div>
 
-            {/* Soma Patch */}
+            {/* 5. Soma Patch — Video */}
             <div className="space-y-6">
               <RevealSection>
                 <div className="text-center mb-12 md:mb-16">
@@ -281,15 +266,23 @@ export default function SomaDetail() {
                     </p>
                   </div>
                   <RevealSection direction="scale" delay={200}>
-                    <div className="max-w-5xl mx-auto">
-                      <Placeholder label="Soma Patch — Product Image / Video" aspect="16/9" />
+                    <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden">
+                      <video
+                        src="/soma-patch-video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-auto"
+                        data-testid="video-patch"
+                      />
                     </div>
                   </RevealSection>
                 </div>
               </RevealSection>
             </div>
 
-            {/* Soma Ring */}
+            {/* 6. Soma Ring — Video */}
             <div className="space-y-6">
               <RevealSection>
                 <div className="text-center mb-12 md:mb-16">
@@ -300,7 +293,17 @@ export default function SomaDetail() {
               <RevealSection>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                   <RevealSection direction="scale" delay={150}>
-                    <Placeholder label="Soma Ring — Product Image" aspect="1/1" />
+                    <div className="rounded-2xl overflow-hidden">
+                      <video
+                        src="/soma-ring-video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-auto"
+                        data-testid="video-ring"
+                      />
+                    </div>
                   </RevealSection>
                   <div>
                     <p className="text-base md:text-lg font-light leading-relaxed mb-8" style={{ color: 'rgba(26,58,74,0.6)' }}>
@@ -329,7 +332,7 @@ export default function SomaDetail() {
 
             {/* Soma App */}
             <div className="space-y-6">
-              {/* Feature 1 */}
+              {/* 7. Feature 1 — 5 phone screenshots */}
               <RevealSection>
                 <div className="py-12 md:py-16 relative" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
                   <div className="max-w-7xl mx-auto">
@@ -345,26 +348,26 @@ export default function SomaDetail() {
                       <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 1</span>
                       <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Simplifies ASD Emotion to Practice Regulation</h3>
                     </div>
-                    <div className="grid grid-cols-5 gap-4 mb-8">
-                      {["Waiting to Connect", "Steady & At Ease", "Unsettled", "Overwhelmed", "Returning to Balance"].map((state, i) => (
-                        <RevealSection key={i} delay={i * 100}>
+                    <div className="grid grid-cols-5 gap-3 md:gap-6">
+                      {phoneImages.map((phone, i) => (
+                        <RevealSection key={i} delay={i * 120}>
                           <div className="flex flex-col items-center gap-3">
-                            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center" style={{ backgroundColor: '#EFF6FA', border: '2px solid rgba(91,164,217,0.2)' }}>
-                              <span style={{ color: 'rgba(26,58,74,0.3)', fontSize: '0.7rem' }}>Icon</span>
-                            </div>
-                            <span className="text-xs text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{state}</span>
+                            <img
+                              src={phone.src}
+                              alt={phone.label}
+                              className="w-full h-auto rounded-xl md:rounded-2xl"
+                              data-testid={`img-phone-${i}`}
+                            />
+                            <span className="text-[10px] md:text-xs text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
                           </div>
                         </RevealSection>
                       ))}
                     </div>
-                    <RevealSection direction="scale" delay={200}>
-                      <Placeholder label="Feature 1 — App Screen" aspect="16/9" />
-                    </RevealSection>
                   </div>
                 </div>
               </RevealSection>
 
-              {/* Feature 2 */}
+              {/* 8. Feature 2 — Video */}
               <RevealSection>
                 <div className="py-8 md:py-12">
                   <div className="max-w-7xl mx-auto">
@@ -376,13 +379,23 @@ export default function SomaDetail() {
                       </p>
                     </div>
                     <RevealSection direction="scale" delay={200}>
-                      <Placeholder label="Feature 2 — Co-regulation Demo" aspect="16/9" />
+                      <div className="rounded-2xl overflow-hidden">
+                        <video
+                          src="/soma-app-feature2.mp4"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-auto"
+                          data-testid="video-feature2"
+                        />
+                      </div>
                     </RevealSection>
                   </div>
                 </div>
               </RevealSection>
 
-              {/* Feature 3 */}
+              {/* 9. Feature 3 — Video */}
               <RevealSection>
                 <div className="py-8 md:py-12" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
                   <div className="max-w-7xl mx-auto">
@@ -394,13 +407,23 @@ export default function SomaDetail() {
                       </p>
                     </div>
                     <RevealSection direction="scale" delay={200}>
-                      <Placeholder label="Feature 3 — Learning Patterns" aspect="16/9" />
+                      <div className="rounded-2xl overflow-hidden">
+                        <video
+                          src="/soma-app-feature3.mp4"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-auto"
+                          data-testid="video-feature3"
+                        />
+                      </div>
                     </RevealSection>
                   </div>
                 </div>
               </RevealSection>
 
-              {/* Feature 4 */}
+              {/* 10. Feature 4 — Video */}
               <RevealSection>
                 <div className="py-8 md:py-12">
                   <div className="max-w-7xl mx-auto">
@@ -412,14 +435,24 @@ export default function SomaDetail() {
                       </p>
                     </div>
                     <RevealSection direction="scale" delay={200}>
-                      <Placeholder label="Feature 4 — Settings Screen" aspect="16/9" />
+                      <div className="rounded-2xl overflow-hidden">
+                        <video
+                          src="/soma-app-feature4.mp4"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-auto"
+                          data-testid="video-feature4"
+                        />
+                      </div>
                     </RevealSection>
                   </div>
                 </div>
               </RevealSection>
             </div>
 
-            {/* Impact */}
+            {/* 11. Impact — Image */}
             <div className="py-16 md:py-24" style={{ backgroundColor: '#1a3a4a', color: '#EFF6FA', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
               <RevealSection>
                 <h2 className="text-4xl md:text-6xl font-light text-center mb-12 md:mb-20" style={{ color: '#EFF6FA' }}>Impact.</h2>
@@ -434,29 +467,24 @@ export default function SomaDetail() {
               </RevealSection>
 
               <RevealSection direction="scale" delay={300}>
-                <div className="max-w-5xl mx-auto">
-                  <Placeholder label="Impact — Final Visual" aspect="16/9" dark />
+                <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden">
+                  <img src="/soma-impact.jpg" alt="Impact" className="w-full h-auto" data-testid="img-impact" />
                 </div>
               </RevealSection>
             </div>
 
-            {/* Closing */}
+            {/* 12. Closing + Logo */}
             <RevealSection direction="scale">
-              <div className="flex flex-col items-center gap-8 py-16 md:py-24 text-center">
-                <div>
-                  <p className="text-2xl md:text-4xl font-light leading-snug" style={{ color: '#1a3a4a' }}>
-                    Small signals.<br />
-                    Gentle support.<br />
-                    <span className="font-semibold">Lasting connection.</span>
-                  </p>
-                </div>
-                <Placeholder label="Soma Logo" aspect="3/1" />
+              <div className="flex flex-col items-center gap-6 py-16 md:py-24 text-center">
+                <img src="/soma-logo-detail.png" alt="Soma Logo" className="w-48 md:w-72" data-testid="img-logo" />
+                <p className="text-sm tracking-widest uppercase" style={{ color: 'rgba(26,58,74,0.4)' }}>
+                  Small signals. Gentle support. Lasting connection.
+                </p>
               </div>
             </RevealSection>
           </div>
         </main>
 
-        {/* Footer */}
         <footer style={{ borderTop: '1px solid rgba(26,58,74,0.08)', marginTop: '80px', padding: '48px 0' }}>
           <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 opacity-60 text-sm">
             <p>© {new Date().getFullYear()} Ruhaus Studio. All rights reserved.</p>
