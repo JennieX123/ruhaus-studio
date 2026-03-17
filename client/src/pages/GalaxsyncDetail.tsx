@@ -275,10 +275,6 @@ export default function GalaxsyncDetail() {
           >
             <h2 className="text-2xl font-semibold playground-heading">Solution</h2>
             <div className="relative p-6 md:p-10 rounded-lg border border-neutral-100 bg-[#FFECBD] overflow-hidden">
-              <div className="absolute inset-0 rounded-lg pointer-events-none" style={{ opacity: 0.06 }}>
-                <img src="/planet-mind.png" alt="" className="absolute" style={{ width: '200px', right: '-30px', top: '-30px' }} />
-                <img src="/planet-nature.png" alt="" className="absolute" style={{ width: '150px', left: '-20px', bottom: '-20px' }} />
-              </div>
               <div className="relative z-10 space-y-4 md:space-y-6 text-center">
                 <p className="text-sm md:text-lg text-neutral-700 leading-relaxed">
                   The gap could be bridged. Two generations could be connected.
