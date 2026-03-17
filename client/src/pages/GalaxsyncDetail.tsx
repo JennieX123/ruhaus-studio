@@ -421,7 +421,9 @@ export default function GalaxsyncDetail() {
             {/* How It Works */}
             <div className="space-y-6">
               <RevealSection>
-                <h2 className="text-2xl font-semibold playground-heading mb-2" data-testid="text-howitworks-heading">How It Works</h2>
+                <div className="text-center mb-12 md:mb-16">
+                  <h2 className="text-4xl md:text-6xl font-bold mb-2" data-testid="text-howitworks-heading" style={{ color: '#563D33' }}>How it works.</h2>
+                </div>
               </RevealSection>
 
               {/* Step 1 - Elders */}
@@ -704,40 +706,38 @@ export default function GalaxsyncDetail() {
               </RevealSection>
             </div>
 
-            {/* Impact Section */}
-            <div>
+            {/* Impact Section - Apple Style */}
+            <div className="py-16 md:py-24" style={{ backgroundColor: '#563D33', color: '#FEF5E4', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
               <RevealSection>
-                <h2 className="text-2xl font-semibold playground-heading mb-8" data-testid="text-impact-heading">Impact</h2>
+                <h2 className="text-4xl md:text-6xl font-light text-center mb-12 md:mb-20" data-testid="text-impact-heading" style={{ color: '#FEF5E4' }}>Profound Impact.</h2>
               </RevealSection>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                <RevealSection delay={0}>
-                  <MagneticCard className="hover-lift p-5 md:p-8 rounded-2xl border border-neutral-100 flex flex-col items-center text-center" style={{ backgroundColor: '#563D33' }}>
-                    <img src="/elder-avatar.png" alt="Elder" className="w-24 h-24 md:w-40 md:h-40 rounded-full object-cover mb-4 md:mb-5" />
-                    <h3 className="font-semibold text-base md:text-lg mb-3 md:mb-4 text-amber-50">Reduced Isolation</h3>
-                    <p className="text-amber-100/80 text-xs md:text-sm">
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+                <RevealSection delay={100}>
+                  <div className="pt-6 md:pt-8" style={{ borderTop: '1px solid rgba(255,236,189,0.3)' }}>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4" style={{ color: '#FFECBD' }}>Reduced Isolation</h3>
+                    <p className="text-base md:text-lg font-light leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
                       Sharing stories gives elders purpose and connection, transforming memories into meaningful contribution and intergenerational bonds.
                     </p>
-                  </MagneticCard>
-                </RevealSection>
-
-                <RevealSection delay={150}>
-                  <MagneticCard className="hover-lift p-5 md:p-8 rounded-2xl border border-neutral-100 flex flex-col items-center text-center" style={{ backgroundColor: '#FFECBD' }}>
-                    <img src="/planet-heart-mind-crop.png" alt="Connection" className="w-24 h-24 md:w-40 md:h-40 object-contain mb-4 md:mb-5" />
-                    <h3 className="font-semibold text-base md:text-lg mb-3 md:mb-4">Meaningful Connection</h3>
-                    <p className="text-neutral-600 text-xs md:text-sm">
-                      Children and elders co-create stories together, building emotional bonds across generations and creating shared narratives of growth.
-                    </p>
-                  </MagneticCard>
+                  </div>
                 </RevealSection>
 
                 <RevealSection delay={300}>
-                  <MagneticCard className="hover-lift p-5 md:p-8 rounded-2xl border border-neutral-100 flex flex-col items-center text-center" style={{ backgroundColor: '#563D33' }}>
-                    <img src="/child-avatar-new.png" alt="Child" className="w-24 h-24 md:w-40 md:h-40 rounded-full object-cover mb-4 md:mb-5" />
-                    <h3 className="font-semibold text-base md:text-lg mb-3 md:mb-4 text-amber-50">ADHD Growth Reflection</h3>
-                    <p className="text-amber-100/80 text-xs md:text-sm">
-                      Children's choices and focus patterns become part of the evolving narrative world, showing measurable growth and meaningful progress.
+                  <div className="pt-6 md:pt-8" style={{ borderTop: '1px solid rgba(255,236,189,0.3)' }}>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4" style={{ color: '#FFECBD' }}>Meaningful Connection</h3>
+                    <p className="text-base md:text-lg font-light leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                      Children and elders co-create stories together, building emotional bonds across generations and creating shared narratives of growth.
                     </p>
-                  </MagneticCard>
+                  </div>
+                </RevealSection>
+
+                <RevealSection delay={500}>
+                  <div className="pt-6 md:pt-8" style={{ borderTop: '1px solid rgba(255,236,189,0.3)' }}>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4" style={{ color: '#FFECBD' }}>ADHD Growth</h3>
+                    <p className="text-base md:text-lg font-light leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                      Children engage longer in therapy through immersive, narrative-driven VR environments tailored to their needs.
+                    </p>
+                  </div>
                 </RevealSection>
               </div>
             </div>
