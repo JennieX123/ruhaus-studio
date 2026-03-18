@@ -69,16 +69,34 @@ const COLORS = {
   headerBg: 'rgba(251,248,244,0.85)',
 };
 
+function IpadVideo({ src, alt, testId }: { src: string; alt: string; testId: string }) {
+  return (
+    <div className="relative mx-auto" style={{ maxWidth: '560px' }}>
+      <div className="relative rounded-[16px] md:rounded-[24px] overflow-hidden shadow-2xl border-[6px] md:border-[10px] border-[#1a1a1a]" style={{ background: '#1a1a1a' }}>
+        <video
+          src={src}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-auto block"
+          data-testid={testId}
+        />
+      </div>
+    </div>
+  );
+}
+
 interface FeatureCardProps {
   label: string;
   title: string;
   description: string;
-  ipadSrc: string;
+  videoSrc: string;
   layout: 'left' | 'right';
   testId: string;
 }
 
-function FeatureCard({ label, title, description, ipadSrc, layout, testId }: FeatureCardProps) {
+function FeatureCard({ label, title, description, videoSrc, layout, testId }: FeatureCardProps) {
   const textContent = (
     <div className="flex flex-col justify-center space-y-4 md:space-y-6">
       <p className="text-xs tracking-widest uppercase font-medium" style={{ color: COLORS.textLight }}>{label}</p>
@@ -88,14 +106,12 @@ function FeatureCard({ label, title, description, ipadSrc, layout, testId }: Fea
   );
 
   const ipadContent = (
-    <div className="flex justify-center">
-      <img src={ipadSrc} alt={title} className="w-full max-w-lg rounded-lg" data-testid={testId} />
-    </div>
+    <IpadVideo src={videoSrc} alt={title} testId={testId} />
   );
 
   return (
     <RevealSection direction={layout === 'left' ? 'left' : 'right'}>
-      <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center`}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
         {layout === 'left' ? (
           <>
             <div className="order-2 md:order-1">{textContent}</div>
@@ -181,15 +197,15 @@ export default function LearnoDetail() {
 
         <main className="pb-12 md:pb-20" style={{ paddingTop: 0 }}>
 
-          {/* Hero — iPad Constellation */}
+          {/* Hero Image */}
           <div ref={heroParallax.ref} className="overflow-hidden w-full">
             <RevealSection direction="scale">
-              <div className="overflow-hidden flex justify-center py-12 md:py-20 lg:py-28">
+              <div className="overflow-hidden">
                 <img
-                  src="/ipad-constellation.png"
-                  alt="LEARNO — My Constellation knowledge realms"
-                  className="w-[85%] md:w-[70%] lg:w-[60%] h-auto"
-                  data-testid="img-hero-ipad"
+                  src="/learno-hero.jpg"
+                  alt="LEARNO — Knowledge Realms ecosystem"
+                  className="w-full h-auto"
+                  data-testid="img-hero"
                   style={{ transform: `scale(${heroScale})`, transition: 'transform 0.1s linear', transformOrigin: 'center center' }}
                 />
               </div>
@@ -200,7 +216,7 @@ export default function LearnoDetail() {
             <div className="space-y-20 md:space-y-32 lg:space-y-40">
 
               {/* Title + Tags */}
-              <div className="max-w-4xl mx-auto space-y-4 md:space-y-6 text-center">
+              <div className="max-w-4xl mx-auto space-y-4 md:space-y-6 text-center pt-10 md:pt-16">
                 <RevealSection delay={200}>
                   <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold playground-heading" data-testid="text-title" style={{ color: COLORS.text }}>LEARNO</h1>
                 </RevealSection>
@@ -218,33 +234,48 @@ export default function LearnoDetail() {
                 </RevealSection>
               </div>
 
-              {/* Problem Statement */}
+              {/* Problem Statement — editorial layout */}
               <RevealSection>
-                <div className="max-w-3xl mx-auto text-center space-y-8 md:space-y-12 px-4 md:px-0">
-                  <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold playground-heading" style={{ color: COLORS.text }}>
-                    Uncovering Hidden Pressure in K1–K12 Education
-                  </h2>
-                  <div className="space-y-6">
-                    <p className="text-sm md:text-base leading-relaxed" style={{ color: COLORS.textMuted }}>
-                      In the United States, 55M K1–K12 students face sustained and often underestimated academic pressure throughout their learning journey.
-                    </p>
-                    <p className="text-sm md:text-base leading-relaxed" style={{ color: COLORS.textMuted }}>
-                      Research indicates that over 60% experience daily academic stress, while around 40% report persistent sadness or disengagement.
-                    </p>
-                    <p className="text-sm md:text-base leading-relaxed" style={{ color: COLORS.textMuted }}>
-                      Despite the scale of this population, existing learning tools remain performance-driven, leaving motivation, confidence, and emotional resilience under-supported.
-                    </p>
+                <div className="max-w-5xl mx-auto px-4 md:px-0">
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+                    <div className="md:col-span-4">
+                      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight playground-heading" style={{ color: COLORS.text }}>
+                        Uncovering Hidden Pressure in K1–K12 Education
+                      </h2>
+                    </div>
+                    <div className="md:col-span-8 space-y-6 md:space-y-8">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="space-y-3">
+                          <p className="text-3xl md:text-4xl font-bold" style={{ color: COLORS.text }}>55M</p>
+                          <p className="text-sm leading-relaxed" style={{ color: COLORS.textMuted }}>
+                            K1–K12 students in the US face sustained and often underestimated academic pressure throughout their learning journey.
+                          </p>
+                        </div>
+                        <div className="space-y-3">
+                          <p className="text-3xl md:text-4xl font-bold" style={{ color: COLORS.text }}>60%</p>
+                          <p className="text-sm leading-relaxed" style={{ color: COLORS.textMuted }}>
+                            experience daily academic stress, while around 40% report persistent sadness or disengagement.
+                          </p>
+                        </div>
+                        <div className="space-y-3">
+                          <p className="text-3xl md:text-4xl font-bold" style={{ color: COLORS.text }}>40%</p>
+                          <p className="text-sm leading-relaxed" style={{ color: COLORS.textMuted }}>
+                            report persistent sadness. Existing tools remain performance-driven, leaving emotional resilience under-supported.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </RevealSection>
 
-              {/* Solution Statement */}
+              {/* Solution Statement — refined */}
               <RevealSection>
-                <div className="max-w-2xl mx-auto text-center space-y-3 px-4 md:px-0">
-                  <p className="text-sm md:text-base" style={{ color: COLORS.textMuted }}>Pressure always happens</p>
-                  <p className="text-sm md:text-base" style={{ color: COLORS.textMuted }}>Now there is a way</p>
-                  <p className="text-sm md:text-lg font-bold" style={{ color: COLORS.text }}>
-                    to make students have a mindful, confidence-building learning journey from K1 to K12
+                <div className="max-w-3xl mx-auto text-center px-4 md:px-0 space-y-6">
+                  <p className="text-sm md:text-lg tracking-wide uppercase" style={{ color: COLORS.textLight, letterSpacing: '0.15em' }}>Pressure always happens</p>
+                  <div className="w-12 h-px mx-auto" style={{ backgroundColor: COLORS.border }} />
+                  <p className="text-lg md:text-2xl lg:text-3xl font-semibold leading-relaxed playground-heading" style={{ color: COLORS.text }}>
+                    Now there is a way to make students have a <span style={{ color: COLORS.accent }}>mindful, confidence-building</span> learning journey from K1 to K12
                   </p>
                 </div>
               </RevealSection>
@@ -259,27 +290,27 @@ export default function LearnoDetail() {
                   label="Learno Universe"
                   title="Individualized Learning Progress"
                   description="Learno represents each subject as a distinct realm, progressing at its own pace based on individual learning patterns. This approach emphasizes personalized growth rather than uniform advancement."
-                  ipadSrc="/ipad-constellation.png"
+                  videoSrc="/learno-universe-dashboard.mp4"
                   layout="right"
-                  testId="img-feature-progress"
+                  testId="video-feature-progress"
                 />
 
                 <FeatureCard
                   label="Learno Universe"
                   title="World Overview & Learning Snapshot"
                   description="A world-level overview provides a consolidated snapshot of learning activity, progress distribution, and relative standing. This view encourages reflection and long-term engagement without overemphasizing competition."
-                  ipadSrc="/ipad-constellation.png"
+                  videoSrc="/learno-universe-overview.mp4"
                   layout="left"
-                  testId="img-feature-overview"
+                  testId="video-feature-overview"
                 />
 
                 <FeatureCard
                   label="Learno Universe"
                   title="Subject-Based Realm Organization"
                   description="Learno organizes learning into subject-based realms, each encompassing its related disciplines and content areas. This structure maintains clarity across subjects while supporting seamless navigation within the learning ecosystem."
-                  ipadSrc="/ipad-constellation.png"
+                  videoSrc="/learno-universe-realms.mp4"
                   layout="right"
-                  testId="img-feature-realms"
+                  testId="video-feature-realms"
                 />
               </div>
 
@@ -293,36 +324,27 @@ export default function LearnoDetail() {
                   label="Personalized Avatars"
                   title="Expressive Character System"
                   description="Learno introduces an expressive character system with varied appearances, outfits, and scales. These visual variations help learners form emotional connections while reinforcing individuality and engagement within the learning experience."
-                  ipadSrc="/ipad-constellation.png"
+                  videoSrc="/learno-char-customized.mp4"
                   layout="left"
-                  testId="img-feature-characters"
+                  testId="video-feature-characters"
                 />
 
                 <FeatureCard
                   label="Personalized Avatars"
                   title="Personalized Avatar Customization"
                   description="Learno allows learners to customize their own characters through personalization settings. By enabling choice in appearance and expression, the system fosters a sense of ownership and identity from the start of the learning journey."
-                  ipadSrc="/ipad-constellation.png"
+                  videoSrc="/learno-ai-customized.mp4"
                   layout="right"
-                  testId="img-feature-avatar"
-                />
-
-                <FeatureCard
-                  label="Personalized Avatars"
-                  title="Age-Responsive Character"
-                  description="Characters adapt to represent learners across different age groups, ensuring visual relevance and inclusivity. This approach helps learners see themselves reflected in the experience, strengthening relatability and long-term engagement."
-                  ipadSrc="/ipad-constellation.png"
-                  layout="left"
-                  testId="img-feature-age"
+                  testId="video-feature-avatar"
                 />
 
                 <FeatureCard
                   label="Learning Communities"
                   title="Learning Community in a Shared 3D World"
                   description="Learno extends learning into a shared 3D world where individual learners coexist within a broader community. This environment reinforces a sense of belonging and shared progress while maintaining each learner's personalized journey."
-                  ipadSrc="/ipad-constellation.png"
-                  layout="right"
-                  testId="img-feature-community"
+                  videoSrc="/learno-community.mp4"
+                  layout="left"
+                  testId="video-feature-community"
                 />
               </div>
 
@@ -336,9 +358,9 @@ export default function LearnoDetail() {
                   label="AI Companions"
                   title="AI Tutors That Adapt to You"
                   description="Learno offers emotionally and personality-aligned AI tutors, each designed with distinct interaction styles, tones, and behavioral archetypes. These tutors adapt to students' learning rhythms and emotional states, providing guidance that is supportive, relatable, and human-centered."
-                  ipadSrc="/ipad-constellation.png"
-                  layout="left"
-                  testId="img-feature-tutors"
+                  videoSrc="/learno-ai-therapy.mp4"
+                  layout="right"
+                  testId="video-feature-tutors"
                 />
               </div>
 
@@ -352,44 +374,30 @@ export default function LearnoDetail() {
                   label="Adaptive Learning"
                   title="AI-Tailored Holistic Study Journey"
                   description="Learno organizes learning content into an AI-tailored, holistic study journey that clearly structures subjects, lessons, and progression. This approach helps learners understand their path toward mastery while reducing cognitive overload and supporting sustained engagement."
-                  ipadSrc="/ipad-constellation.png"
-                  layout="right"
-                  testId="img-feature-study"
-                />
-
-                <FeatureCard
-                  label="Adaptive Learning"
-                  title="Visual Learning Map Experience"
-                  description="The visual learning map presents learning progress as an intuitive, navigable path. By making progress and upcoming milestones visible, it helps learners maintain motivation and plan their studies with confidence."
-                  ipadSrc="/ipad-constellation.png"
+                  videoSrc="/learno-ai-study.mp4"
                   layout="left"
-                  testId="img-feature-map"
-                />
-
-                <FeatureCard
-                  label="Adaptive Learning"
-                  title="AI-Driven Deep Learning & Tutor Support"
-                  description="Learno combines AI-driven deep learning with contextual tutor support to guide learners through complex concepts. Real-time feedback and targeted explanations help reinforce understanding while encouraging independent problem-solving."
-                  ipadSrc="/ipad-constellation.png"
-                  layout="right"
-                  testId="img-feature-deep"
+                  testId="video-feature-study"
                 />
               </div>
 
-              {/* ——— Full-bleed Emotional Chat iPad ——— */}
+              {/* ——— Full-bleed VR Scene ——— */}
               <RevealSection direction="scale">
-                <div className="full-bleed-learno overflow-hidden flex justify-center" style={{ backgroundColor: '#1a1520' }}>
-                  <div className="py-12 md:py-20 w-[85%] md:w-[70%] lg:w-[60%]">
-                    <img src="/ipad-constellation.png" alt="LEARNO — Emotional AI companion chat" className="w-full h-auto" data-testid="img-emotional-chat" />
-                  </div>
+                <div className="full-bleed-learno overflow-hidden">
+                  <img src="/learno-vr.jpg" alt="LEARNO — Immersive VR learning with AI companion" className="w-full h-auto" data-testid="img-vr-scene" />
                 </div>
               </RevealSection>
 
-              {/* ——— Closing ——— */}
+              {/* ——— Closing — Characters + Logo ——— */}
               <RevealSection direction="scale">
-                <div className="flex flex-col items-center gap-4 md:gap-6 py-16 md:py-28 text-center">
-                  <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold playground-heading" style={{ color: COLORS.text }}>LEARNO</h2>
-                  <p className="text-sm md:text-base leading-relaxed max-w-md" style={{ color: COLORS.textMuted }}>
+                <div className="full-bleed-learno overflow-hidden">
+                  <img src="/learno-characters.png" alt="LEARNO character collection" className="w-full h-auto" data-testid="img-characters" />
+                </div>
+              </RevealSection>
+
+              <RevealSection direction="scale">
+                <div className="flex flex-col items-center gap-4 md:gap-5 py-16 md:py-28 text-center">
+                  <img src="/assets/images/project-learno.png" alt="LEARNO Logo" className="h-10 md:h-14" data-testid="img-logo" />
+                  <p className="text-xs md:text-sm tracking-widest uppercase" style={{ color: COLORS.textLight }}>
                     The gamified knowledge realms ecosystem designed for K1–K12
                   </p>
                 </div>
