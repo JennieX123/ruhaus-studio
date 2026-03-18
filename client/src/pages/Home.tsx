@@ -79,8 +79,8 @@ export default function Home() {
                         src={project.image} 
                         alt={project.title} 
                         className={`object-contain transition-all ease-in-out duration-200 ${
-                          project.slug === 'soma' ? 'w-28 md:w-36' :
-                          project.slug === 'galaxsync' ? 'w-40 md:w-52' :
+                          project.slug === 'soma' ? 'w-36 md:w-44' :
+                          project.slug === 'galaxsync' ? 'w-48 md:w-60' :
                           'max-w-full max-h-full'
                         }`}
                       />
