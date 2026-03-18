@@ -375,7 +375,7 @@ export default function SomaDetail() {
 
               {/* Soma App */}
               <div className="space-y-6">
-                {/* Feature 1 — 5 phone screenshots, 3+2 rows */}
+                {/* Feature 1 — 5 phone screenshots, 3+2 rows, large */}
                 <RevealSection>
                   <div className="py-16 md:py-24 relative" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
                     <div className="max-w-7xl mx-auto">
@@ -392,34 +392,34 @@ export default function SomaDetail() {
                         <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Simplifies ASD Emotion to Practice Regulation</h3>
                       </div>
 
-                      <div className="flex justify-center gap-4 md:gap-6 mb-6">
+                      <div className="grid grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
                         {phoneImages.slice(0, 3).map((phone, i) => (
                           <RevealSection key={i} delay={i * 150}>
-                            <div className="phone-card flex flex-col items-center gap-2" style={{ width: 'min(30vw, 340px)' }}>
+                            <div className="phone-card flex flex-col items-center gap-3">
                               <img
                                 src={phone.src}
                                 alt={phone.label}
-                                className="w-full h-auto rounded-2xl md:rounded-3xl"
+                                className="w-full h-auto"
                                 data-testid={`img-phone-${i}`}
                                 style={{ filter: 'drop-shadow(0 10px 40px rgba(0,50,80,0.12))' }}
                               />
-                              <span className="text-[10px] md:text-sm text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
+                              <span className="text-xs md:text-sm text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
                             </div>
                           </RevealSection>
                         ))}
                       </div>
-                      <div className="flex justify-center gap-4 md:gap-6">
+                      <div className="grid grid-cols-2 gap-6 md:gap-8 max-w-[66%] mx-auto">
                         {phoneImages.slice(3).map((phone, i) => (
                           <RevealSection key={i + 3} delay={(i + 3) * 150}>
-                            <div className="phone-card flex flex-col items-center gap-2" style={{ width: 'min(30vw, 340px)' }}>
+                            <div className="phone-card flex flex-col items-center gap-3">
                               <img
                                 src={phone.src}
                                 alt={phone.label}
-                                className="w-full h-auto rounded-2xl md:rounded-3xl"
+                                className="w-full h-auto"
                                 data-testid={`img-phone-${i + 3}`}
                                 style={{ filter: 'drop-shadow(0 10px 40px rgba(0,50,80,0.12))' }}
                               />
-                              <span className="text-[10px] md:text-sm text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
+                              <span className="text-xs md:text-sm text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
                             </div>
                           </RevealSection>
                         ))}
