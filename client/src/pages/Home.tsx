@@ -66,15 +66,25 @@ export default function Home() {
                 {/* Project Card/Image */}
                 <div className="playground-card mb-6 relative aspect-video overflow-hidden">
                   <div className="playground-card-img-container w-full h-full relative flex items-center justify-center bg-[#F5F5F5] p-12 md:p-20">
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
-                      className={`max-w-full max-h-full object-contain transition-all ease-in-out ${
-                        ['galaxsync', 'soma', 'hear-me', 'yoyo'].includes(project.slug)
-                          ? 'duration-200 brightness-110 group-hover:drop-shadow-[0_0_20px_rgba(88,60,160,0.5)]'
-                          : 'duration-700 grayscale brightness-[0.2] group-hover:grayscale-0 group-hover:brightness-100'
-                      }`}
-                    />
+                    {project.slug === 'hear-me' ? (
+                      <span
+                        className="text-4xl md:text-5xl font-bold transition-all ease-in-out duration-200"
+                        style={{ fontFamily: "'Nunito', sans-serif", color: '#1a3a2a' }}
+                        data-testid="text-hearme-logo"
+                      >
+                        Hear Me
+                      </span>
+                    ) : (
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className={`max-w-full max-h-full object-contain transition-all ease-in-out ${
+                          ['galaxsync', 'soma', 'yoyo'].includes(project.slug)
+                            ? 'duration-200 brightness-110 group-hover:drop-shadow-[0_0_20px_rgba(88,60,160,0.5)]'
+                            : 'duration-700 grayscale brightness-[0.2] group-hover:grayscale-0 group-hover:brightness-100'
+                        }`}
+                      />
+                    )}
                   </div>
                 </div>
                 
