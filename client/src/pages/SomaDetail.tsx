@@ -397,7 +397,7 @@ export default function SomaDetail() {
                 <RevealSection direction="scale" delay={200}>
                   <div className="full-bleed-video overflow-hidden">
                     <video
-                      src="/soma-replacement-3d.mp4"
+                      src="/soma-patch-video.mp4"
                       autoPlay
                       loop
                       muted
