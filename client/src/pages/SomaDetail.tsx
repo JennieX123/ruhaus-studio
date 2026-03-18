@@ -267,11 +267,14 @@ export default function SomaDetail() {
           <div ref={heroParallax.ref} className="overflow-hidden w-full">
             <RevealSection direction="scale">
               <div className="overflow-hidden">
-                <img
-                  src="/soma-hero.jpg"
-                  alt="Soma Hero"
+                <video
+                  src="/soma-hero-video.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="w-full h-auto object-cover"
-                  data-testid="img-hero"
+                  data-testid="video-hero"
                   style={{ transform: `scale(${heroScale})`, transition: 'transform 0.1s linear', transformOrigin: 'center center' }}
                 />
               </div>
