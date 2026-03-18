@@ -65,10 +65,10 @@ export default function Home() {
               >
                 {/* Project Card/Image */}
                 <div className="playground-card mb-6 relative aspect-video overflow-hidden">
-                  <div className={`playground-card-img-container w-full h-full relative flex items-center justify-center p-12 md:p-20 ${project.slug === 'learno' ? 'bg-black' : 'bg-[#F5F5F5]'}`}>
+                  <div className="playground-card-img-container w-full h-full relative flex items-center justify-center p-12 md:p-20 bg-[#F5F5F5]">
                     {project.slug === 'hear-me' ? (
                       <span
-                        className="text-4xl md:text-5xl font-bold transition-all ease-in-out duration-200"
+                        className="text-4xl md:text-5xl font-bold transition-all ease-in-out duration-700 grayscale group-hover:grayscale-0"
                         style={{ fontFamily: "'Nunito', sans-serif", color: '#88B395' }}
                         data-testid="text-hearme-logo"
                       >
@@ -78,7 +78,7 @@ export default function Home() {
                       <img 
                         src={project.image} 
                         alt={project.title} 
-                        className={`object-contain transition-all ease-in-out duration-200 ${
+                        className={`object-contain transition-all ease-in-out duration-700 grayscale group-hover:grayscale-0 ${
                           project.slug === 'soma' ? 'w-36 md:w-44' :
                           project.slug === 'galaxsync' ? 'w-48 md:w-60' :
                           project.slug === 'yoyo' ? 'w-24 md:w-32' :

@@ -46,8 +46,8 @@ export class MemStorage implements IStorage {
       {
         slug: "hear-me",
         title: "Hear Me",
-        domain: "#Audio #Voice",
-        intro: "Next-gen voice interfaces and immersive auditory experiences for creative professionals.",
+        domain: "#AI #Accessibility",
+        intro: "An AI avatar assistant designed for deaf and non-vocal users, enabling natural communication.",
         image: "/assets/images/project-hearme.svg",
         tags: ["AI", "VOICE UX", "NEW"]
       },
@@ -62,18 +62,10 @@ export class MemStorage implements IStorage {
       {
         slug: "learno",
         title: "LEARNO",
-        domain: "#EdTech #Learning",
-        intro: "Structured and beautiful educational platforms designed for the curious mind.",
+        domain: "#EdTech #AI #Gamification",
+        intro: "A next-generation K–12 learning ecosystem with AI-guided gamified journeys and emotional companions.",
         image: "/assets/images/project-learno.png",
-        tags: ["EDTECH", "UX DESIGN"]
-      },
-      {
-        slug: "lumina",
-        title: "Lumina",
-        domain: "#SmartHome #IoT",
-        intro: "Ambient computing and intelligent lighting systems blending seamlessly into spaces.",
-        image: "/assets/images/project-lumina.png",
-        tags: ["IOT", "AMBIENT"]
+        tags: ["EDTECH", "AI", "K-12"]
       },
     ];
     seedData.forEach(p => this.createProject(p));

@@ -389,17 +389,16 @@ export default function LearnoDetail() {
 
               {/* ——— Closing — Characters + Logo ——— */}
               <RevealSection direction="scale">
-                <div className="full-bleed-learno overflow-hidden">
-                  <img src="/learno-characters.png" alt="LEARNO character collection" className="w-full h-auto" data-testid="img-characters" />
-                </div>
-              </RevealSection>
-
-              <RevealSection direction="scale">
-                <div className="flex flex-col items-center gap-4 md:gap-5 py-16 md:py-28 text-center">
-                  <img src="/assets/images/project-learno.png" alt="LEARNO Logo" className="h-10 md:h-14" data-testid="img-logo" />
-                  <p className="text-xs md:text-sm tracking-widest uppercase" style={{ color: COLORS.textLight }}>
-                    The gamified knowledge realms ecosystem designed for K1–K12
-                  </p>
+                <div className="flex flex-col items-center text-center">
+                  <div className="full-bleed-learno overflow-hidden">
+                    <img src="/learno-characters.png" alt="LEARNO character collection" className="w-full h-auto" data-testid="img-characters" />
+                  </div>
+                  <div className="flex flex-col items-center gap-4 pt-8 md:pt-12 pb-16 md:pb-28">
+                    <img src="/assets/images/project-learno.png" alt="LEARNO Logo" className="h-10 md:h-14" data-testid="img-logo" />
+                    <p className="text-xs md:text-sm tracking-widest uppercase" style={{ color: COLORS.textLight }}>
+                      The gamified knowledge realms ecosystem designed for K1–K12
+                    </p>
+                  </div>
                 </div>
               </RevealSection>
 
