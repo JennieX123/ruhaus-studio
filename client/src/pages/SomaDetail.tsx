@@ -393,21 +393,24 @@ export default function SomaDetail() {
                       </div>
                     </div>
 
-                    <div className="flex justify-center items-end gap-6 md:gap-8 px-6 md:px-12">
-                      {phoneImages.map((phone, i) => (
-                        <RevealSection key={i} delay={i * 120}>
-                          <div className="flex flex-col items-center gap-4" style={{ width: 'min(17vw, 240px)' }}>
-                            <img
-                              src={phone.src}
-                              alt={phone.label}
-                              className="w-full h-auto rounded-[20px] md:rounded-[28px]"
-                              data-testid={`img-phone-${i}`}
-                              style={{ boxShadow: '0 8px 30px rgba(0,50,80,0.08)' }}
-                            />
-                            <span className="text-[10px] md:text-xs text-center font-medium whitespace-nowrap" style={{ color: 'rgba(26,58,74,0.5)' }}>{phone.label}</span>
-                          </div>
-                        </RevealSection>
-                      ))}
+                    <div className="overflow-x-auto" style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none' }}>
+                      <style>{`.phone-scroll::-webkit-scrollbar { display: none; }`}</style>
+                      <div className="phone-scroll flex gap-6 md:gap-8 px-8 md:px-16 pb-4" style={{ minWidth: 'max-content' }}>
+                        {phoneImages.map((phone, i) => (
+                          <RevealSection key={i} delay={i * 120}>
+                            <div className="flex flex-col items-center gap-4" style={{ width: '260px', flexShrink: 0 }}>
+                              <img
+                                src={phone.src}
+                                alt={phone.label}
+                                className="w-full h-auto rounded-[24px] md:rounded-[32px]"
+                                data-testid={`img-phone-${i}`}
+                                style={{ boxShadow: '0 8px 30px rgba(0,50,80,0.08)' }}
+                              />
+                              <span className="text-[10px] md:text-xs text-center font-medium whitespace-nowrap" style={{ color: 'rgba(26,58,74,0.5)' }}>{phone.label}</span>
+                            </div>
+                          </RevealSection>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </RevealSection>
