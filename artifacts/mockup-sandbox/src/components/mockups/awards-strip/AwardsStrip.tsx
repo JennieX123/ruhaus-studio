@@ -1,11 +1,11 @@
 export default function AwardsStrip() {
   const awards = [
-    { src: "/award-reddot.png", alt: "Red Dot Design Award", h: 36 },
-    { src: "/award-if.png", alt: "iF Design Award", h: 40 },
-    { src: "/award-adesign.png", alt: "A' Design Award", h: 48 },
-    { src: "/award-indigo.png", alt: "Indigo Design Award", h: 36 },
-    { src: "/award-adc.png", alt: "ADC Award", h: 44 },
-    { src: "/award-asia.png", alt: "Asia Design Prize", h: 36 },
+    { src: "/award-reddot.png", alt: "Red Dot Design Award" },
+    { src: "/award-if.png", alt: "iF Design Award" },
+    { src: "/award-adesign.png", alt: "A' Design Award" },
+    { src: "/award-indigo.png", alt: "Indigo Design Award" },
+    { src: "/award-adc.png", alt: "ADC Award" },
+    { src: "/award-asia.png", alt: "Asia Design Prize" },
   ];
 
   return (
@@ -42,11 +42,9 @@ export default function AwardsStrip() {
               src={award.src}
               alt={award.alt}
               style={{
-                height: `${award.h}px`,
+                height: "40px",
                 width: "auto",
                 objectFit: "contain",
-                filter: "grayscale(1) brightness(0) invert(0)",
-                opacity: 0.45,
               }}
             />
           ))}
