@@ -67,6 +67,69 @@ function MagneticCard({ children, className = "", style }: { children: React.Rea
   );
 }
 
+function PhoneCarousel({ phones }: { phones: { src: string; label: string }[] }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = useCallback(() => {
+    if (!scrollRef.current) return;
+    const el = scrollRef.current;
+    const scrollLeft = el.scrollLeft;
+    const itemWidth = el.scrollWidth / phones.length;
+    const idx = Math.round(scrollLeft / itemWidth);
+    setActiveIndex(Math.min(idx, phones.length - 1));
+  }, [phones.length]);
+
+  const scrollTo = useCallback((index: number) => {
+    if (!scrollRef.current) return;
+    const itemWidth = scrollRef.current.scrollWidth / phones.length;
+    scrollRef.current.scrollTo({ left: itemWidth * index, behavior: 'smooth' });
+  }, [phones.length]);
+
+  return (
+    <div>
+      <style>{`.phone-carousel::-webkit-scrollbar { display: none; }`}</style>
+      <div
+        ref={scrollRef}
+        className="phone-carousel flex gap-6 md:gap-8 px-8 md:px-16 pb-6 overflow-x-auto"
+        style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch', scrollSnapType: 'x mandatory' }}
+        onScroll={handleScroll}
+      >
+        {phones.map((phone, i) => (
+          <div key={i} className="flex flex-col items-center gap-3 flex-shrink-0" style={{ width: '260px', scrollSnapAlign: 'center' }}>
+            <img
+              src={phone.src}
+              alt={phone.label}
+              className="w-full h-auto"
+              data-testid={`img-phone-${i}`}
+            />
+            <span className="text-[10px] md:text-xs text-center font-medium whitespace-nowrap" style={{ color: 'rgba(26,58,74,0.5)' }}>{phone.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex justify-center mt-6">
+        <div className="flex items-center gap-2 px-4 py-2.5 rounded-full" style={{ backgroundColor: 'rgba(26,58,74,0.06)' }}>
+          {phones.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => scrollTo(i)}
+              className="transition-all duration-300 rounded-full cursor-pointer"
+              style={{
+                width: activeIndex === i ? '28px' : '8px',
+                height: '8px',
+                backgroundColor: activeIndex === i ? '#5BA4D9' : 'rgba(26,58,74,0.2)',
+                border: activeIndex === i ? '2px solid #5BA4D9' : 'none',
+              }}
+              data-testid={`dot-phone-${i}`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function useScrollParallax() {
   const ref = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
@@ -393,25 +456,7 @@ export default function SomaDetail() {
                       </div>
                     </div>
 
-                    <div className="overflow-x-auto" style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none' }}>
-                      <style>{`.phone-scroll::-webkit-scrollbar { display: none; }`}</style>
-                      <div className="phone-scroll flex gap-6 md:gap-8 px-8 md:px-16 pb-4" style={{ minWidth: 'max-content' }}>
-                        {phoneImages.map((phone, i) => (
-                          <RevealSection key={i} delay={i * 120}>
-                            <div className="flex flex-col items-center gap-4" style={{ width: '260px', flexShrink: 0 }}>
-                              <img
-                                src={phone.src}
-                                alt={phone.label}
-                                className="w-full h-auto rounded-[24px] md:rounded-[32px]"
-                                data-testid={`img-phone-${i}`}
-                                style={{ boxShadow: '0 8px 30px rgba(0,50,80,0.08)' }}
-                              />
-                              <span className="text-[10px] md:text-xs text-center font-medium whitespace-nowrap" style={{ color: 'rgba(26,58,74,0.5)' }}>{phone.label}</span>
-                            </div>
-                          </RevealSection>
-                        ))}
-                      </div>
-                    </div>
+                    <PhoneCarousel phones={phoneImages} />
                   </div>
                 </RevealSection>
 
