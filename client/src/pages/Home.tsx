@@ -46,6 +46,29 @@ export default function Home() {
           </h2>
         </div>
 
+        {/* Awards Strip */}
+        <div className="mb-12 md:mb-16">
+          <p className="text-[10px] tracking-[2px] text-neutral-300 uppercase font-semibold mb-4">Recognition</p>
+          <div className="flex items-center gap-8 flex-wrap">
+            {[
+              { src: "/award-reddot.png", alt: "Red Dot Design Award" },
+              { src: "/award-if.png", alt: "iF Design Award" },
+              { src: "/award-adesign.png", alt: "A' Design Award" },
+              { src: "/award-indigo.png", alt: "Indigo Design Award" },
+              { src: "/award-asia.png", alt: "Asia Design Prize" },
+              { src: "/award-adc.png", alt: "ADC Award" },
+              { src: "/award-ux.png", alt: "UX Design Award" },
+            ].map((award) => (
+              <img
+                key={award.alt}
+                src={award.src}
+                alt={award.alt}
+                style={{ height: "36px", width: "auto", objectFit: "contain" }}
+              />
+            ))}
+          </div>
+        </div>
+
         {/* Portfolio Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
           {isLoading ? (
