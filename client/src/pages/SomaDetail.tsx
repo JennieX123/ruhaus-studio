@@ -106,6 +106,8 @@ function PhoneCarousel({ phones }: { phones: { src: string; label: string }[] })
               transform: activeIndex === i ? 'scale(1.08)' : 'scale(1)',
               transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
             }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.transform = 'scale(1.08)'; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.transform = activeIndex === i ? 'scale(1.08)' : 'scale(1)'; }}
           >
             <img
               src={phone.src}
