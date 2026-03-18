@@ -472,7 +472,7 @@ export default function SomaDetail() {
                       </RevealSection>
                       <div className="text-center mb-8 md:mb-16 px-4 md:px-0">
                         <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 1</span>
-                        <h3 className="text-lg md:text-2xl font-bold mt-2 md:mt-3" style={{ color: '#1a3a4a' }}>Simplifies ASD Emotion to Practice Regulation</h3>
+                        <h3 className="text-lg md:text-2xl font-bold mt-2 md:mt-3" style={{ color: '#1a3a4a' }}>Translating Autistic Emotions into Particle Visualizations</h3>
                       </div>
                     </div>
 
