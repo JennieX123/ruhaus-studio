@@ -2,8 +2,8 @@
 type ModuleMap = Record<string, () => Promise<Record<string, unknown>>>;
 export const modules: ModuleMap = {
   "./components/mockups/galaxsync-enhanced/EnhancedMotion.tsx": () => import("../components/mockups/galaxsync-enhanced/EnhancedMotion.tsx"),
-  "./components/mockups/galaxsync-redesign/AppleInspired.tsx": () => import("../components/mockups/galaxsync-redesign/AppleInspired.tsx"),
   "./components/mockups/ruhaus-homepage/DarkStudio.tsx": () => import("../components/mockups/ruhaus-homepage/DarkStudio.tsx"),
   "./components/mockups/ruhaus-homepage/PlayfulInnovation.tsx": () => import("../components/mockups/ruhaus-homepage/PlayfulInnovation.tsx"),
-  "./components/mockups/ruhaus-homepage/WarmEditorial.tsx": () => import("../components/mockups/ruhaus-homepage/WarmEditorial.tsx")
+  "./components/mockups/ruhaus-homepage/WarmEditorial.tsx": () => import("../components/mockups/ruhaus-homepage/WarmEditorial.tsx"),
+  "./components/mockups/galaxsync-redesign/AppleInspired.tsx": () => import("../components/mockups/galaxsync-redesign/AppleInspired.tsx")
 };
