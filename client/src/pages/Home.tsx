@@ -68,7 +68,7 @@ export default function Home() {
                   <div className="playground-card-img-container w-full h-full relative flex items-center justify-center p-12 md:p-20 bg-[#F5F5F5]">
                     {project.slug === 'hear-me' ? (
                       <span
-                        className="text-4xl md:text-5xl font-bold transition-all duration-700 ease-out saturate-[0.3] group-hover:saturate-100 group-hover:scale-105"
+                        className="text-4xl md:text-5xl font-bold transition-all duration-700 ease-out opacity-40 group-hover:opacity-100 group-hover:scale-105"
                         style={{ fontFamily: "'Nunito', sans-serif", color: '#88B395' }}
                         data-testid="text-hearme-logo"
                       >
@@ -78,7 +78,7 @@ export default function Home() {
                       <img 
                         src={project.image} 
                         alt={project.title} 
-                        className={`object-contain transition-all duration-700 ease-out saturate-[0.3] group-hover:saturate-100 group-hover:scale-105 ${
+                        className={`object-contain transition-all duration-700 ease-out saturate-[0.3] opacity-40 group-hover:saturate-100 group-hover:opacity-100 group-hover:scale-105 ${
                           project.slug === 'soma' ? 'w-36 md:w-44' :
                           project.slug === 'galaxsync' ? 'w-48 md:w-60' :
                           project.slug === 'yoyo' ? 'w-24 md:w-32' :
