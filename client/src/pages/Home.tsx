@@ -63,7 +63,7 @@ export default function Home() {
                 key={award.alt}
                 src={award.src}
                 alt={award.alt}
-                style={{ height: "36px", width: "auto", objectFit: "contain", filter: "grayscale(0.4)", opacity: 0.85 }}
+                style={{ height: "36px", width: "auto", objectFit: "contain" }}
               />
             ))}
           </div>
