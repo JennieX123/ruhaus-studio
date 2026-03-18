@@ -336,7 +336,7 @@ export default function SomaDetail() {
                 <RevealSection delay={400}>
                   <div className="text-center mt-20 md:mt-32 mb-4">
                     <p className="text-xl md:text-3xl lg:text-5xl font-light italic leading-snug" style={{ color: 'rgba(26,58,74,0.45)' }}>
-                      <span style={{ display: 'inline-block', opacity: 0.6 }}>"</span>What if regulation could begin<br />before escalation?<span style={{ display: 'inline-block', opacity: 0.6 }}>"</span>
+                      <span style={{ display: 'inline-block', opacity: 0.6 }}>"</span>What if regulation could begin<br /><span style={{ fontStyle: 'normal', fontWeight: 700, color: '#1a3a4a' }}>before</span> escalation?<span style={{ display: 'inline-block', opacity: 0.6 }}>"</span>
                     </p>
                   </div>
                 </RevealSection>
