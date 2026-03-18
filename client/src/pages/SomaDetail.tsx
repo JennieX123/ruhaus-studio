@@ -483,84 +483,78 @@ export default function SomaDetail() {
                 {/* Feature 2 — Video */}
                 <RevealSection>
                   <div className="py-8 md:py-12">
-                    <div className="max-w-7xl mx-auto px-6">
-                      <div className="mb-8">
-                        <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 2</span>
-                        <h3 className="text-lg md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Co-regulation Synchronizes Activities & Suggestions</h3>
-                        <p className="text-sm md:text-base font-light leading-relaxed mt-3" style={{ color: 'rgba(26,58,74,0.6)' }}>
-                          Guidance appears when support is needed. Breathing guidance aligned with the child's rhythm. Or simple playful activities.
-                        </p>
-                      </div>
-                      <RevealSection direction="scale" delay={200}>
-                        <div className="rounded-2xl overflow-hidden">
-                          <video
-                            src="/soma-app-feature2.mp4"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="w-full h-auto"
-                            data-testid="video-feature2"
-                          />
-                        </div>
-                      </RevealSection>
+                    <div className="max-w-7xl mx-auto px-6 mb-8">
+                      <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 2</span>
+                      <h3 className="text-lg md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Co-regulation Synchronizes Activities & Suggestions</h3>
+                      <p className="text-sm md:text-base font-light leading-relaxed mt-3" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                        Guidance appears when support is needed. Breathing guidance aligned with the child's rhythm. Or simple playful activities.
+                      </p>
                     </div>
+                    <RevealSection direction="scale" delay={200}>
+                      <div className="full-bleed-video overflow-hidden">
+                        <video
+                          src="/soma-app-feature2.mp4"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-auto"
+                          data-testid="video-feature2"
+                        />
+                      </div>
+                    </RevealSection>
                   </div>
                 </RevealSection>
 
                 {/* Feature 3 — Video */}
                 <RevealSection>
-                  <div className="py-8 md:py-12" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
-                    <div className="max-w-7xl mx-auto px-6">
-                      <div className="mb-8">
-                        <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 3</span>
-                        <h3 className="text-lg md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Personalized Learning Patterns</h3>
-                        <p className="text-sm md:text-base font-light leading-relaxed mt-3" style={{ color: 'rgba(26,58,74,0.6)' }}>
-                          An AI/LLM that learns which strategies work best. And builds personalized support patterns.
-                        </p>
-                      </div>
-                      <RevealSection direction="scale" delay={200}>
-                        <div className="rounded-2xl overflow-hidden">
-                          <video
-                            src="/soma-app-feature3.mp4"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="w-full h-auto"
-                            data-testid="video-feature3"
-                          />
-                        </div>
-                      </RevealSection>
+                  <div className="py-8 md:py-12">
+                    <div className="max-w-7xl mx-auto px-6 mb-8">
+                      <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 3</span>
+                      <h3 className="text-lg md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Personalized Learning Patterns</h3>
+                      <p className="text-sm md:text-base font-light leading-relaxed mt-3" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                        An AI/LLM that learns which strategies work best. And builds personalized support patterns.
+                      </p>
                     </div>
+                    <RevealSection direction="scale" delay={200}>
+                      <div className="full-bleed-video overflow-hidden">
+                        <video
+                          src="/soma-app-feature3.mp4"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-auto"
+                          data-testid="video-feature3"
+                        />
+                      </div>
+                    </RevealSection>
                   </div>
                 </RevealSection>
 
                 {/* Feature 4 — Video */}
                 <RevealSection>
                   <div className="py-8 md:py-12">
-                    <div className="max-w-7xl mx-auto px-6">
-                      <div className="mb-8">
-                        <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 4</span>
-                        <h3 className="text-lg md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Adjustable AI Wearable Setting</h3>
-                        <p className="text-sm md:text-base font-light leading-relaxed mt-3" style={{ color: 'rgba(26,58,74,0.6)' }}>
-                          Teachers can adjust patch and ring settings/activities.
-                        </p>
-                      </div>
-                      <RevealSection direction="scale" delay={200}>
-                        <div className="rounded-2xl overflow-hidden">
-                          <video
-                            src="/soma-app-feature4.mp4"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="w-full h-auto"
-                            data-testid="video-feature4"
-                          />
-                        </div>
-                      </RevealSection>
+                    <div className="max-w-7xl mx-auto px-6 mb-8">
+                      <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 4</span>
+                      <h3 className="text-lg md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Adjustable AI Wearable Setting</h3>
+                      <p className="text-sm md:text-base font-light leading-relaxed mt-3" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                        Teachers can adjust patch and ring settings/activities.
+                      </p>
                     </div>
+                    <RevealSection direction="scale" delay={200}>
+                      <div className="full-bleed-video overflow-hidden">
+                        <video
+                          src="/soma-app-feature4.mp4"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-auto"
+                          data-testid="video-feature4"
+                        />
+                      </div>
+                    </RevealSection>
                   </div>
                 </RevealSection>
               </div>
@@ -580,7 +574,7 @@ export default function SomaDetail() {
                 </RevealSection>
 
                 <RevealSection direction="scale" delay={300}>
-                  <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden relative">
+                  <div className="full-bleed-video overflow-hidden relative">
                     <img src="/soma-impact.jpg" alt="Impact" className="w-full h-auto" data-testid="img-impact" />
                     <div className="absolute top-0 left-0 w-full h-full" style={{ background: 'linear-gradient(135deg, rgba(239,244,251,0.45) 0%, rgba(239,244,251,0.15) 30%, transparent 55%)' }} />
                     <div className="absolute top-4 left-4 md:top-12 md:left-12">
