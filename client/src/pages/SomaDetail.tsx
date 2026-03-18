@@ -89,26 +89,22 @@ function PhoneCarousel({ phones }: { phones: { src: string; label: string }[] })
 
   return (
     <div>
-      <style>{`.phone-carousel::-webkit-scrollbar { display: none; }`}</style>
+      <style>{`
+        .phone-carousel::-webkit-scrollbar { display: none; }
+        .phone-item { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        .phone-item:hover { transform: scale(1.12); z-index: 10; }
+      `}</style>
       <div
         ref={scrollRef}
-        className="phone-carousel flex gap-10 md:gap-14 px-8 md:px-16 pb-6 overflow-x-auto"
-        style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch', scrollSnapType: 'x mandatory' }}
+        className="phone-carousel flex gap-10 md:gap-14 px-8 md:px-16 overflow-x-auto"
+        style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch', scrollSnapType: 'x mandatory', paddingTop: '24px', paddingBottom: '24px' }}
         onScroll={handleScroll}
       >
         {phones.map((phone, i) => (
           <div
             key={i}
-            className="flex flex-col items-center gap-3 flex-shrink-0 cursor-pointer"
-            style={{
-              width: '260px',
-              scrollSnapAlign: 'center',
-              transform: activeIndex === i ? 'scale(1.15)' : 'scale(1)',
-              opacity: activeIndex === i ? 1 : 0.6,
-              transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease',
-              zIndex: activeIndex === i ? 10 : 1,
-            }}
-            onClick={() => scrollTo(i)}
+            className="phone-item flex flex-col items-center gap-3 flex-shrink-0"
+            style={{ width: '260px', scrollSnapAlign: 'center' }}
           >
             <img
               src={phone.src}
@@ -116,12 +112,12 @@ function PhoneCarousel({ phones }: { phones: { src: string; label: string }[] })
               className="w-full h-auto"
               data-testid={`img-phone-${i}`}
             />
-            <span className="text-[10px] md:text-xs text-center font-medium whitespace-nowrap" style={{ color: activeIndex === i ? 'rgba(26,58,74,0.8)' : 'rgba(26,58,74,0.4)', transition: 'color 0.4s ease' }}>{phone.label}</span>
+            <span className="text-[10px] md:text-xs text-center font-medium whitespace-nowrap" style={{ color: 'rgba(26,58,74,0.5)' }}>{phone.label}</span>
           </div>
         ))}
       </div>
 
-      <div className="flex justify-center mt-6">
+      <div className="flex justify-center mt-4">
         <div className="flex items-center gap-2 px-4 py-2.5 rounded-full" style={{ backgroundColor: 'rgba(26,58,74,0.06)' }}>
           {phones.map((_, i) => (
             <button
