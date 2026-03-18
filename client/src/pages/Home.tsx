@@ -70,10 +70,8 @@ export default function Home() {
                       src={project.image} 
                       alt={project.title} 
                       className={`max-w-full max-h-full object-contain transition-all ease-in-out ${
-                        ['galaxsync', 'soma'].includes(project.slug)
-                          ? 'duration-200 ' + (project.slug === 'galaxsync'
-                            ? 'brightness-110 saturate-150 group-hover:drop-shadow-[0_0_20px_rgba(160,110,80,0.6)]'
-                            : 'brightness-110 saturate-150 group-hover:drop-shadow-[0_0_20px_rgba(76,129,161,0.6)]')
+                        ['galaxsync', 'soma', 'hear-me', 'yoyo'].includes(project.slug)
+                          ? 'duration-200 brightness-110 group-hover:drop-shadow-[0_0_20px_rgba(88,60,160,0.5)]'
                           : 'duration-700 grayscale brightness-[0.2] group-hover:grayscale-0 group-hover:brightness-100'
                       }`}
                     />

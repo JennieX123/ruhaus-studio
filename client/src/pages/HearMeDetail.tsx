@@ -211,7 +211,7 @@ export default function HearMeDetail() {
               {/* Closing */}
               <RevealSection direction="scale">
                 <div className="flex flex-col items-center gap-6 py-16 md:py-24 text-center">
-                  <img src="/hearme-logo.png" alt="Hear Me Logo" className="w-48 md:w-72" data-testid="img-logo" />
+                  <h2 className="text-3xl md:text-5xl font-bold" data-testid="img-logo" style={{ fontFamily: "'Nunito', sans-serif", color: '#1a3a2a' }}>Hear Me</h2>
                   <p className="text-sm tracking-widest uppercase" style={{ color: 'rgba(26,58,42,0.4)' }}>
                     Bridging communication. Building connection.
                   </p>

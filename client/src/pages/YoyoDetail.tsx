@@ -215,7 +215,7 @@ export default function YoyoDetail() {
               {/* Closing */}
               <RevealSection direction="scale">
                 <div className="flex flex-col items-center gap-4 md:gap-6 py-12 md:py-24 text-center">
-                  <h2 className="text-2xl md:text-4xl font-semibold playground-heading" style={{ color: '#2D1B69' }}>YOYO</h2>
+                  <img src="/yoyo-logo.png" alt="YOYO Logo" className="w-24 md:w-36" data-testid="img-logo" />
                   <p className="text-xs md:text-sm tracking-widest uppercase" style={{ color: 'rgba(45,27,105,0.4)' }}>
                     Nurturing connection. Supporting growth.
                   </p>

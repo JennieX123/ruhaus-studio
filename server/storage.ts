@@ -48,7 +48,7 @@ export class MemStorage implements IStorage {
         title: "Hear Me",
         domain: "#Audio #Voice",
         intro: "Next-gen voice interfaces and immersive auditory experiences for creative professionals.",
-        image: "/assets/images/project-hearme.png",
+        image: "/assets/images/project-hearme.svg",
         tags: ["AI", "VOICE UX", "NEW"]
       },
       {
