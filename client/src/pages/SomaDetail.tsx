@@ -84,6 +84,7 @@ function PhoneCarousel({ phones }: { phones: { src: string; label: string }[] })
     if (!scrollRef.current) return;
     const itemWidth = scrollRef.current.scrollWidth / phones.length;
     scrollRef.current.scrollTo({ left: itemWidth * index, behavior: 'smooth' });
+    setActiveIndex(index);
   }, [phones.length]);
 
   return (
@@ -96,14 +97,26 @@ function PhoneCarousel({ phones }: { phones: { src: string; label: string }[] })
         onScroll={handleScroll}
       >
         {phones.map((phone, i) => (
-          <div key={i} className="flex flex-col items-center gap-3 flex-shrink-0" style={{ width: '260px', scrollSnapAlign: 'center' }}>
+          <div
+            key={i}
+            className="flex flex-col items-center gap-3 flex-shrink-0 cursor-pointer"
+            style={{
+              width: '260px',
+              scrollSnapAlign: 'center',
+              transform: activeIndex === i ? 'scale(1.15)' : 'scale(1)',
+              opacity: activeIndex === i ? 1 : 0.6,
+              transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease',
+              zIndex: activeIndex === i ? 10 : 1,
+            }}
+            onClick={() => scrollTo(i)}
+          >
             <img
               src={phone.src}
               alt={phone.label}
               className="w-full h-auto"
               data-testid={`img-phone-${i}`}
             />
-            <span className="text-[10px] md:text-xs text-center font-medium whitespace-nowrap" style={{ color: 'rgba(26,58,74,0.5)' }}>{phone.label}</span>
+            <span className="text-[10px] md:text-xs text-center font-medium whitespace-nowrap" style={{ color: activeIndex === i ? 'rgba(26,58,74,0.8)' : 'rgba(26,58,74,0.4)', transition: 'color 0.4s ease' }}>{phone.label}</span>
           </div>
         ))}
       </div>
