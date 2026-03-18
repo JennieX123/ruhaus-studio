@@ -68,7 +68,7 @@ export default function Home() {
                   <div className="playground-card-img-container w-full h-full relative flex items-center justify-center bg-[#F5F5F5] p-12 md:p-20">
                     {project.slug === 'hear-me' ? (
                       <span
-                        className="text-4xl md:text-5xl font-bold transition-all ease-in-out duration-200"
+                        className="text-4xl md:text-5xl font-bold transition-all ease-in-out duration-700 opacity-20 group-hover:opacity-100"
                         style={{ fontFamily: "'Nunito', sans-serif", color: '#88B395' }}
                         data-testid="text-hearme-logo"
                       >
