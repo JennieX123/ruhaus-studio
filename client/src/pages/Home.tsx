@@ -50,7 +50,7 @@ export default function Home() {
         <div className="mb-10 md:mb-14 -mt-4">
           <div className="flex items-center gap-8 flex-wrap">
             {[
-              { src: "/award-reddot.png", alt: "Red Dot Design Award" },
+              { src: "/award-reddot-v2.png", alt: "Red Dot Design Award" },
               { src: "/award-if.png", alt: "iF Design Award" },
               { src: "/award-adesign.png", alt: "A' Design Award" },
               { src: "/award-indigo.png", alt: "Indigo Design Award" },
