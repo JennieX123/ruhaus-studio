@@ -572,8 +572,18 @@ export default function SomaDetail() {
                 </RevealSection>
 
                 <RevealSection direction="scale" delay={300}>
-                  <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden">
+                  <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden relative">
                     <img src="/soma-impact.jpg" alt="Impact" className="w-full h-auto" data-testid="img-impact" />
+                    <div className="absolute top-0 left-0 w-full h-full" style={{ background: 'linear-gradient(135deg, rgba(239,244,251,0.55) 0%, rgba(239,244,251,0.25) 35%, transparent 60%)' }} />
+                    <div className="absolute top-8 left-8 md:top-12 md:left-12">
+                      <RevealSection delay={500}>
+                        <p className="text-lg md:text-2xl lg:text-3xl font-light leading-relaxed" style={{ color: '#1a3a4a' }}>
+                          Small signals.<br />
+                          Gentle support.<br />
+                          Lasting connection.
+                        </p>
+                      </RevealSection>
+                    </div>
                   </div>
                 </RevealSection>
               </div>
