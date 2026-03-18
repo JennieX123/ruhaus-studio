@@ -81,6 +81,7 @@ export default function Home() {
                         className={`object-contain transition-all ease-in-out duration-200 ${
                           project.slug === 'soma' ? 'w-36 md:w-44' :
                           project.slug === 'galaxsync' ? 'w-48 md:w-60' :
+                          project.slug === 'yoyo' ? 'w-24 md:w-32' :
                           'max-w-full max-h-full'
                         }`}
                       />
