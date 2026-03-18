@@ -39,7 +39,7 @@ export class MemStorage implements IStorage {
         slug: "galaxsync",
         title: "Galaxsync",
         domain: "#Data #Sci-Fi",
-        intro: "Real-time data synchronization visualizer crossing vast digital distances.",
+        intro: "A reciprocal AI-driven VR care ecosystem connecting elders and ADHD children through shared stories and interactive worlds.",
         image: "/galaxsync-logo-original.png",
         tags: ["Reciprocal AI-VR Ecosystem", "ADHD", "Elders"]
       },
