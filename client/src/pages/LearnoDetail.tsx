@@ -380,30 +380,33 @@ export default function LearnoDetail() {
                 />
               </div>
 
-              {/* ——— Full-bleed VR Scene ——— */}
-              <RevealSection direction="scale">
-                <div className="full-bleed-learno overflow-hidden">
-                  <img src="/learno-vr.jpg" alt="LEARNO — Immersive VR learning with AI companion" className="w-full h-auto" data-testid="img-vr-scene" />
-                </div>
-              </RevealSection>
-
-              {/* ——— Closing — Characters + Logo ——— */}
-              <RevealSection direction="scale">
-                <div className="flex flex-col items-center text-center">
-                  <div className="full-bleed-learno overflow-hidden">
-                    <img src="/learno-characters.png" alt="LEARNO character collection" className="w-full h-auto" data-testid="img-characters" />
-                  </div>
-                  <div className="flex flex-col items-center gap-4 pt-8 md:pt-12 pb-16 md:pb-28">
-                    <img src="/assets/images/project-learno.png" alt="LEARNO Logo" className="h-10 md:h-14" data-testid="img-logo" />
-                    <p className="text-xs md:text-sm tracking-widest uppercase" style={{ color: COLORS.textLight }}>
-                      The gamified knowledge realms ecosystem designed for K1–K12
-                    </p>
-                  </div>
-                </div>
-              </RevealSection>
-
             </div>
           </div>
+
+          {/* ——— Full-bleed VR Scene ——— */}
+          <RevealSection direction="scale">
+            <div className="w-full overflow-hidden mt-20 md:mt-32">
+              <img src="/learno-vr.jpg" alt="LEARNO — Immersive VR learning with AI companion" className="w-full h-auto block" data-testid="img-vr-scene" />
+            </div>
+          </RevealSection>
+
+          {/* ——— Closing — Characters + Logo ——— */}
+          <div className="max-w-5xl mx-auto px-6">
+            <RevealSection direction="scale">
+              <div className="pt-16 md:pt-24">
+                <img src="/learno-characters.png" alt="LEARNO character collection" className="w-full h-auto block" data-testid="img-characters" />
+              </div>
+            </RevealSection>
+            <RevealSection>
+              <div className="flex flex-col items-center gap-4 pt-8 md:pt-12 pb-16 md:pb-28 text-center">
+                <img src="/assets/images/project-learno.png" alt="LEARNO Logo" className="h-10 md:h-14" data-testid="img-logo" />
+                <p className="text-xs md:text-sm tracking-widest uppercase" style={{ color: COLORS.textLight }}>
+                  The gamified knowledge realms ecosystem designed for K1–K12
+                </p>
+              </div>
+            </RevealSection>
+          </div>
+
         </main>
 
         <footer style={{ borderTop: `1px solid ${COLORS.border}`, marginTop: '80px', padding: '48px 0' }}>
