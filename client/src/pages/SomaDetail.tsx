@@ -272,7 +272,7 @@ export default function SomaDetail() {
                   alt="Soma Hero"
                   className="w-full h-auto object-cover"
                   data-testid="img-hero"
-                  style={{ transform: `scale(${1.08 + heroParallax.progress * 0.08})`, transition: 'transform 0.1s linear', transformOrigin: 'center center' }}
+                  style={{ transform: `scale(${heroScale})`, transition: 'transform 0.1s linear', transformOrigin: 'center center' }}
                 />
               </div>
             </RevealSection>
