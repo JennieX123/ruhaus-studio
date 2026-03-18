@@ -392,32 +392,30 @@ export default function SomaDetail() {
                         <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Simplifies ASD Emotion to Practice Regulation</h3>
                       </div>
 
-                      <div className="grid grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
+                      <div className="grid grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: '2vw', paddingRight: '2vw' }}>
                         {phoneImages.slice(0, 3).map((phone, i) => (
                           <RevealSection key={i} delay={i * 150}>
-                            <div className="phone-card flex flex-col items-center gap-3">
+                            <div className="flex flex-col items-center gap-3">
                               <img
                                 src={phone.src}
                                 alt={phone.label}
                                 className="w-full h-auto"
                                 data-testid={`img-phone-${i}`}
-                                style={{ filter: 'drop-shadow(0 10px 40px rgba(0,50,80,0.12))' }}
                               />
                               <span className="text-xs md:text-sm text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
                             </div>
                           </RevealSection>
                         ))}
                       </div>
-                      <div className="grid grid-cols-2 gap-6 md:gap-8 max-w-[66%] mx-auto">
+                      <div className="grid grid-cols-2 gap-6 md:gap-8 mx-auto" style={{ width: '66vw' }}>
                         {phoneImages.slice(3).map((phone, i) => (
                           <RevealSection key={i + 3} delay={(i + 3) * 150}>
-                            <div className="phone-card flex flex-col items-center gap-3">
+                            <div className="flex flex-col items-center gap-3">
                               <img
                                 src={phone.src}
                                 alt={phone.label}
                                 className="w-full h-auto"
                                 data-testid={`img-phone-${i + 3}`}
-                                style={{ filter: 'drop-shadow(0 10px 40px rgba(0,50,80,0.12))' }}
                               />
                               <span className="text-xs md:text-sm text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
                             </div>
