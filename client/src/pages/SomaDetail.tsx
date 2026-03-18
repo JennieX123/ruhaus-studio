@@ -89,22 +89,23 @@ function PhoneCarousel({ phones }: { phones: { src: string; label: string }[] })
 
   return (
     <div>
-      <style>{`
-        .phone-carousel::-webkit-scrollbar { display: none; }
-        .phone-item { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
-        .phone-item:hover { transform: scale(1.12); z-index: 10; }
-      `}</style>
+      <style>{`.phone-carousel::-webkit-scrollbar { display: none; }`}</style>
       <div
         ref={scrollRef}
-        className="phone-carousel flex gap-10 md:gap-14 px-8 md:px-16 overflow-x-auto"
-        style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch', scrollSnapType: 'x mandatory', paddingTop: '24px', paddingBottom: '24px' }}
+        className="phone-carousel flex gap-10 md:gap-14 px-8 md:px-16 overflow-x-auto items-center"
+        style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch', scrollSnapType: 'x mandatory', paddingTop: '40px', paddingBottom: '40px' }}
         onScroll={handleScroll}
       >
         {phones.map((phone, i) => (
           <div
             key={i}
-            className="phone-item flex flex-col items-center gap-3 flex-shrink-0"
-            style={{ width: '260px', scrollSnapAlign: 'center' }}
+            className="flex flex-col items-center gap-3 flex-shrink-0"
+            style={{
+              width: '240px',
+              scrollSnapAlign: 'center',
+              transform: activeIndex === i ? 'scale(1.08)' : 'scale(1)',
+              transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+            }}
           >
             <img
               src={phone.src}
