@@ -78,7 +78,7 @@ export default function Home() {
                       <img 
                         src={project.image} 
                         alt={project.title} 
-                        className={`object-contain transition-all duration-700 ease-out saturate-[0.3] opacity-40 group-hover:saturate-100 group-hover:opacity-100 group-hover:scale-105 ${
+                        className={`object-contain transition-all duration-700 ease-out opacity-40 group-hover:opacity-100 group-hover:scale-105 ${
                           project.slug === 'soma' ? 'w-36 md:w-44' :
                           project.slug === 'galaxsync' ? 'w-48 md:w-60' :
                           project.slug === 'yoyo' ? 'w-24 md:w-32' :
