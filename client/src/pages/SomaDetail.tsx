@@ -91,7 +91,7 @@ function PhoneCarousel({ phones }: { phones: { src: string; label: string }[] })
       <style>{`.phone-carousel::-webkit-scrollbar { display: none; }`}</style>
       <div
         ref={scrollRef}
-        className="phone-carousel flex gap-6 md:gap-8 px-8 md:px-16 pb-6 overflow-x-auto"
+        className="phone-carousel flex gap-10 md:gap-14 px-8 md:px-16 pb-6 overflow-x-auto"
         style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch', scrollSnapType: 'x mandatory' }}
         onScroll={handleScroll}
       >
