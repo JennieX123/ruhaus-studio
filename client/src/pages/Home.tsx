@@ -82,6 +82,7 @@ export default function Home() {
                           project.slug === 'soma' ? 'w-36 md:w-44' :
                           project.slug === 'galaxsync' ? 'w-48 md:w-60' :
                           project.slug === 'yoyo' ? 'w-24 md:w-32' :
+                          project.slug === 'learno' ? 'w-36 md:w-44' :
                           'max-w-full max-h-full'
                         }`}
                       />

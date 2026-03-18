@@ -9,6 +9,7 @@ import GalaxsyncDetail from "@/pages/GalaxsyncDetail";
 import SomaDetail from "@/pages/SomaDetail";
 import HearMeDetail from "@/pages/HearMeDetail";
 import YoyoDetail from "@/pages/YoyoDetail";
+import LearnoDetail from "@/pages/LearnoDetail";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/soma" component={SomaDetail}/>
       <Route path="/hear-me" component={HearMeDetail}/>
       <Route path="/yoyo" component={YoyoDetail}/>
+      <Route path="/learno" component={LearnoDetail}/>
       <Route path="/:slug" component={ProjectDetail}/>
       <Route component={NotFound} />
     </Switch>
