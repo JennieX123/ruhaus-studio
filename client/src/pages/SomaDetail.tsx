@@ -397,7 +397,7 @@ export default function SomaDetail() {
                 <RevealSection direction="scale" delay={200}>
                   <div className="full-bleed-video overflow-hidden">
                     <video
-                      src="/soma-patch-video.mp4"
+                      src="/soma-replacement-3d.mp4"
                       autoPlay
                       loop
                       muted
@@ -444,7 +444,7 @@ export default function SomaDetail() {
                 <RevealSection direction="scale" delay={200}>
                   <div className="full-bleed-video overflow-hidden">
                     <video
-                      src="/soma-ring-video.mp4"
+                      src="/soma-ring-breakdown.mp4"
                       autoPlay
                       loop
                       muted
@@ -493,7 +493,7 @@ export default function SomaDetail() {
                     <RevealSection direction="scale" delay={200}>
                       <div className="full-bleed-video overflow-hidden">
                         <video
-                          src="/soma-app-feature2.mp4"
+                          src="/soma-app-1-new.mp4"
                           autoPlay
                           loop
                           muted
@@ -519,7 +519,7 @@ export default function SomaDetail() {
                     <RevealSection direction="scale" delay={200}>
                       <div className="full-bleed-video overflow-hidden">
                         <video
-                          src="/soma-app-feature3.mp4"
+                          src="/soma-app-3-new.mp4"
                           autoPlay
                           loop
                           muted
@@ -545,7 +545,7 @@ export default function SomaDetail() {
                     <RevealSection direction="scale" delay={200}>
                       <div className="full-bleed-video overflow-hidden">
                         <video
-                          src="/soma-app-feature4.mp4"
+                          src="/soma-app-4-new.mp4"
                           autoPlay
                           loop
                           muted
