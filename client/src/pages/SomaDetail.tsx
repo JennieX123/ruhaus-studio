@@ -95,11 +95,11 @@ export default function SomaDetail() {
   if (!mounted) return null;
 
   const phoneImages = [
-    { src: "/soma-phone-waiting.png", label: "Waiting to Connect" },
-    { src: "/soma-phone-steady.png", label: "Steady & At Ease" },
-    { src: "/soma-phone-unsettled.png", label: "Unsettled" },
-    { src: "/soma-phone-overwhelmed.png", label: "Overwhelmed" },
-    { src: "/soma-phone-balance.png", label: "Returning to Balance" },
+    { src: "/soma-phone-waiting-trimmed.png", label: "Waiting to Connect" },
+    { src: "/soma-phone-steady-trimmed.png", label: "Steady & At Ease" },
+    { src: "/soma-phone-unsettled-trimmed.png", label: "Unsettled" },
+    { src: "/soma-phone-overwhelmed-trimmed.png", label: "Overwhelmed" },
+    { src: "/soma-phone-balance-trimmed.png", label: "Returning to Balance" },
   ];
 
   const heroScale = 1 + heroParallax.progress * 0.08;
