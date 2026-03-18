@@ -375,35 +375,36 @@ export default function SomaDetail() {
 
               {/* Soma App */}
               <div className="space-y-6">
-                {/* Feature 1 — 5 phone screenshots, 3+2 rows, large */}
+                {/* Feature 1 — 5 phone screenshots in one row */}
                 <RevealSection>
-                  <div className="py-16 md:py-24 relative" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
-                    <div className="max-w-7xl mx-auto">
+                  <div className="py-20 md:py-32 relative" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
+                    <div className="max-w-6xl mx-auto">
                       <RevealSection>
-                        <div className="text-center mb-8 md:mb-12">
-                          <h2 className="text-4xl md:text-6xl font-bold mb-4" style={{ color: '#1a3a4a' }}>Soma App</h2>
+                        <div className="text-center mb-16 md:mb-20">
+                          <h2 className="text-4xl md:text-6xl font-bold mb-6" style={{ color: '#1a3a4a' }}>Soma App</h2>
                           <p className="text-base md:text-lg font-light leading-relaxed max-w-3xl mx-auto" style={{ color: 'rgba(26,58,74,0.6)' }}>
                             The Soma app quietly monitors emotional patterns in the background.
                           </p>
                         </div>
                       </RevealSection>
-                      <div className="mb-4">
+                      <div className="text-center mb-12 md:mb-16">
                         <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 1</span>
-                        <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Simplifies ASD Emotion to Practice Regulation</h3>
+                        <h3 className="text-xl md:text-2xl font-bold mt-3" style={{ color: '#1a3a4a' }}>Simplifies ASD Emotion to Practice Regulation</h3>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-5 gap-3" style={{ padding: '0 2vw' }}>
+                    <div className="flex justify-center items-end gap-6 md:gap-8 px-6 md:px-12">
                       {phoneImages.map((phone, i) => (
                         <RevealSection key={i} delay={i * 120}>
-                          <div className="flex flex-col items-center gap-2">
+                          <div className="flex flex-col items-center gap-4" style={{ width: 'min(17vw, 240px)' }}>
                             <img
                               src={phone.src}
                               alt={phone.label}
-                              className="w-full h-auto"
+                              className="w-full h-auto rounded-[20px] md:rounded-[28px]"
                               data-testid={`img-phone-${i}`}
+                              style={{ boxShadow: '0 8px 30px rgba(0,50,80,0.08)' }}
                             />
-                            <span className="text-[10px] md:text-xs text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
+                            <span className="text-[10px] md:text-xs text-center font-medium whitespace-nowrap" style={{ color: 'rgba(26,58,74,0.5)' }}>{phone.label}</span>
                           </div>
                         </RevealSection>
                       ))}
