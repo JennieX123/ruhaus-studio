@@ -387,41 +387,41 @@ export default function SomaDetail() {
                           </p>
                         </div>
                       </RevealSection>
-                      <div className="mb-8">
+                      <div className="mb-4">
                         <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 1</span>
                         <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Simplifies ASD Emotion to Practice Regulation</h3>
                       </div>
+                    </div>
 
-                      <div className="grid grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: '2vw', paddingRight: '2vw' }}>
-                        {phoneImages.slice(0, 3).map((phone, i) => (
-                          <RevealSection key={i} delay={i * 150}>
-                            <div className="flex flex-col items-center gap-3">
-                              <img
-                                src={phone.src}
-                                alt={phone.label}
-                                className="w-full h-auto"
-                                data-testid={`img-phone-${i}`}
-                              />
-                              <span className="text-xs md:text-sm text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
-                            </div>
-                          </RevealSection>
-                        ))}
-                      </div>
-                      <div className="grid grid-cols-2 gap-6 md:gap-8 mx-auto" style={{ width: '66vw' }}>
-                        {phoneImages.slice(3).map((phone, i) => (
-                          <RevealSection key={i + 3} delay={(i + 3) * 150}>
-                            <div className="flex flex-col items-center gap-3">
-                              <img
-                                src={phone.src}
-                                alt={phone.label}
-                                className="w-full h-auto"
-                                data-testid={`img-phone-${i + 3}`}
-                              />
-                              <span className="text-xs md:text-sm text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
-                            </div>
-                          </RevealSection>
-                        ))}
-                      </div>
+                    <div className="grid grid-cols-3 gap-3 mb-4" style={{ padding: '0 1vw' }}>
+                      {phoneImages.slice(0, 3).map((phone, i) => (
+                        <RevealSection key={i} delay={i * 150}>
+                          <div className="flex flex-col items-center gap-1">
+                            <img
+                              src={phone.src}
+                              alt={phone.label}
+                              className="w-full h-auto"
+                              data-testid={`img-phone-${i}`}
+                            />
+                            <span className="text-[10px] md:text-xs text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
+                          </div>
+                        </RevealSection>
+                      ))}
+                    </div>
+                    <div className="grid grid-cols-2 gap-3 mx-auto" style={{ width: '66%', padding: '0 1vw' }}>
+                      {phoneImages.slice(3).map((phone, i) => (
+                        <RevealSection key={i + 3} delay={(i + 3) * 150}>
+                          <div className="flex flex-col items-center gap-1">
+                            <img
+                              src={phone.src}
+                              alt={phone.label}
+                              className="w-full h-auto"
+                              data-testid={`img-phone-${i + 3}`}
+                            />
+                            <span className="text-[10px] md:text-xs text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
+                          </div>
+                        </RevealSection>
+                      ))}
                     </div>
                   </div>
                 </RevealSection>
