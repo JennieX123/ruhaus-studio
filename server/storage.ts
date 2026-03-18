@@ -52,20 +52,20 @@ export class MemStorage implements IStorage {
         tags: ["AI", "VOICE UX", "NEW"]
       },
       {
-        slug: "yoyo",
-        title: "YOYO",
-        domain: "#AI #IoT #Child Wellness",
-        intro: "An intelligent assistant ensuring a holistic approach to child development.",
-        image: "/assets/images/project-yoyo.png",
-        tags: ["AI", "IoT", "NEW"]
-      },
-      {
         slug: "learno",
         title: "LEARNO",
         domain: "#EdTech #AI #Gamification",
         intro: "A next-generation K–12 learning ecosystem with AI-guided gamified journeys and emotional companions.",
         image: "/assets/images/project-learno.png",
         tags: ["EDTECH", "AI", "K-12"]
+      },
+      {
+        slug: "yoyo",
+        title: "YOYO",
+        domain: "#AI #IoT #Child Wellness",
+        intro: "An intelligent assistant ensuring a holistic approach to child development.",
+        image: "/assets/images/project-yoyo.png",
+        tags: ["AI", "IoT", "NEW"]
       },
     ];
     seedData.forEach(p => this.createProject(p));
