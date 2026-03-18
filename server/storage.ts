@@ -54,10 +54,10 @@ export class MemStorage implements IStorage {
       {
         slug: "yoyo",
         title: "YOYO",
-        domain: "#Play #Interactive",
-        intro: "Whimsical digital toys and interactive playgrounds that bring joy to daily routines.",
+        domain: "#AI #IoT #Child Wellness",
+        intro: "An intelligent assistant ensuring a holistic approach to child development.",
         image: "/assets/images/project-yoyo.png",
-        tags: ["PRODUCT", "INTERACTIVE"]
+        tags: ["AI", "IoT", "NEW"]
       },
       {
         slug: "learno",
