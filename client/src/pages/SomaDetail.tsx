@@ -344,7 +344,7 @@ export default function SomaDetail() {
 
               {/* 4. Innovation — Introduce Soma */}
               <div className="py-16 md:py-32" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
-                <div className="max-w-6xl mx-auto text-center">
+                <div className="max-w-7xl mx-auto text-center">
                   <RevealSection>
                     <h2 className="text-3xl md:text-5xl lg:text-7xl leading-tight mb-6 md:mb-12" style={{ fontFamily: "'Georgia', serif", color: '#1a3a4a' }}>
                       Introducing <br /><span className="italic">Soma</span>
@@ -355,7 +355,7 @@ export default function SomaDetail() {
                       An AI-wearable ecosystem addressing self co-regulation in autism education.
                     </p>
                   </RevealSection>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto px-4 md:px-0">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto px-4 md:px-0">
                     <RevealSection delay={200}>
                       <div className="flex flex-col items-center gap-5">
                         <img src="/soma-patch-image.jpg" alt="Soma Patch" className="w-full rounded-3xl object-cover" style={{ aspectRatio: '1/1' }} data-testid="img-patch-intro" />
