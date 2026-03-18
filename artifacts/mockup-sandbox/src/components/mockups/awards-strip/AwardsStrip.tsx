@@ -4,8 +4,9 @@ export default function AwardsStrip() {
     { src: "/award-if.png", alt: "iF Design Award" },
     { src: "/award-adesign.png", alt: "A' Design Award" },
     { src: "/award-indigo.png", alt: "Indigo Design Award" },
-    { src: "/award-adc.png", alt: "ADC Award" },
     { src: "/award-asia.png", alt: "Asia Design Prize" },
+    { src: "/award-adc.png", alt: "ADC Award" },
+    { src: "/award-ux.png", alt: "UX Design Award" },
   ];
 
   return (
