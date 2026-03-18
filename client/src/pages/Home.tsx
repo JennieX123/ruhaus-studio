@@ -69,7 +69,7 @@ export default function Home() {
                     {project.slug === 'hear-me' ? (
                       <span
                         className="text-4xl md:text-5xl font-bold transition-all ease-in-out duration-200"
-                        style={{ fontFamily: "'Nunito', sans-serif", color: '#1a3a2a' }}
+                        style={{ fontFamily: "'Nunito', sans-serif", color: '#0d1f15' }}
                         data-testid="text-hearme-logo"
                       >
                         Hear Me
