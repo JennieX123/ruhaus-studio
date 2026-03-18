@@ -89,19 +89,22 @@ function PhoneCarousel({ phones }: { phones: { src: string; label: string }[] })
 
   return (
     <div>
-      <style>{`.phone-carousel::-webkit-scrollbar { display: none; }`}</style>
+      <style>{`
+        .phone-carousel::-webkit-scrollbar { display: none; }
+        @media (min-width: 768px) { .phone-item { width: 240px !important; } }
+      `}</style>
       <div
         ref={scrollRef}
-        className="phone-carousel flex gap-10 md:gap-14 px-8 md:px-16 overflow-x-auto items-center"
-        style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch', scrollSnapType: 'x mandatory', paddingTop: '40px', paddingBottom: '40px' }}
+        className="phone-carousel flex gap-6 md:gap-14 px-6 md:px-16 overflow-x-auto items-center"
+        style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch', scrollSnapType: 'x mandatory', paddingTop: '24px', paddingBottom: '24px' }}
         onScroll={handleScroll}
       >
         {phones.map((phone, i) => (
           <div
             key={i}
-            className="flex flex-col items-center gap-3 flex-shrink-0"
+            className="flex flex-col items-center gap-2 md:gap-3 flex-shrink-0 phone-item"
             style={{
-              width: '240px',
+              width: '180px',
               scrollSnapAlign: 'center',
               transform: activeIndex === i ? 'scale(1.08)' : 'scale(1)',
               transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
@@ -180,7 +183,7 @@ export default function SomaDetail() {
   const heroScale = 1 + heroParallax.progress * 0.08;
 
   return (
-    <div className="min-h-screen selection:bg-current selection:text-white relative" style={{ backgroundColor: '#EFF4FB', fontFamily: "'Nunito', sans-serif" }}>
+    <div className="min-h-screen selection:bg-current selection:text-white relative" style={{ backgroundColor: '#EFF4FB', fontFamily: "'Nunito', sans-serif", overflowX: 'clip' }}>
       <style>{`
         @keyframes grain {
           0%, 100% { transform: translate(0, 0); }
@@ -210,9 +213,14 @@ export default function SomaDetail() {
           box-shadow: 0 20px 60px rgba(0, 50, 80, 0.1);
         }
         .full-bleed-video {
+          width: 100%;
+          position: relative;
+          left: 50%;
+          right: 50%;
+          margin-left: -50vw;
+          margin-right: -50vw;
           width: 100vw;
-          margin-left: calc(-50vw + 50%);
-          margin-right: calc(-50vw + 50%);
+          max-width: 100vw;
         }
         @keyframes fadeInUp {
           from { opacity: 0; transform: translateY(40px); }
@@ -256,7 +264,7 @@ export default function SomaDetail() {
         <main className="pb-12 md:pb-20" style={{ paddingTop: 0 }}>
 
           {/* 1. Hero — Parallax zoom on scroll */}
-          <div ref={heroParallax.ref} className="overflow-hidden" style={{ width: '100vw' }}>
+          <div ref={heroParallax.ref} className="overflow-hidden w-full">
             <RevealSection direction="scale">
               <div className="overflow-hidden">
                 <img
@@ -278,7 +286,7 @@ export default function SomaDetail() {
                   <h1 className="text-3xl md:text-5xl font-semibold playground-heading" data-testid="text-title" style={{ color: '#1a3a4a' }}>Soma</h1>
                 </RevealSection>
                 <RevealSection delay={400}>
-                  <p className="text-base md:text-xl leading-relaxed whitespace-nowrap" data-testid="text-subtitle" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                  <p className="text-sm md:text-xl leading-relaxed" data-testid="text-subtitle" style={{ color: 'rgba(26,58,74,0.6)' }}>
                     An AI wearable ecosystem addressing self co-regulation in autism education.
                   </p>
                 </RevealSection>
@@ -295,17 +303,17 @@ export default function SomaDetail() {
               <div className="py-12 md:py-20" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
                 <RevealSection>
                   <div className="text-center mb-12 md:mb-20">
-                    <h2 className="text-4xl md:text-6xl font-light mb-4 md:mb-6" style={{ letterSpacing: '-0.02em', color: '#1a3a4a' }}>Current Challenges</h2>
+                    <h2 className="text-2xl md:text-4xl lg:text-6xl font-light mb-4 md:mb-6" style={{ letterSpacing: '-0.02em', color: '#1a3a4a' }}>Current Challenges</h2>
                   </div>
                 </RevealSection>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto px-4 md:px-0">
                   <RevealSection delay={100} direction="left">
                     <MagneticCard className="h-full" style={{ display: 'flex', flexDirection: 'column', cursor: 'default' }}>
                       <div className="overflow-hidden rounded-2xl">
                         <img src="/soma-children-challenge.jpg" alt="Children regulation challenge" className="w-full object-cover transition-transform duration-700 hover:scale-105" style={{ aspectRatio: '4/3' }} data-testid="img-children-challenge" />
                       </div>
-                      <h3 className="text-xl md:text-2xl font-bold mt-6 mb-4" style={{ color: '#1a3a4a' }}>Autism Children Regulation Challenge</h3>
+                      <h3 className="text-lg md:text-2xl font-bold mt-4 md:mt-6 mb-3 md:mb-4" style={{ color: '#1a3a4a' }}>Autism Children Regulation Challenge</h3>
                       <p className="text-sm md:text-base font-light leading-relaxed" style={{ color: 'rgba(26,58,74,0.6)' }}>
                         Autism is not a behavior problem. It is often a 1-to-1 aid intensive problem. Most autistic children attend mainstream schools. Emotional regulation is a daily concern. Physiological signals change first.
                       </p>
@@ -317,7 +325,7 @@ export default function SomaDetail() {
                       <div className="overflow-hidden rounded-2xl">
                         <img src="/soma-teacher-challenge.jpg" alt="Teacher's limited attention" className="w-full object-cover transition-transform duration-700 hover:scale-105" style={{ aspectRatio: '4/3' }} data-testid="img-teacher-challenge" />
                       </div>
-                      <h3 className="text-xl md:text-2xl font-bold mt-6 mb-4" style={{ color: '#1a3a4a' }}>Teacher's Limited Attention</h3>
+                      <h3 className="text-lg md:text-2xl font-bold mt-4 md:mt-6 mb-3 md:mb-4" style={{ color: '#1a3a4a' }}>Teacher's Limited Attention</h3>
                       <p className="text-sm md:text-base font-light leading-relaxed" style={{ color: 'rgba(26,58,74,0.6)' }}>
                         Teachers rely on experience and constant attention. 1 teacher, 20–30 students. And the harder part is not knowing if support is needed.
                       </p>
@@ -327,7 +335,7 @@ export default function SomaDetail() {
 
                 <RevealSection delay={400}>
                   <div className="text-center mt-20 md:mt-32 mb-4">
-                    <p className="text-2xl md:text-4xl lg:text-5xl font-light italic leading-snug" style={{ color: 'rgba(26,58,74,0.45)' }}>
+                    <p className="text-xl md:text-3xl lg:text-5xl font-light italic leading-snug" style={{ color: 'rgba(26,58,74,0.45)' }}>
                       <span style={{ display: 'inline-block', opacity: 0.6 }}>"</span>What if regulation could begin<br />before escalation?<span style={{ display: 'inline-block', opacity: 0.6 }}>"</span>
                     </p>
                   </div>
@@ -338,16 +346,16 @@ export default function SomaDetail() {
               <div className="py-16 md:py-32" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
                 <div className="max-w-6xl mx-auto text-center">
                   <RevealSection>
-                    <h2 className="text-4xl md:text-6xl lg:text-7xl leading-tight mb-8 md:mb-12" style={{ fontFamily: "'Georgia', serif", color: '#1a3a4a' }}>
+                    <h2 className="text-3xl md:text-5xl lg:text-7xl leading-tight mb-6 md:mb-12" style={{ fontFamily: "'Georgia', serif", color: '#1a3a4a' }}>
                       Introducing <br /><span className="italic">Soma</span>
                     </h2>
                   </RevealSection>
                   <RevealSection delay={200}>
-                    <p className="text-lg md:text-2xl font-light leading-relaxed whitespace-nowrap mb-16" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                    <p className="text-sm md:text-lg lg:text-2xl font-light leading-relaxed mb-10 md:mb-16 px-4 md:px-0" style={{ color: 'rgba(26,58,74,0.6)' }}>
                       An AI-wearable ecosystem addressing self co-regulation in autism education.
                     </p>
                   </RevealSection>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto px-4 md:px-0">
                     <RevealSection delay={200}>
                       <div className="flex flex-col items-center gap-5">
                         <img src="/soma-patch-image.jpg" alt="Soma Patch" className="w-full rounded-3xl object-cover" style={{ aspectRatio: '1/1' }} data-testid="img-patch-intro" />
@@ -374,14 +382,14 @@ export default function SomaDetail() {
               <div className="space-y-6">
                 <RevealSection>
                   <div className="text-center mb-6 md:mb-8">
-                    <h2 className="text-4xl md:text-6xl font-bold" style={{ color: '#1a3a4a' }}>Soma Patch</h2>
+                    <h2 className="text-2xl md:text-4xl lg:text-6xl font-bold" style={{ color: '#1a3a4a' }}>Soma Patch</h2>
                   </div>
                 </RevealSection>
 
                 <RevealSection>
-                  <div className="max-w-4xl mx-auto text-center mb-8">
-                    <p className="text-base md:text-lg font-light leading-relaxed" style={{ color: 'rgba(26,58,74,0.6)' }}>
-                      A soft, skin-like patch that monitors physiological signals of stress inside the palm.<br />A flexible sensing system continuously captures biometric signals.
+                  <div className="max-w-4xl mx-auto text-center mb-8 px-4 md:px-0">
+                    <p className="text-sm md:text-lg font-light leading-relaxed" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                      A soft, skin-like patch that monitors physiological signals of stress inside the palm. A flexible sensing system continuously captures biometric signals.
                     </p>
                   </div>
                 </RevealSection>
@@ -405,14 +413,14 @@ export default function SomaDetail() {
               <div className="space-y-6">
                 <RevealSection>
                   <div className="text-center mb-6 md:mb-8">
-                    <h2 className="text-4xl md:text-6xl font-bold" style={{ color: '#1a3a4a' }}>Soma Ring</h2>
+                    <h2 className="text-2xl md:text-4xl lg:text-6xl font-bold" style={{ color: '#1a3a4a' }}>Soma Ring</h2>
                   </div>
                 </RevealSection>
 
                 <RevealSection>
-                  <div className="max-w-4xl mx-auto text-center mb-8">
-                    <p className="text-base md:text-lg font-light leading-relaxed" style={{ color: 'rgba(26,58,74,0.6)' }}>
-                      A wearable for intuitive co-regulation. Receives real-time biometric data.<br />Multi-modal alerts through LED and vibration. Touch-to-guide regulation — teacher and child synchronize.
+                  <div className="max-w-4xl mx-auto text-center mb-8 px-4 md:px-0">
+                    <p className="text-sm md:text-lg font-light leading-relaxed" style={{ color: 'rgba(26,58,74,0.6)' }}>
+                      A wearable for intuitive co-regulation. Receives real-time biometric data. Multi-modal alerts through LED and vibration. Touch-to-guide regulation — teacher and child synchronize.
                     </p>
                     <ul className="flex flex-wrap justify-center gap-3 mt-6">
                       {[
@@ -452,19 +460,19 @@ export default function SomaDetail() {
               <div className="space-y-6">
                 {/* Feature 1 — 5 phone screenshots in one row */}
                 <RevealSection>
-                  <div className="py-20 md:py-32 relative" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
-                    <div className="max-w-6xl mx-auto">
+                  <div className="py-12 md:py-32 relative" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
+                    <div className="max-w-6xl mx-auto px-4 md:px-0">
                       <RevealSection>
-                        <div className="text-center mb-16 md:mb-20">
-                          <h2 className="text-4xl md:text-6xl font-bold mb-6" style={{ color: '#1a3a4a' }}>Soma App</h2>
+                        <div className="text-center mb-10 md:mb-20">
+                          <h2 className="text-2xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6" style={{ color: '#1a3a4a' }}>Soma App</h2>
                           <p className="text-base md:text-lg font-light leading-relaxed max-w-3xl mx-auto" style={{ color: 'rgba(26,58,74,0.6)' }}>
                             The Soma app quietly monitors emotional patterns in the background.
                           </p>
                         </div>
                       </RevealSection>
-                      <div className="text-center mb-12 md:mb-16">
+                      <div className="text-center mb-8 md:mb-16 px-4 md:px-0">
                         <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 1</span>
-                        <h3 className="text-xl md:text-2xl font-bold mt-3" style={{ color: '#1a3a4a' }}>Simplifies ASD Emotion to Practice Regulation</h3>
+                        <h3 className="text-lg md:text-2xl font-bold mt-2 md:mt-3" style={{ color: '#1a3a4a' }}>Simplifies ASD Emotion to Practice Regulation</h3>
                       </div>
                     </div>
 
@@ -478,7 +486,7 @@ export default function SomaDetail() {
                     <div className="max-w-7xl mx-auto px-6">
                       <div className="mb-8">
                         <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 2</span>
-                        <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Co-regulation Synchronizes Activities & Suggestions</h3>
+                        <h3 className="text-lg md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Co-regulation Synchronizes Activities & Suggestions</h3>
                         <p className="text-sm md:text-base font-light leading-relaxed mt-3" style={{ color: 'rgba(26,58,74,0.6)' }}>
                           Guidance appears when support is needed. Breathing guidance aligned with the child's rhythm. Or simple playful activities.
                         </p>
@@ -503,10 +511,10 @@ export default function SomaDetail() {
                 {/* Feature 3 — Video */}
                 <RevealSection>
                   <div className="py-8 md:py-12" style={{ backgroundColor: 'white', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
-                    <div className="max-w-7xl mx-auto">
+                    <div className="max-w-7xl mx-auto px-6">
                       <div className="mb-8">
                         <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 3</span>
-                        <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Personalized Learning Patterns</h3>
+                        <h3 className="text-lg md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Personalized Learning Patterns</h3>
                         <p className="text-sm md:text-base font-light leading-relaxed mt-3" style={{ color: 'rgba(26,58,74,0.6)' }}>
                           An AI/LLM that learns which strategies work best. And builds personalized support patterns.
                         </p>
@@ -534,7 +542,7 @@ export default function SomaDetail() {
                     <div className="max-w-7xl mx-auto px-6">
                       <div className="mb-8">
                         <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(26,58,74,0.4)' }}>Feature 4</span>
-                        <h3 className="text-xl md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Adjustable AI Wearable Setting</h3>
+                        <h3 className="text-lg md:text-2xl font-bold mt-2" style={{ color: '#1a3a4a' }}>Adjustable AI Wearable Setting</h3>
                         <p className="text-sm md:text-base font-light leading-relaxed mt-3" style={{ color: 'rgba(26,58,74,0.6)' }}>
                           Teachers can adjust patch and ring settings/activities.
                         </p>
@@ -560,12 +568,12 @@ export default function SomaDetail() {
               {/* Impact */}
               <div className="py-16 md:py-24" style={{ backgroundColor: '#1a3a4a', color: '#EFF6FA', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', paddingLeft: 'calc(50vw - 50%)', paddingRight: 'calc(50vw - 50%)' }}>
                 <RevealSection>
-                  <h2 className="text-4xl md:text-6xl font-light text-center mb-12 md:mb-20" style={{ color: '#EFF6FA' }}>Impact</h2>
+                  <h2 className="text-2xl md:text-4xl lg:text-6xl font-light text-center mb-8 md:mb-20" style={{ color: '#EFF6FA' }}>Impact</h2>
                 </RevealSection>
 
                 <RevealSection delay={200}>
-                  <div className="max-w-4xl mx-auto text-center mb-16">
-                    <p className="text-lg md:text-xl font-light leading-relaxed" style={{ color: 'rgba(239,246,250,0.7)' }}>
+                  <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16 px-4 md:px-0">
+                    <p className="text-sm md:text-lg lg:text-xl font-light leading-relaxed" style={{ color: 'rgba(239,246,250,0.7)' }}>
                       Soma bridges the gap between physiological distress and classroom support, empowering children to make more intuitive pairing and transitions.
                     </p>
                   </div>
@@ -575,9 +583,9 @@ export default function SomaDetail() {
                   <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden relative">
                     <img src="/soma-impact.jpg" alt="Impact" className="w-full h-auto" data-testid="img-impact" />
                     <div className="absolute top-0 left-0 w-full h-full" style={{ background: 'linear-gradient(135deg, rgba(239,244,251,0.45) 0%, rgba(239,244,251,0.15) 30%, transparent 55%)' }} />
-                    <div className="absolute top-8 left-8 md:top-12 md:left-12">
+                    <div className="absolute top-4 left-4 md:top-12 md:left-12">
                       <RevealSection delay={500}>
-                        <p className="text-lg md:text-2xl lg:text-3xl font-light leading-relaxed" style={{ color: '#1a3a4a' }}>
+                        <p className="text-sm md:text-xl lg:text-3xl font-light leading-relaxed" style={{ color: '#1a3a4a' }}>
                           Small signals.<br />
                           Gentle support.<br />
                           Lasting connection.
