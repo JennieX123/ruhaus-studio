@@ -65,7 +65,7 @@ export default function Home() {
               >
                 {/* Project Card/Image */}
                 <div className="playground-card mb-6 relative aspect-video overflow-hidden">
-                  <div className="playground-card-img-container w-full h-full relative flex items-center justify-center bg-[#F5F5F5] p-12 md:p-20">
+                  <div className={`playground-card-img-container w-full h-full relative flex items-center justify-center p-12 md:p-20 ${project.slug === 'learno' ? 'bg-black' : 'bg-[#F5F5F5]'}`}>
                     {project.slug === 'hear-me' ? (
                       <span
                         className="text-4xl md:text-5xl font-bold transition-all ease-in-out duration-200"
