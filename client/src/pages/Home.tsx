@@ -47,8 +47,7 @@ export default function Home() {
         </div>
 
         {/* Awards Strip */}
-        <div className="mb-12 md:mb-16">
-          <p className="text-[10px] tracking-[2px] text-neutral-300 uppercase font-semibold mb-4">Recognition</p>
+        <div className="mb-10 md:mb-14 -mt-4">
           <div className="flex items-center gap-8 flex-wrap">
             {[
               { src: "/award-reddot.png", alt: "Red Dot Design Award" },
@@ -58,12 +57,13 @@ export default function Home() {
               { src: "/award-asia.png", alt: "Asia Design Prize" },
               { src: "/award-adc.png", alt: "ADC Award" },
               { src: "/award-ux.png", alt: "UX Design Award" },
+              { src: "/award-cwa.png", alt: "Chicago Women in Architecture" },
             ].map((award) => (
               <img
                 key={award.alt}
                 src={award.src}
                 alt={award.alt}
-                style={{ height: "36px", width: "auto", objectFit: "contain" }}
+                style={{ height: "44px", width: "auto", objectFit: "contain" }}
               />
             ))}
           </div>
