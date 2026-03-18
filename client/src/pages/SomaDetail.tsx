@@ -393,30 +393,15 @@ export default function SomaDetail() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-3 mb-4" style={{ padding: '0 1vw' }}>
-                      {phoneImages.slice(0, 3).map((phone, i) => (
-                        <RevealSection key={i} delay={i * 150}>
-                          <div className="flex flex-col items-center gap-1">
+                    <div className="grid grid-cols-5 gap-3" style={{ padding: '0 2vw' }}>
+                      {phoneImages.map((phone, i) => (
+                        <RevealSection key={i} delay={i * 120}>
+                          <div className="flex flex-col items-center gap-2">
                             <img
                               src={phone.src}
                               alt={phone.label}
                               className="w-full h-auto"
                               data-testid={`img-phone-${i}`}
-                            />
-                            <span className="text-[10px] md:text-xs text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
-                          </div>
-                        </RevealSection>
-                      ))}
-                    </div>
-                    <div className="grid grid-cols-2 gap-3 mx-auto" style={{ width: '66%', padding: '0 1vw' }}>
-                      {phoneImages.slice(3).map((phone, i) => (
-                        <RevealSection key={i + 3} delay={(i + 3) * 150}>
-                          <div className="flex flex-col items-center gap-1">
-                            <img
-                              src={phone.src}
-                              alt={phone.label}
-                              className="w-full h-auto"
-                              data-testid={`img-phone-${i + 3}`}
                             />
                             <span className="text-[10px] md:text-xs text-center font-medium" style={{ color: 'rgba(26,58,74,0.6)' }}>{phone.label}</span>
                           </div>
