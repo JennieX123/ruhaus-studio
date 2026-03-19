@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "mbdtsqxyhuahwVrYeeIhu"
+uri = "file://client/public/favicon-jr-backup.svg"
+type = "image"
+title = "JR Favicon (original)"
