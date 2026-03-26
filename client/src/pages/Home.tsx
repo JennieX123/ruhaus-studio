@@ -87,27 +87,39 @@ export default function Home() {
                 onClick={() => navigate(`/${project.slug}`)}
               >
                 {/* Project Card/Image */}
-                <div className="playground-card mb-6 relative aspect-video overflow-hidden">
-                  <div className="playground-card-img-container w-full h-full relative flex items-center justify-center p-12 md:p-20 bg-[#F5F5F5]">
+                <div className="playground-card mb-6 relative aspect-video overflow-hidden rounded-xl">
+                  {/* Full-bleed hero image */}
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    data-testid={`img-hero-${project.slug}`}
+                  />
+                  {/* Logo overlay — bottom left */}
+                  <div className="absolute bottom-4 left-4">
                     {project.slug === 'hear-me' ? (
                       <span
-                        className="text-3xl md:text-4xl font-bold transition-all duration-700 ease-out group-hover:scale-115"
-                        style={{ fontFamily: "'Nunito', sans-serif", color: '#88B395' }}
-                        data-testid="text-hearme-logo"
+                        className="text-lg font-bold px-3 py-1 rounded-full"
+                        style={{ fontFamily: "'Nunito', sans-serif", color: '#88B395', backgroundColor: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(8px)' }}
                       >
                         Hear Me
                       </span>
                     ) : (
-                      <img 
-                        src={project.image} 
-                        alt={project.title} 
-                        className={`object-contain transition-all duration-700 ease-out group-hover:scale-115 ${
-                          project.slug === 'soma' ? 'w-36 md:w-44' :
-                          project.slug === 'galaxsync' ? 'w-48 md:w-60' :
-                          project.slug === 'yoyo' ? 'w-20 md:w-28' :
-                          project.slug === 'learno' ? 'w-36 md:w-44' :
-                          'max-w-full max-h-full'
-                        }`}
+                      <img
+                        src={
+                          project.slug === 'soma' ? '/soma-logo-detail.png' :
+                          project.slug === 'galaxsync' ? '/galaxsync-logo-detail.png' :
+                          project.slug === 'yoyo' ? '/assets/images/project-yoyo.png' :
+                          project.slug === 'learno' ? '/assets/images/project-learno.png' :
+                          project.image
+                        }
+                        alt={`${project.title} logo`}
+                        className="object-contain"
+                        style={{
+                          height: project.slug === 'yoyo' ? '28px' : '32px',
+                          width: 'auto',
+                          filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.3))',
+                        }}
                       />
                     )}
                   </div>

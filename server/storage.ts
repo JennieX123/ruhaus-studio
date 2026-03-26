@@ -32,7 +32,7 @@ export class MemStorage implements IStorage {
         title: "Soma",
         domain: "#Health #Wellness",
         intro: "An AI wearable ecosystem addressing self co-regulation in autism education.",
-        image: "/soma-logo.png",
+        image: "/soma-hero.jpg",
         tags: ["AI Wearable Ecosystem", "Smart Phone", "ASD"]
       },
       {
@@ -40,7 +40,7 @@ export class MemStorage implements IStorage {
         title: "Galaxsync",
         domain: "#Data #Sci-Fi",
         intro: "A reciprocal AI-driven VR care ecosystem connecting elders and ADHD children through shared stories and interactive worlds.",
-        image: "/galaxsync-logo-original.png",
+        image: "/galaxsync-hero.jpg",
         tags: ["Reciprocal AI-VR Ecosystem", "ADHD", "Elders"]
       },
       {
@@ -48,7 +48,7 @@ export class MemStorage implements IStorage {
         title: "Hear Me",
         domain: "#AI #Accessibility",
         intro: "An AI avatar assistant designed for deaf and non-vocal users, enabling natural communication.",
-        image: "/assets/images/project-hearme.svg",
+        image: "/hearme-hero.jpg",
         tags: ["AI", "VOICE UX", "NEW"]
       },
       {
@@ -56,7 +56,7 @@ export class MemStorage implements IStorage {
         title: "LEARNO",
         domain: "#EdTech #AI #Gamification",
         intro: "A next-generation K–12 learning ecosystem with AI-guided gamified journeys and emotional companions.",
-        image: "/assets/images/project-learno.png",
+        image: "/learno-hero.jpg",
         tags: ["EDTECH", "AI", "K-12"]
       },
       {
@@ -64,7 +64,7 @@ export class MemStorage implements IStorage {
         title: "YOYO",
         domain: "#AI #IoT #Child Wellness",
         intro: "An intelligent assistant ensuring a holistic approach to child development.",
-        image: "/assets/images/project-yoyo.png",
+        image: "/yoyo-hero.jpg",
         tags: ["AI", "IoT", "NEW"]
       },
     ];
