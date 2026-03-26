@@ -107,34 +107,6 @@ export default function Home() {
                     data-testid={`img-hero-${project.slug}`}
                   />
                   )}
-                  {/* Logo overlay — bottom left */}
-                  <div className="absolute bottom-4 left-4">
-                    {project.slug === 'hear-me' ? (
-                      <span
-                        className="text-lg font-bold px-3 py-1 rounded-full"
-                        style={{ fontFamily: "'Nunito', sans-serif", color: '#88B395', backgroundColor: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(8px)' }}
-                      >
-                        Hear Me
-                      </span>
-                    ) : (
-                      <img
-                        src={
-                          project.slug === 'soma' ? '/soma-logo-detail.png' :
-                          project.slug === 'galaxsync' ? '/galaxsync-logo-detail.png' :
-                          project.slug === 'yoyo' ? '/assets/images/project-yoyo.png' :
-                          project.slug === 'learno' ? '/assets/images/project-learno.png' :
-                          project.image
-                        }
-                        alt={`${project.title} logo`}
-                        className="object-contain"
-                        style={{
-                          height: project.slug === 'yoyo' ? '28px' : '32px',
-                          width: 'auto',
-                          filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.3))',
-                        }}
-                      />
-                    )}
-                  </div>
                 </div>
                 
                 {/* Project Info */}
