@@ -88,13 +88,25 @@ export default function Home() {
               >
                 {/* Project Card/Image */}
                 <div className="playground-card mb-6 relative aspect-video overflow-hidden rounded-xl">
-                  {/* Full-bleed hero image */}
+                  {/* Full-bleed hero image or video */}
+                  {(project.slug === 'hear-me' || project.slug === 'yoyo') ? (
+                    <video
+                      src={project.slug === 'hear-me' ? '/hearme-video.mp4' : '/yoyo-video.mp4'}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover"
+                      data-testid={`video-hero-${project.slug}`}
+                    />
+                  ) : (
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     data-testid={`img-hero-${project.slug}`}
                   />
+                  )}
                   {/* Logo overlay — bottom left */}
                   <div className="absolute bottom-4 left-4">
                     {project.slug === 'hear-me' ? (
