@@ -6,3 +6,9 @@ id = "mbdtsqxyhuahwVrYeeIhu"
 uri = "file://client/public/favicon-jr-backup.svg"
 type = "image"
 title = "JR Favicon (original)"
+
+[[outputs]]
+id = "FlrXr3oeBmFfbyHieQ2OY"
+uri = "file://client/public/learno-deck.pdf"
+type = "pdf"
+title = "LEARNO — Document Deck (14 pages)"
