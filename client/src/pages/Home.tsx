@@ -1,23 +1,43 @@
-import { useQuery } from "@tanstack/react-query";
 import { videoSrc } from '../lib/video';
-import { type Project } from "@shared/schema";
-import { ExternalLink, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
+
+const PROJECTS = [
+  {
+    id: 1, slug: "soma", title: "Soma", domain: "#Health #Wellness",
+    intro: "An AI wearable ecosystem addressing self co-regulation in autism education.",
+    image: "/soma-hero.jpg", tags: ["AI Wearable Ecosystem", "Smart Phone", "ASD"],
+  },
+  {
+    id: 2, slug: "galaxsync", title: "Galaxsync", domain: "#Data #Sci-Fi",
+    intro: "A reciprocal AI-driven VR care ecosystem connecting elders and ADHD children through shared stories and interactive worlds.",
+    image: "/galaxsync-hero.jpg", tags: ["Reciprocal AI-VR Ecosystem", "ADHD", "Elders"],
+  },
+  {
+    id: 3, slug: "hear-me", title: "Hear Me", domain: "#AI #Accessibility",
+    intro: "An AI avatar assistant designed for deaf and non-vocal users, enabling natural communication.",
+    image: "/hearme-hero.jpg", tags: ["AI", "VOICE UX", "NEW"],
+  },
+  {
+    id: 4, slug: "learno", title: "LEARNO", domain: "#EdTech #AI #Gamification",
+    intro: "A next-generation K–12 learning ecosystem with AI-guided gamified journeys and emotional companions.",
+    image: "/learno-hero.jpg", tags: ["EDTECH", "AI", "K-12"],
+  },
+  {
+    id: 5, slug: "yoyo", title: "YOYO", domain: "#AI #IoT #Child Wellness",
+    intro: "An intelligent assistant ensuring a holistic approach to child development.",
+    image: "/yoyo-hero.jpg", tags: ["AI", "IoT", "NEW"],
+  },
+];
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [, navigate] = useLocation();
 
-  const { data: projects, isLoading } = useQuery<Project[]>({
-    queryKey: ["/api/projects"],
-  });
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
+  useEffect(() => { setMounted(true); }, []);
   if (!mounted) return null;
+
+  const projects = PROJECTS;
 
   return (
     <div className="playground-root theme-jason min-h-screen selection:bg-current selection:text-white">
@@ -72,16 +92,7 @@ export default function Home() {
 
         {/* Portfolio Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
-          {isLoading ? (
-            Array(6).fill(0).map((_, i) => (
-              <div key={i} className="animate-pulse flex flex-col gap-4">
-                <div className="aspect-[4/3] bg-neutral-100 rounded-xl" />
-                <div className="h-4 bg-neutral-100 rounded w-1/4" />
-                <div className="h-4 bg-neutral-100 rounded w-3/4" />
-              </div>
-            ))
-          ) : (
-            projects?.map((project) => (
+          {projects.map((project) => (
               <div 
                 key={project.id} 
                 className="group cursor-pointer flex flex-col"
@@ -128,8 +139,7 @@ export default function Home() {
                   )}
                 </div>
               </div>
-            ))
-          )}
+          ))}
         </div>
       </main>
       {/* Footer */}
