@@ -1,4 +1,5 @@
 import { useLocation } from "wouter";
+import { videoSrc } from '../lib/video';
 import { ArrowLeft } from "lucide-react";
 import { useState, useEffect, useRef, useCallback } from "react";
 
@@ -447,7 +448,7 @@ export default function GalaxsyncDetail() {
                         <div className="absolute inset-0 z-30 flex items-center justify-center" style={{ padding: '3.2% 3.2% 2.8% 4.5%' }}>
                           <video
                             ref={elderVideo2Ref}
-                            src="/elder-digital-assets.mp4"
+                            src={videoSrc("/elder-digital-assets.mp4")}
                             autoPlay
                             muted
                             loop
@@ -664,7 +665,7 @@ export default function GalaxsyncDetail() {
                         <div className="absolute inset-0 z-30 flex items-center justify-center" style={{ padding: '3.2% 3.2% 2.8% 4.5%' }}>
                           <video
                             ref={elderVideoRef}
-                            src="/elder-recording.mp4"
+                            src={videoSrc("/elder-recording.mp4")}
                             autoPlay
                             muted
                             loop
@@ -698,7 +699,7 @@ export default function GalaxsyncDetail() {
                         <img src="/ipad-constellation.png" alt="iPad frame" className="w-full relative z-20 pointer-events-none" />
                         <div className="absolute inset-0 z-30 flex items-center justify-center" style={{ padding: '3.2% 3.2% 2.8% 4.5%' }}>
                           <video
-                            src="/elder-dashboard.mp4"
+                            src={videoSrc("/elder-dashboard.mp4")}
                             autoPlay
                             muted
                             loop

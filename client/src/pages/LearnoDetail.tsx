@@ -1,4 +1,5 @@
 import { useLocation } from "wouter";
+import { videoSrc } from '../lib/video';
 import { useState, useEffect, useRef } from "react";
 
 function useReveal(threshold = 0.15) {

@@ -1,4 +1,5 @@
 import { useLocation } from "wouter";
+import { videoSrc } from '../lib/video';
 import { useState, useEffect, useRef } from "react";
 
 function useReveal(threshold = 0.15) {
@@ -129,7 +130,7 @@ export default function HearMeDetail() {
             <RevealSection direction="scale">
               <div className="overflow-hidden">
                 <video
-                  src="/hearme-video.mp4"
+                  src={videoSrc("/hearme-video.mp4")}
                   autoPlay
                   loop
                   muted

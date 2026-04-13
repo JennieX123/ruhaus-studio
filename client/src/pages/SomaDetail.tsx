@@ -1,4 +1,5 @@
 import { useLocation } from "wouter";
+import { videoSrc } from '../lib/video';
 import { useState, useEffect, useRef, useCallback } from "react";
 
 function useReveal(threshold = 0.15) {
@@ -397,7 +398,7 @@ export default function SomaDetail() {
                 <RevealSection direction="scale" delay={200}>
                   <div className="full-bleed-video overflow-hidden">
                     <video
-                      src="/soma-patch-video.mp4"
+                      src={videoSrc("/soma-patch-video.mp4")}
                       autoPlay
                       loop
                       muted
@@ -444,7 +445,7 @@ export default function SomaDetail() {
                 <RevealSection direction="scale" delay={200}>
                   <div className="full-bleed-video overflow-hidden">
                     <video
-                      src="/soma-ring-breakdown.mp4"
+                      src={videoSrc("/soma-ring-breakdown.mp4")}
                       autoPlay
                       loop
                       muted
@@ -493,7 +494,7 @@ export default function SomaDetail() {
                     <RevealSection direction="scale" delay={200}>
                       <div className="full-bleed-video overflow-hidden">
                         <video
-                          src="/soma-app-1-new.mp4"
+                          src={videoSrc("/soma-app-1-new.mp4")}
                           autoPlay
                           loop
                           muted
@@ -519,7 +520,7 @@ export default function SomaDetail() {
                     <RevealSection direction="scale" delay={200}>
                       <div className="full-bleed-video overflow-hidden">
                         <video
-                          src="/soma-app-3-new.mp4"
+                          src={videoSrc("/soma-app-3-new.mp4")}
                           autoPlay
                           loop
                           muted
@@ -545,7 +546,7 @@ export default function SomaDetail() {
                     <RevealSection direction="scale" delay={200}>
                       <div className="full-bleed-video overflow-hidden">
                         <video
-                          src="/soma-app-4-new.mp4"
+                          src={videoSrc("/soma-app-4-new.mp4")}
                           autoPlay
                           loop
                           muted

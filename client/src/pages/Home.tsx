@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { videoSrc } from '../lib/video';
 import { type Project } from "@shared/schema";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";

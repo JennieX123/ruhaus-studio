@@ -1,4 +1,5 @@
 import { useLocation } from "wouter";
+import { videoSrc } from '../lib/video';
 import { useState, useEffect, useRef } from "react";
 
 function useReveal(threshold = 0.15) {
@@ -133,7 +134,7 @@ export default function YoyoDetail() {
             <RevealSection direction="scale">
               <div className="overflow-hidden">
                 <video
-                  src="/yoyo-video.mp4"
+                  src={videoSrc("/yoyo-video.mp4")}
                   autoPlay
                   loop
                   muted
